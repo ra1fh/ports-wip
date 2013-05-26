@@ -1,0 +1,24 @@
+$OpenBSD$
+--- make/gcc.mak.orig	Mon Sep 28 17:31:03 2009
++++ make/gcc.mak	Tue Jan  3 00:09:25 2012
+@@ -15,7 +15,7 @@
+ # (That trick has been disabled.)
+ 
+ # The install prefix and directories
+-prefix		= /usr/local
++prefix		= $(PREFIX)
+ exec_prefix	= $(prefix)
+ 
+ bindir		= $(exec_prefix)/bin
+@@ -68,10 +68,7 @@ libs:
+ # This rule won't try to generate HTML files
+ # if a host system doesn't have LinuxDoc Tools.
+ docs:
+-	@if linuxdoc -B check doc/index >/dev/null 2>&1; \
+-	  then $(MAKE) -C doc html; \
+-	  else echo '"LinuxDoc Tools" is not installed; skipping HTML documentation.'; \
+-	  fi
++	$(MAKE) -C doc html
+ 
+ # Some platforms cannot compile all of the sample and library-test programs.
+ # So, these rules ignore errors.

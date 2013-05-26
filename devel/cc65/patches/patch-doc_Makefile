@@ -1,0 +1,50 @@
+$OpenBSD$
+--- doc/Makefile.orig	Sun Mar  7 13:41:17 2010
++++ doc/Makefile	Mon Jan  2 23:51:56 2012
+@@ -61,10 +61,11 @@ TEX  =	$(SGML:.sgml=.tex)
+ # Pattern-rules, to make targets
+ 
+ %.txt:	%.sgml
+-	linuxdoc -B txt -f $(TXT_OPTIONS) $<
++	sgmlfmt -f ascii $<
++	mv $(subst .sgml,.ascii,$<) $@ 
+ 
+ %.html:	%.sgml
+-	linuxdoc -B html --split=1 $(BUTTONS) $<
++	sgmlfmt -f html $<
+ 
+ %.info:	%.sgml
+ 	linuxdoc -B info $<
+@@ -98,12 +99,6 @@ tex:	linuxdoc $(TEX)
+ 
+ .PHONY:	linuxdoc
+ linuxdoc:
+-	@sgmlcheck index >/dev/null 2>&1 || { \
+-	echo; \
+-	echo '"LinuxDoc Tools" does not exist on this system.'; \
+-	echo 'So, most of the documentation might not have been built.'; \
+-	echo; \
+-	false;}
+ 
+ .PHONY:	clean
+ clean:
+@@ -117,16 +112,16 @@ zap:	clean
+ # Special target rules
+ 
+ coding.html:	coding.sgml
+-	sgml2html --split=0 $<
++	sgmlfmt -f html $<
+ 
+ # funcref.sgml's third section is huge.
+ # So, funcref.html is split into sub-section files.
+ #
+ funcref.html:	funcref.sgml
+-	sgml2html --split=2 $(BUTTONS) $<
++	sgmlfmt -f html $<
+ 
+ # The index.html target is special:
+ # It is only a table of contents.  So, it should not be split.
+ #
+ index.html:	index.sgml
+-	sgml2html --split=0 $<
++	sgmlfmt -f html $<
