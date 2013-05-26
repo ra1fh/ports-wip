@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/plantuml
+share/plantuml/
+share/plantuml/plantuml.jar
