@@ -1,0 +1,16 @@
+$OpenBSD$
+--- Makefile.orig	Sun Feb  8 07:49:30 2009
++++ Makefile	Thu Jan  5 22:57:39 2012
+@@ -17,9 +17,9 @@ LDFLAGS = -lc
+ 
+ DESTDIR = /usr/local
+ 
+-BINDIR = $(DESTDIR)/bin
+-MANDIR = $(DESTDIR)/share/man/man1
+-DOCDIR = $(DESTDIR)/share/doc
++BINDIR = $(PREFIX)/bin
++MANDIR = $(PREFIX)/man/man1
++DOCDIR = $(PREFIX)/share/doc
+ 
+ MKDIR = mkdir -p
+ INSTALL = install
