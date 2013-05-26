@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/dasm
+@bin bin/ftohex
+share/doc/dasm/
+share/doc/dasm/dasm.txt
+share/doc/dasm/ftohex.txt
