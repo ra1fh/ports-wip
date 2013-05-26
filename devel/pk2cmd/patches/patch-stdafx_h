@@ -1,0 +1,11 @@
+$OpenBSD$
+--- stdafx.h.orig	Tue Jan  6 20:57:34 2009
++++ stdafx.h	Sat Mar 23 11:06:40 2013
+@@ -46,7 +46,6 @@
+ #define	_tfopen_s	fopen_s
+ 
+ extern char * _tcsncpy_s(char *dst, const char *src, int len);
+-extern void _tsearchenv_s(const char *fname, const char *path, char *bfr);
+ extern void	_localtime64_s(struct tm *x, time_t *y);
+ extern void	_tcsftime(char *bfr, int len, const char *fmt, struct tm *time);
+ extern void	_stprintf_s(char *bfr, int size, const char *fmt, ...);

@@ -1,0 +1,21 @@
+$OpenBSD$
+--- pk2usb.h.orig	Sat Mar 23 11:25:40 2013
++++ pk2usb.h	Sat Mar 23 11:26:33 2013
+@@ -78,6 +78,8 @@ extern pickit_dev	*deviceHandle;
+ 
+ #define	reqLen	64			// PICkit 2 always uses 64-byte transfers
+ 
++#define UNITID_LEN		32
++
+ #define	CONFIG_HID		1	// Use HID for pickit configuration
+ #define	CONFIG_VENDOR	2	// Vendor specific configuration
+ 
+@@ -161,7 +163,7 @@ class CUsbhidioc //: public CDialog (protected)
+ //    void GetDeviceCapabilities();
+ //    void PrepareForOverlappedTransfer();
+ 
+-		char m_UnitID[32];
++		char m_UnitID[UNITID_LEN];
+ };
+ 
+ struct scriptInterpreter {

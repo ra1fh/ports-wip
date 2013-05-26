@@ -1,0 +1,12 @@
+$OpenBSD$
+--- pk2usb.cpp.orig	Tue Dec  9 23:35:48 2008
++++ pk2usb.cpp	Sat Mar 23 11:27:13 2013
+@@ -283,7 +283,7 @@ pickit_dev *usbPickitOpen(int unitIndex, char *unitID)
+ 
+ 						if (unitIDSerial[0] && (unitIDSerial[0] != 9))
+ 						{
+-							strcpy(unitID, unitIDSerial);
++							strlcpy(unitID, unitIDSerial, UNITID_LEN);
+ 							unitID[14] = 0; // ensure termination after 14 characters
+ 						}
+ 					}

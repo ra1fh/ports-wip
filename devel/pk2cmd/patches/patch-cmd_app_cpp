@@ -1,0 +1,148 @@
+$OpenBSD$
+--- cmd_app.cpp.orig	Wed Jan  7 21:59:18 2009
++++ cmd_app.cpp	Sat Mar 23 11:21:01 2013
+@@ -49,6 +49,8 @@ Ccmd_app::~Ccmd_app(void)
+ {
+ }
+ 
++#define DEVICEFILE_DEFAULT_PATH "/usr/local/share/pk2cmd/PK2DeviceFile.dat"
++
+ void Ccmd_app::PK2_CMD_Entry(int argc, _TCHAR* argv[])
+ {
+ 	_TCHAR tempString[MAX_PATH] = "";
+@@ -74,9 +76,9 @@ void Ccmd_app::PK2_CMD_Entry(int argc, _TCHAR* argv[])
+ 			_tcscat_s(tempString, "PK2DeviceFile.dat");
+ #else
+ 		if (tempString[_tcslen(tempString)-1] != '/')
+-			_tcscat_s(tempString, "/PK2DeviceFile.dat");
++			strlcat(tempString, "/PK2DeviceFile.dat", sizeof(tempString));
+ 		else
+-			_tcscat_s(tempString, "PK2DeviceFile.dat");
++			strlcat(tempString, "PK2DeviceFile.dat", sizeof(tempString));
+ #endif
+ 	}
+ 	else if (ReturnCode == INVALID_CMDLINE_ARG)
+@@ -84,12 +86,8 @@ void Ccmd_app::PK2_CMD_Entry(int argc, _TCHAR* argv[])
+ 		return;
+ 	}
+ 	else
+-	{ // no -B, check PATH
+-		_tsearchenv_s("PK2DeviceFile.dat", "PATH", tempString);
+-		if (_tcslen(tempString) < 17)
+-		{
+-			_tcsncpy_s(tempString, "PK2DeviceFile.dat", 17);
+-		}
++	{ // no -B, use default path
++		strlcpy(tempString, DEVICEFILE_DEFAULT_PATH, sizeof(tempString));
+ 	}
+ 	if (!PicFuncs.ReadDeviceFile(tempString))
+ 	{
+@@ -251,7 +249,7 @@ void Ccmd_app::processArgvForSpaces(int argc, _TCHAR* 
+ 	for (i=0, j=0; i < argc; i++, j++)
+ 	{
+ 		nargv[j] = (char *) malloc(MAX_PATH);
+-		strcpy(nargv[j], argv[i]);
++		strlcpy(nargv[j], argv[i], MAX_PATH);
+ 		nargc++;
+ 
+ 		if (checkSwitch(argv[i]))
+@@ -260,7 +258,7 @@ void Ccmd_app::processArgvForSpaces(int argc, _TCHAR* 
+ 			{
+ 				if (!checkSwitch(argv[i + 1]))
+ 				{
+-					strcat(nargv[j], argv[++i]);
++					strlcat(nargv[j], argv[++i], MAX_PATH);
+ 				}
+ 			}
+ 		}
+@@ -489,8 +487,8 @@ bool Ccmd_app::bootloadArg(int argc, _TCHAR* argv[])
+ 			j = 1;
+ 			while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 			{ // check for path with space(s) in it
+-				_tcscat_s(tempString, " ");
+-				_tcscat_s(tempString, argv[i+j]);
++				strlcat(tempString, " ", sizeof(tempString));
++				strlcat(tempString, argv[i+j], sizeof(tempString));
+ 				argv[i + j++] = (char *) "";
+ 			}
+ 			ret = Pk2BootLoadFuncs.ReadHexAndDownload(tempString, &PicFuncs, pk2UnitIndex);
+@@ -553,8 +551,8 @@ bool Ccmd_app::unitIDArg(int argc, _TCHAR* argv[])
+ 			j = 1;
+ 			while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 			{ // check for name with space(s) in it
+-				_tcscat_s(writeString, " ");
+-				_tcscat_s(writeString, argv[i+j]);
++				strlcat(writeString, " ", sizeof(writeString));
++				strlcat(writeString, argv[i+j], sizeof(writeString));
+ 				argv[i + j++] = (char *) "";
+ 			}
+ 			ret = PicFuncs.UnitIDWrite(writeString);
+@@ -807,8 +805,8 @@ bool Ccmd_app::priority1Args(int argc, _TCHAR* argv[],
+ 						j = 1;
+ 						while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 						{ // check for path with space(s) in it
+-							_tcscat_s(tempString, " ");
+-							_tcscat_s(tempString, argv[i+j]);
++							strlcat(tempString, " ", sizeof(tempString));
++							strlcat(tempString, argv[i+j], sizeof(tempString));
+ 							if (!preserveArgs)
+ 								argv[i + j] = (char *) "";
+ 							j++;
+@@ -1325,7 +1323,7 @@ bool Ccmd_app::priority2Args(int argc, _TCHAR* argv[])
+ 								int k = 1;
+ 								if (((i+k) < argc) && (!checkSwitch(argv[i+k])))
+ 								{ // check for space after v
+-									_tcscat_s(tempString, argv[i+k]);
++									strlcat(tempString, argv[i+k], sizeof(tempString));
+ 									argv[i + k++] = (char *) "";
+ 								}
+ 								int vtop = 0;
+@@ -1529,8 +1527,8 @@ bool Ccmd_app::priority2Args(int argc, _TCHAR* argv[])
+ 								while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 								{ // check for path with space(s) in it
+ 									if (_tcslen(tempString) != 0) // don't add space if it's between "F" and start of filename
+-										_tcscat_s(tempString, " ");
+-									_tcscat_s(tempString, argv[i+j]);
++										strlcat(tempString, " ", sizeof(tempString));
++									strlcat(tempString, argv[i+j], sizeof(tempString));
+ 									argv[i + j++] = (char *) "";
+ 								}
+ 								// Check for BIN file:
+@@ -1582,7 +1580,7 @@ bool Ccmd_app::priority2Args(int argc, _TCHAR* argv[])
+ 						j = 1;
+ 						if (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 						{ // check for space after p
+-							_tcscat_s(tempString, argv[i+j]);
++							strlcat(tempString, argv[i+j], sizeof(tempString));
+ 							argv[i + j++] = (char *) "";
+ 						}
+ 						ret = getRange(&startAddr, &stopAddr, tempString);
+@@ -1613,7 +1611,7 @@ bool Ccmd_app::priority2Args(int argc, _TCHAR* argv[])
+ 							j = 1;
+ 							if (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 							{ // check for space after p
+-								_tcscat_s(tempString, argv[i+j]);
++								strlcat(tempString, argv[i+j], sizeof(tempString));
+ 								argv[i + j++] = (char *) "";
+ 							}
+ 							ret = getRange(&startAddr, &stopAddr, tempString);
+@@ -2240,8 +2238,8 @@ bool Ccmd_app::checkDevFilePathOptionB(int argc, _TCHA
+ 	int j = 1;
+ 	while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 	{ // check for path with space(s) in it
+-		_tcscat_s(path_temp, " ");
+-		_tcscat_s(path_temp, argv[i+j]);
++		strlcat(path_temp, " ", sizeof(path_temp));
++		strlcat(path_temp, argv[i+j], sizeof(path_temp));
+ 		argv[i + j++] = (char *) "";
+ 	}
+ 	i = 0;
+@@ -2935,7 +2933,7 @@ bool Ccmd_app::checkHelp2(int argc, _TCHAR* argv[], bo
+ 							int j = 1;
+ 							while (((i+j) < argc) && (!checkSwitch(argv[i+j])))
+ 							{ // check for term with space(s) in it
+-								_tcscat_s(searchTerm, argv[i+j]);
++								strlcat(searchTerm, argv[i+j], sizeof(searchTerm));
+ 								argv[i + j++] = (char *) "";
+ 							}
+ 							displayPartList(argc, argv, searchTerm);

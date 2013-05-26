@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/pk2cmd
+share/pk2cmd/
+share/pk2cmd/PK2DeviceFile.dat
