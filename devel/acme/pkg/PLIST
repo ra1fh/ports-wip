@@ -1,0 +1,16 @@
+@comment $OpenBSD$
+@bin bin/acme
+share/doc/acme/
+share/doc/acme/65816.txt
+share/doc/acme/AddrModes.txt
+share/doc/acme/AllPOs.txt
+share/doc/acme/COPYING
+share/doc/acme/Changes.txt
+share/doc/acme/Errors.txt
+share/doc/acme/Example.txt
+share/doc/acme/Help.txt
+share/doc/acme/Illegals.txt
+share/doc/acme/Lib.txt
+share/doc/acme/QuickRef.txt
+share/doc/acme/Source.txt
+share/doc/acme/Upgrade.txt
