@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gtkextra/gtkcharsel.c.orig	Thu Aug  5 18:12:08 2010
++++ gtkextra/gtkcharsel.c	Sat Jan 19 11:43:53 2013
+@@ -34,7 +34,7 @@
+ 
+ 
+ #include <gtk/gtk.h>
+-#include <glib/gunicode.h>
++#include <glib.h>
+ 
+ #include <string.h>
+ #include "gtkextra-compat.h"
