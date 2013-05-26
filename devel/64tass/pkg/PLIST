@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/64tass
+share/doc/64tass/
+share/doc/64tass/README
+share/doc/64tass/README.html
