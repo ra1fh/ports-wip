@@ -1,0 +1,6 @@
+@comment $OpenBSD$
+@bin bin/dreamass
+@info info/dreamass.info
+share/doc/dreamass/
+share/doc/dreamass/dreamass.html
+share/doc/dreamass/dreamass.txt

@@ -1,0 +1,3 @@
+"DreamAss" is a crossassembler. It produces binaries for 6510, 65816
+and compatible CPUs.  The 'illegal' opcodes of the 6510 are also
+supported.
