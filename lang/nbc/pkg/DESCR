@@ -1,0 +1,5 @@
+Next Byte Codes (NBC) is a simple language with an assembly language
+syntax that can be used to program LEGO's NXT programmable brick.
+
+Not eXactly C (NXC) is a high level language, similar to C, built on
+top of the NBC compiler. It can also be used to program the NXT brick.

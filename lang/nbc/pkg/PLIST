@@ -1,0 +1,5 @@
+@comment $OpenBSD$
+@bin bin/nbc
+share/doc/nbc/
+share/doc/nbc/Changelog
+share/doc/nbc/Readme

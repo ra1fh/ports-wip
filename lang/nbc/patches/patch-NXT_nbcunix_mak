@@ -1,0 +1,17 @@
+$OpenBSD$
+--- NXT/nbcunix.mak.orig	Tue Mar 15 22:10:19 2011
++++ NXT/nbcunix.mak	Sat Jan  4 00:27:05 2014
+@@ -13,11 +13,11 @@ realclean:: clean
+ 
+ install:: all
+ 
+-PFLAGS=-S2cdghi -dRELEASE -vewnhi -l -Fu../ -Fu. -Fu../bricktools -dCAN_DOWNLOAD
++PFLAGS=-S2cdghi -dRELEASE -vewnhi -l -Fi/usr/local/include -Fl/usr/local/lib -Fu../ -Fu. -Fu../bricktools -dCAN_DOWNLOAD
+ 
+ 
+ # PTOOLPREFIX may differ on different platforms (e.g. /usr/local/bin/)
+-PTOOLPREFIX=/usr/bin/
++PTOOLPREFIX=/usr/local/bin/
+ PPC=$(PTOOLPREFIX)fpc
+ 
+ # how to link executable
