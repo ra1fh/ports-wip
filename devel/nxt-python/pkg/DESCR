@@ -1,0 +1,4 @@
+NXT-Python is a package for controlling a LEGO NXT robot using the
+Python programming language. It can communicate using either USB or
+Bluetooth. It is available under the Gnu GPL v3 license. It is based
+on NXT_Python, where releases halted in May 2007.

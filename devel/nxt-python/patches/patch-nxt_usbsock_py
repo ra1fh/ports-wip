@@ -1,0 +1,12 @@
+$OpenBSD$
+--- nxt/usbsock.py.orig	Sun Nov 20 22:13:42 2011
++++ nxt/usbsock.py	Sat Jan  4 00:50:59 2014
+@@ -44,8 +44,6 @@ class USBSock(object):
+         self.handle = self.device.open()
+         self.handle.setConfiguration(1)
+         self.handle.claimInterface(0)
+-        if os.name != 'nt': # http://code.google.com/p/nxt-python/issues/detail?id=33
+-            self.handle.reset()
+         if self.debug:
+             print 'Connected.'
+         return Brick(self)
