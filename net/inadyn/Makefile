@@ -2,7 +2,7 @@
 
 COMMENT =		small memory footprint dynamic dns updater
 
-DISTNAME =		inadyn-1.99.5
+DISTNAME =		inadyn-1.99.6
 
 CATEGORIES =		net
 
