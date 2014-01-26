@@ -1,0 +1,47 @@
+$OpenBSD$
+--- Makefile.orig	Mon Apr 15 07:33:29 2013
++++ Makefile	Thu Jan 16 22:10:40 2014
+@@ -60,24 +60,26 @@ service:
+ 	@sed "s|##PREFIX##|$(PREFIX)|" org.knopwob.dunst.service.in > org.knopwob.dunst.service
+ 
+ install: all
+-	@echo installing executables to ${DESTDIR}${PREFIX}/bin
+-	@mkdir -p ${DESTDIR}${PREFIX}/bin
+-	@cp -f dunst ${DESTDIR}${PREFIX}/bin
+-	@chmod 755 ${DESTDIR}${PREFIX}/bin/dunst
+-	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man1
+-	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+-	@cp -f dunst.1 ${DESTDIR}${MANPREFIX}/man1/
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dunst.1
+-	@mkdir -p "${DESTDIR}${PREFIX}/share/dunst"
+-	@ cp -f dunstrc ${DESTDIR}${PREFIX}/share/dunst
+-	@mkdir -p "${DESTDIR}${PREFIX}/share/dbus-1/services/"
+-	@cp -vf org.knopwob.dunst.service "${DESTDIR}${PREFIX}/share/dbus-1/services/org.knopwob.dunst.service"
++	@echo DESTDIR=${DESTDIR}
++	@echo PREFIX=${PREFIX}
++	@echo installing executables to ${PREFIX}/bin
++	@mkdir -p ${PREFIX}/bin
++	@cp -f dunst ${PREFIX}/bin
++	@chmod 755 ${PREFIX}/bin/dunst
++	@echo installing manual pages to ${MANPREFIX}/man1
++	@mkdir -p ${MANPREFIX}/man1
++	@cp -f dunst.1 ${MANPREFIX}/man1/
++	@chmod 644 ${MANPREFIX}/man1/dunst.1
++	@mkdir -p "${PREFIX}/share/dunst"
++	@ cp -f dunstrc ${PREFIX}/share/dunst
++	@mkdir -p "${PREFIX}/share/dbus-1/services/"
++	@cp -f org.knopwob.dunst.service "${PREFIX}/share/dbus-1/services/org.knopwob.dunst.service"
+ 
+ uninstall:
+-	@echo removing executables from ${DESTDIR}${PREFIX}/bin
+-	@rm -f ${DESTDIR}${PREFIX}/bin/dunst
+-	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+-	@rm -f ${DESTDIR}${MANPREFIX}/man1/dunst
+-	@rm -f ${DESTDIR}${PREFIX}/share/dbus-1/service/org.knopwob.dunst.service
++	@echo removing executables from ${PREFIX}/bin
++	@rm -f ${PREFIX}/bin/dunst
++	@echo removing manual page from ${MANPREFIX}/man1
++	@rm -f ${MANPREFIX}/man1/dunst
++	@rm -f ${PREFIX}/share/dbus-1/service/org.knopwob.dunst.service
+ 
+ .PHONY: all options clean dist install uninstall
