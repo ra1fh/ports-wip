@@ -1,28 +1,28 @@
-COMMENT =	plantuml UML diagram generator
+COMMENT =		plantuml UML diagram generator
 
-DISTNAME =	plantuml-7961
-PKGNAME  =  plantuml-7961
+DISTNAME =		plantuml-7961
+PKGNAME  =  		plantuml-7961
 
-PKG_ARCH =	*
+PKG_ARCH =		*
 
-CATEGORIES =	devel
+CATEGORIES =		devel
 
-HOMEPAGE =	http://plantuml.sourceforge.net
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=plantuml/}
+HOMEPAGE =		http://plantuml.sourceforge.net
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=plantuml/}
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m pthread stdc++
+WANTLIB =		c m pthread stdc++
 
-MODULES =	java
-MODJAVA_VER =	1.7+
+MODULES =		java
+MODJAVA_VER =		1.7+
 
-BUILD_DEPENDS =	devel/apache-ant
-RUN_DEPENDS =	java/javaPathHelper \
-				math/graphviz
+BUILD_DEPENDS =		devel/apache-ant
+RUN_DEPENDS =		java/javaPathHelper \
+			math/graphviz
 
-MAKE_ENV =	JAVA_HOME=${JAVA_HOME} MAKE=${MAKE_PROGRAM}
-ANT_CMD =	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
+MAKE_ENV =		JAVA_HOME=${JAVA_HOME} MAKE=${MAKE_PROGRAM}
+ANT_CMD =		${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
 			${LOCALBASE}/bin/ant
 
 do-build:

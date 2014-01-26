@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD$
 
 COMMENT =		Python library to control NXT
 
@@ -10,17 +10,17 @@ CATEGORIES =		devel
 HOMEPAGE =		http://code.google.com/p/nxt-python/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://nxt-python.googlecode.com/files/
+MASTER_SITES =		http://nxt-python.googlecode.com/files/
 
-MODULES =	lang/python
+MODULES =		lang/python
 
-RUN_DEPENDS =	devel/pyusb
-WANTLIB =	${MODPY_WANTLIB}
+RUN_DEPENDS =		devel/pyusb
+WANTLIB =		${MODPY_WANTLIB}
 
-MAKE_ENV +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV +=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nxt-python

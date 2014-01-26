@@ -1,28 +1,28 @@
 # $OpenBSD$
 
-COMMENT=	cross development package for 6502 systems
+COMMENT=		cross development package for 6502 systems
 
 DISTNAME=		cc65-sources-2.13.3
-PKGNAME=    	cc65-2.13.3
-EXTRACT_SUFX= 	.tar.bz2
+PKGNAME=    		cc65-2.13.3
+EXTRACT_SUFX= 		.tar.bz2
 WRKDIST=		${WRKDIR}/cc65-2.13.3
 
-CATEGORIES=	devel
+CATEGORIES=		devel
 
-HOMEPAGE=	http://www.cc65.org/
+HOMEPAGE=		http://www.cc65.org/
 
 PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=		No
+PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
 
 WANTLIB += c m
 
-BUILD_DEPENDS=	textproc/sgmlformat
+BUILD_DEPENDS=		textproc/sgmlformat
 
-MASTER_SITES = http://cc65.oldos.net/
+MASTER_SITES = 		http://cc65.oldos.net/
 
-USE_GMAKE = Yes
+USE_GMAKE = 		Yes
 
-MAKE_FILE = make/gcc.mak
+MAKE_FILE = 		make/gcc.mak
 
 .include <bsd.port.mk>

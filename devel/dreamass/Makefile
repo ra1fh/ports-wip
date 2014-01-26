@@ -1,22 +1,22 @@
 # $OpenBSD$
 
-COMMENT=	dreamass is a cross assembler for 6510 and compatible
+COMMENT=		dreamass is a cross assembler for 6510 and compatible
 
 DISTNAME=		dreamass_src_20090110
-PKGNAME=    	dreamass-20090110
+PKGNAME=    		dreamass-20090110
 WRKDIST=		${WRKDIR}/dreamass
 
-CATEGORIES=	devel
+CATEGORIES=		devel
 
-HOMEPAGE=	http://developer.berlios.de/projects/rrtools/
+HOMEPAGE=		http://developer.berlios.de/projects/rrtools/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c
+WANTLIB += 		c
 
-MASTER_SITES = ${MASTER_SITE_BERLIOS:=rrtools/}
+MASTER_SITES = 		${MASTER_SITE_BERLIOS:=rrtools/}
 
 USE_GMAKE = Yes
 
