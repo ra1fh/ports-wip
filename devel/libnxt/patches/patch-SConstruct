@@ -1,0 +1,20 @@
+$OpenBSD$
+--- SConstruct.orig	Sun Jan 26 11:19:23 2014
++++ SConstruct	Sun Jan 26 11:28:00 2014
+@@ -1,6 +1,6 @@
+ from glob import glob
+ 
+-auto_libs = ''
++auto_libs = 'libusb'
+ 
+ # Detect the system's endianness
+ from sys import byteorder
+@@ -10,7 +10,7 @@ else:
+ 	endian = '_NXT_LITTLE_ENDIAN'
+ 
+ BuildEnv = Environment(CCFLAGS=['-Wall', '-std=gnu99',
+-				'-g', '-ggdb', '-D' + endian])
++				'-g', '-ggdb', '-D' + endian], LINKFLAGS=['-L/usr/local/lib'])
+ if auto_libs:
+ 	BuildEnv.ParseConfig('pkg-config --cflags --libs ' + auto_libs)
+ 

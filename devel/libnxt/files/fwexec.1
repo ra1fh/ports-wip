@@ -1,0 +1,38 @@
+.TH FWEXEC 1 "January 12, 2013"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+fwexec \- program to upload and rexecute image file to a connected NXT device
+.SH SYNOPSIS
+.B fwexec 
+file
+.SH DESCRIPTION
+This manual page documents briefly the
+.B fwexec
+command.
+.PP
+\fBfwexec\fP is a program to upload image file to a connected NXT device
+by the libNXT library and then to execute it.
+.SH OPTIONS
+This program has not any options and take file name of the NXT firmaware 
+to upload
+.SH SEE ALSO
+.BR nbc (1),
+.BR fwflash (1),
+.BR nexttool (1).
+.br
+.SH AUTHOR
+fwexec and libnxt was written by David Anderson <david.anderson@calixo.net>.
+.PP
+This manual page was written by Slavko <linux@slavino.sk>,
+for the Debian project (and may be used by others).

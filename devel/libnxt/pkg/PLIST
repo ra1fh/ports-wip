@@ -1,0 +1,7 @@
+@comment $OpenBSD$
+@bin bin/fwexec
+@bin bin/fwflash
+@man man/man1/fwexec.1
+@man man/man1/fwflash.1
+share/doc/libnxt/
+share/doc/libnxt/README
