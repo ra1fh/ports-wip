@@ -16,7 +16,7 @@ LIB_DEPENDS=		x11/gtk+2 \
 			x11/gtkglext \
 			devel/sdl \
 			devel/vte \
-			graphics/libungif \
+			graphics/giflib \
 			audio/lame
 
 WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes   \
@@ -30,10 +30,10 @@ WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext Xfixes   \
 			pangocairo-1.0 pangoft2-1.0 pixman-1 png	\
 			pthread z pthread-stubs xcb xcb-render GL	\
 			xcb-shm atk-1.0 iconv intl GLU ICE SM Xmu Xt	\
-			vte
+			vte gif
 
 # added for sdlsound
-WANTLIB += 		Xxf86vm jpeg SDL ungif
+WANTLIB += 		Xxf86vm jpeg SDL 
 
 CONFIGURE_STYLE= 	simple
 
