@@ -2,7 +2,7 @@
 
 COMMENT=		extensible emacs interface for TeX
 
-DISTNAME=		auctex-11.87
+DISTNAME=		auctex-11.88
 #REVISION=		0
 CATEGORIES=		print
 
@@ -19,6 +19,8 @@ RUN_DEPENDS=		emacs->=24,<25:editors/emacs \
 			print/texlive/base
 BUILD_DEPENDS=		emacs->=24,<25:editors/emacs \
 			print/texlive/base
+
+USE_GMAKE=			Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-lispdir=${PREFIX}/share/emacs/site-lisp
