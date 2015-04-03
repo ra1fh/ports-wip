@@ -1,12 +1,20 @@
 $OpenBSD$
---- doc/Makefile.orig	Fri Apr  3 15:00:15 2015
-+++ doc/Makefile	Fri Apr  3 15:06:30 2015
-@@ -80,7 +80,7 @@ TEX  =	$(SGML:.sgml=.tex)
- # Targets
+
+Generating the info documentation errors out:
+
+sgmltmp.grc65.2.texi:96:
+    Cross reference to nonexistent node `example-grc' (perhaps incorrect sectioning?).
+sgmltmp.grc65.2.texi:41:
+  Cross reference to nonexistent node `building-seq' (perhaps incorrect sectioning?).
+
+--- doc/Makefile.orig	Wed Mar 25 16:24:45 2015
++++ doc/Makefile	Sat Apr  4 01:21:10 2015
+@@ -43,7 +43,7 @@ endif
+ zip:
+ 	@cd .. && zip cc65 html/*.*
  
- .PHONY:	all
--all:	txt html info dvi
-+all:	txt html
+-doc: html info
++doc: html
  
- .PHONY:	txt
- txt:	linuxdoc $(TXT)
+ html: $(addprefix ../html/,$(SGMLS:.sgml=.html) doc.css doc.png)
+ 

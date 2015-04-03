@@ -2,27 +2,26 @@
 
 COMMENT=		cross development package for 6502 systems
 
-DISTNAME=		cc65-sources-2.13.3
-PKGNAME=    		cc65-2.13.3
-EXTRACT_SUFX= 		.tar.bz2
-WRKDIST=		${WRKDIR}/cc65-2.13.3
+V =			20150325
+GH_ACCOUNT =		cc65
+GH_PROJECT =		cc65
+GH_COMMIT = 		c3bec9368b4e78e35fc655ac71a70ddcef747a52
+
+DISTNAME =		${GH_PROJECT}-${V}
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.cc65.org/
+HOMEPAGE=		https://cc65.github.io/cc65/
 
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_FTP=	No
+PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m
+WANTLIB += 		c m
 
 BUILD_DEPENDS=		textproc/linuxdoc-tools
 
-MASTER_SITES = 		http://cc65.oldos.net/
-
 USE_GMAKE = 		Yes
+ALL_TARGET =		all doc
 
-MAKE_FILE = 		make/gcc.mak
+MAKE_ENV =		prefix=${PREFIX}
 
 .include <bsd.port.mk>
