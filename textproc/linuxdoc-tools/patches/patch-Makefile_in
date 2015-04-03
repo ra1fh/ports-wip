@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Makefile.in.orig	Mon Apr  8 19:11:41 2013
++++ Makefile.in	Fri Apr  3 14:49:09 2015
+@@ -126,7 +126,7 @@ endif
+ 	@echo "Installing library and support files in $(pkgdata_ddir)..."
+ 	[ -d $(pkgdata_ddir) ] || mkdir -m 755 -p $(pkgdata_ddir)
+ #	# cp -r lib/* $(pkgdata_ddir)
+-	( cd lib && tar --exclude='CVS' -cpf - . ) | ( cd $(pkgdata_ddir) && tar -xpf - )
++	( cd lib && gtar --exclude='CVS' -cpf - . ) | ( cd $(pkgdata_ddir) && gtar -xpf - )
+ 	cp VERSION $(pkgdata_ddir)
+ 
+ #    -- Install manual pages
+@@ -173,7 +173,7 @@ endif
+ 
+ 	mkdir -m 755 -p $(doc_ddir)
+ 	# cp -r doc/* $(doc_ddir)
+-	( cd doc && tar --exclude='CVS' -cpf - . ) | ( cd $(doc_ddir) && tar -xpf - )
++	( cd doc && gtar --exclude='CVS' -cpf - . ) | ( cd $(doc_ddir) && gtar -xpf - )
+ 	rm -f $(doc_ddir)/Makedoc.sh
+ 	find $(doc_ddir) -type d -print | xargs chmod 755
+ 	find $(doc_ddir) -type f -print | xargs chmod 644
