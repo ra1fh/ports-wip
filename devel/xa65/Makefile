@@ -2,7 +2,7 @@
 
 COMMENT=		open source 6502 cross assembler
 
-DISTNAME=		xa-2.3.5
+DISTNAME=		xa-2.3.7
 
 CATEGORIES=		devel
 
