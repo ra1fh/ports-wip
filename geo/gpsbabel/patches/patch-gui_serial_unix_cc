@@ -1,0 +1,22 @@
+$OpenBSD$
+--- gui/serial_unix.cc.orig	Sun Aug 25 06:27:45 2013
++++ gui/serial_unix.cc	Thu Apr  2 20:47:45 2015
+@@ -22,12 +22,12 @@
+ #if !defined (Q_OS_MAC) // FIXME: find a better way to hide this on Mac.
+ 
+ static const char *deviceNames[] = {
+-  "/dev/ttyS0",
+-  "/dev/ttyS1",
+-  "/dev/ttyS2",
+-  "/dev/ttyS3",
+-  "/dev/ttyUSB0",
+-  "/dev/rfcomm0",
++  "/dev/cua00",
++  "/dev/cua01",
++  "/dev/cua02",
++  "/dev/cua03",
++  "/dev/cuaU0",
++  "/dev/cuaU1",
+   0
+ };
+ 
