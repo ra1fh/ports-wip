@@ -1,7 +1,10 @@
 $OpenBSD$
---- data/fonts/Makefile.in.orig	Sat Feb 26 19:07:32 2011
-+++ data/fonts/Makefile.in	Fri Jan  6 23:50:42 2012
-@@ -511,23 +511,6 @@ uninstall-am: uninstall-fontsDATA
+
+fc-cache call creates a build error.
+
+--- data/fonts/Makefile.in.orig	Wed Apr  1 22:52:49 2015
++++ data/fonts/Makefile.in	Wed Apr  1 23:04:11 2015
+@@ -538,18 +538,6 @@ uninstall-am: uninstall-fontsDATA
  
  
  install: install-data-am
@@ -17,11 +20,6 @@ $OpenBSD$
 -@HAVE_FC_CACHE_TRUE@@SDL_COMPILE_FALSE@	else \
 -@HAVE_FC_CACHE_TRUE@@SDL_COMPILE_FALSE@	  echo 'fc-cache not available... giving up.' ; \
 -@HAVE_FC_CACHE_TRUE@@SDL_COMPILE_FALSE@	fi
--@HAVE_FC_CACHE_FALSE@@SDL_COMPILE_FALSE@	@echo "Preparing fontdir..." ; \
--@HAVE_FC_CACHE_FALSE@@SDL_COMPILE_FALSE@	cd $(DESTDIR)$(fontsdir) ; \
--@HAVE_FC_CACHE_FALSE@@SDL_COMPILE_FALSE@	bdftopcf -o vice-cbm.pcf vice-cbm.bdf ; \
--@HAVE_FC_CACHE_FALSE@@SDL_COMPILE_FALSE@	rm vice-cbm.bdf ; \
--@HAVE_FC_CACHE_FALSE@@SDL_COMPILE_FALSE@	mkfontdir .
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ @SDL_COMPILE_FALSE@	@echo "Preparing fontdir..." ; \
+ @SDL_COMPILE_FALSE@	cd $(DESTDIR)$(fontsdir) ; \
+ @SDL_COMPILE_FALSE@	bdftopcf -o vice-cbm.pcf vice-cbm.bdf ; \
