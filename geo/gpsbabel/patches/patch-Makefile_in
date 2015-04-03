@@ -1,6 +1,6 @@
 $OpenBSD$
 --- Makefile.in.orig	Wed Dec 17 01:47:31 2014
-+++ Makefile.in	Thu Apr  2 20:44:22 2015
++++ Makefile.in	Fri Apr  3 23:04:45 2015
 @@ -113,7 +113,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
  	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
  	  gbfile.o parse.o session.o src/core/xmlstreamwriter.o \
@@ -18,11 +18,26 @@ $OpenBSD$
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
  	xsltproc \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -252,7 +251,6 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
+@@ -252,13 +251,11 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  #
  gpsbabel.fo:  FORCE
  	perl xmldoc/makedoc
 -	xmlwf xmldoc/readme.xml		#check for well-formedness
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
  	xsltproc -o $@ xmldoc/babelpdf.xsl xmldoc/readme.xml
+ 
+ gpsbabel.pdf: gpsbabel.fo
+ 	fop -q -fo gpsbabel.fo -pdf gpsbabel.pdf 
+-	cp gpsbabel.pdf $(WEB)/htmldoc-$(DOCVERSION)/gpsbabel-$(DOCVERSION).pdf
+ 
+ 
+ gpsbabel.html: FORCE # gpsbabel
+@@ -281,7 +278,7 @@ changes.html: FORCE
+ 	wget -O $(WEB)/changes.html http://www.gpsbabel.org/changes.html || exit 1
+ 	rm -f $(WEB)/changes.html.1 > /dev/null
+ 
+-doc: gpsbabel $(WEB)/htmldoc-$(DOCVERSION)/index.html gpsbabel.pdf # readme.txt
++doc: gpsbabel gpsbabel.pdf # readme.txt
+ 
+ FORCE:
  

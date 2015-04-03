@@ -11,10 +11,6 @@ PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
 CATEGORIES=		geo
 
-#REVISION-main=		0
-#REVISION-tk=		0
-#REVISION-qt=		0
-
 HOMEPAGE=		http://www.gpsbabel.org/
 
 # GPLv2
@@ -35,7 +31,10 @@ MULTI_PACKAGES=		-main -tk -qt
 
 MODULES=		x11/tk x11/qt5
 
-BUILD_DEPENDS=		textproc/docbook-xsl
+BUILD_DEPENDS=		textproc/libxml \
+			textproc/libxslt \
+			textproc/fop
+
 LIB_DEPENDS-main=	devel/libusb-compat \
 			x11/qt5
 
@@ -62,6 +61,7 @@ post-configure:
 		app.pro
 post-build:
 	cd ${WRKSRC}/gui && make
+	cd ${WRKSRC} && make doc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${PREFIX}/bin
@@ -70,6 +70,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/guibabel ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/gpsbabel
+	${INSTALL_DATA} ${WRKSRC}/gpsbabel.pdf ${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gui/gpsbabel.desktop \
 		${PREFIX}/share/applications
