@@ -1,0 +1,9 @@
+$OpenBSD$
+--- gpsim/Makefile.am.orig	Thu Apr  2 23:11:52 2015
++++ gpsim/Makefile.am	Sat Nov 15 04:18:47 2014
+@@ -22,4 +22,4 @@ CLEANFILES = gpsim.h
+ EXTRA_DIST = makefile.mingw
+ 
+ gpsim.h: gpsim.h.in
+-	sed -e "s/@REVISION@/$$(${top_srcdir}\/get_cl_revision.sh -s ${top_srcdir}\/ChangeLog)/g" "$<" > "$@"
++	sed -e "s/@REVISION@/$$(${top_srcdir}\/get_cl_revision.sh -s ${top_srcdir}\/ChangeLog)/g" gpsim.h.in > gpsim.h

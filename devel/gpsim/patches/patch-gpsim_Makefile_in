@@ -1,0 +1,12 @@
+$OpenBSD$
+--- gpsim/Makefile.in.orig	Sat Nov 15 05:28:59 2014
++++ gpsim/Makefile.in	Thu Apr  2 23:12:25 2015
+@@ -655,7 +655,7 @@ uninstall-am: uninstall-binPROGRAMS
+ 
+ 
+ gpsim.h: gpsim.h.in
+-	sed -e "s/@REVISION@/$$(${top_srcdir}\/get_cl_revision.sh -s ${top_srcdir}\/ChangeLog)/g" "$<" > "$@"
++	sed -e "s/@REVISION@/$$(${top_srcdir}\/get_cl_revision.sh -s ${top_srcdir}\/ChangeLog)/g" gpsim.h.in > gpsim.h
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
