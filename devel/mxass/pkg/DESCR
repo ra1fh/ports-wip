@@ -1,0 +1,2 @@
+mxass is a cross assembler that targets Commodore 64-like
+platforms. It runs on UNIX systems and supports 6502, 65816 and Z80.

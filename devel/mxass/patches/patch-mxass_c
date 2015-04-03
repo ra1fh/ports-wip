@@ -1,0 +1,14 @@
+$OpenBSD$
+--- mxass.c.orig	Sat Dec  6 18:54:39 2014
++++ mxass.c	Sat Apr  4 01:50:28 2015
+@@ -197,8 +197,8 @@ typedef unsigned short uint16_t;
+ 
+ #define PORT            0x378	/* LPT1 */
+ 
+-#define OPCODESFILENAME  "OPCODES.A18"
+-#define OPCODESFILENAMEZ80  "OPZ80.A23"
++#define OPCODESFILENAME  "/usr/local/share/mxass/OPCODES.A18"
++#define OPCODESFILENAMEZ80  "/usr/local/share/mxass/OPZ80.A23"
+ 
+ #define OPCODESFILELENGTH  5350
+ #define OPCODESFILELENGTHZ80  546
