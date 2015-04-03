@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	No
 
 WANTLIB += c m
 
-BUILD_DEPENDS=		textproc/sgmlformat
+BUILD_DEPENDS=		textproc/linuxdoc-tools
 
 MASTER_SITES = 		http://cc65.oldos.net/
 
