@@ -1,0 +1,13 @@
+@comment $OpenBSD$
+@bin bin/biosdump
+@bin bin/cformat
+@bin bin/ctools
+@bin bin/d64dump
+@man man/man1/biosdump.1
+@man man/man1/cformat.1
+@man man/man1/ctools.1
+@man man/man1/d64dump.1
+@man man/man5/d64.5
+share/doc/ctools/
+share/doc/ctools/COPYING
+share/doc/ctools/README
