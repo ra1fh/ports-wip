@@ -2,22 +2,23 @@
 
 COMMENT=		ACME crossassembler for multiple environments
 
-DISTNAME=		acme091src
-PKGNAME=    		acme-0.91
-EXTRACT_SUFX= 		.tar.bz2
-WRKDIST=		${WRKDIR}/acme091
+DISTNAME=		acme-crossass-code-0-54-trunk
+PKGNAME=    		acme-0.95.5
+EXTRACT_SUFX= 		.zip
+WRKDIST=		${WRKDIR}/acme-crossass-code-0-54-trunk
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/
+HOMEPAGE=		http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/ \
+			http://sourceforge.net/p/acme-crossass/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += 		c
+WANTLIB += 		c m
 
-MASTER_SITES = 		http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/current/
+MASTER_SITES = 		http://sourceforge.net/code-snapshots/svn/a/ac/acme-crossass/code-0/
 
 do-build:
 	cd ${WRKSRC}/src && $(MAKE_PROGRAM)
