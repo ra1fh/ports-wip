@@ -34,10 +34,6 @@ My OpenBSD ports.
 
 * **lang/nbc** C-like compiler for Lego Mindstorms NXT
 
-### net
-
-* **net/inadyn** small memory footprint dynamic dns updater
-
 ### print
 
 * **print/auctex** extensible emacs interface for TeX (for emacs 24)
