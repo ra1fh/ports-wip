@@ -1,0 +1,24 @@
+$OpenBSD$
+--- Makefile.INCLUDE.orig	Thu Jun 25 19:22:32 2015
++++ Makefile.INCLUDE	Thu Jul  2 21:59:36 2015
+@@ -45,9 +45,9 @@ unexport GOBIN
+ GOARCH  = $(subst x86_64,amd64,$(patsubst i%86,386,$(ARCH)))
+ GOPKG  ?= go$(GO_VERSION).$(GOOS)-$(GOARCH)$(RELEASE_SUFFIX).tar.gz
+ GOURL  ?= https://golang.org/dl
+-GOROOT  = $(BUILD_PATH)/root/go
++GOROOT  = /usr/local/go
+ GOPATH  = $(BUILD_PATH)/root/gopath
+-GOCC    = $(GOROOT)/bin/go
++GOCC    = /usr/local/bin/go
+ TMPDIR  = /tmp
+ GOENV   = TMPDIR=$(TMPDIR) GOROOT=$(GOROOT) GOPATH=$(GOPATH)
+ GO      = $(GOENV) $(GOCC)
+@@ -65,7 +65,7 @@ export GO_TEST_FLAGS ?= -short
+ 
+ REV        := $(shell git rev-parse --short HEAD 2> /dev/null  || echo 'unknown')
+ BRANCH     := $(shell git rev-parse --abbrev-ref HEAD 2> /dev/null  || echo 'unknown')
+-HOSTNAME   := $(shell hostname -f)
++HOSTNAME   := $(shell hostname)
+ BUILD_DATE := $(shell date +%Y%m%d-%H:%M:%S)
+ BUILDFLAGS := -ldflags \
+   " -X $(REPO_PATH)/version.Version $(VERSION)\

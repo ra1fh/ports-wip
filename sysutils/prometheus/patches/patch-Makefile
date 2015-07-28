@@ -1,0 +1,25 @@
+$OpenBSD$
+--- Makefile.orig	Thu Jun 25 19:22:32 2015
++++ Makefile	Thu Jul  2 21:58:30 2015
+@@ -17,9 +17,9 @@ include Makefile.INCLUDE
+ 
+ all: binary test
+ 
+-$(GOCC): $(BUILD_PATH)/cache/$(GOPKG)
+-	tar -C $(BUILD_PATH)/root -xzf $<
+-	touch $@
++#$(GOCC): $(BUILD_PATH)/cache/$(GOPKG)
++#	tar -C $(BUILD_PATH)/root -xzf $<
++#	touch $@
+ 
+ advice: $(GOCC)
+ 	$(GO) vet ./...
+@@ -65,7 +65,7 @@ $(SELFLINK): $(GOPATH)
+ 	ln -s $(MAKEFILE_DIR) $@
+ 
+ $(GOPATH):
+-	cp -a $(MAKEFILE_DIR)/Godeps/_workspace "$(GOPATH)"
++	cp -pPR $(MAKEFILE_DIR)/Godeps/_workspace "$(GOPATH)"
+ 
+ dependencies: $(GOCC) | $(SELFLINK)
+ 
