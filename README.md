@@ -38,6 +38,10 @@ My OpenBSD ports.
 
 * **print/auctex** extensible emacs interface for TeX (for emacs 24)
 
+### sysutils
+
+* **sysutils/prometheus** monitoring system and time series database
+
 ### textproc
 
 * **textproc/fop** Formatting Objects Processor
