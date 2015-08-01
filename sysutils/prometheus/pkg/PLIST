@@ -23,6 +23,9 @@ share/examples/prometheus/consoles/node-cpu.html
 share/examples/prometheus/consoles/node-disk.html
 share/examples/prometheus/consoles/node-overview.html
 share/examples/prometheus/consoles/node.html
+share/examples/prometheus/console_libraries/
+share/examples/prometheus/console_libraries/menu.lib
+share/examples/prometheus/console_libraries/prom.lib
 share/examples/prometheus/prometheus.yml
 @sample ${SYSCONFDIR}/prometheus/prometheus.yml
 @mode 0755

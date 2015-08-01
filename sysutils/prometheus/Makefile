@@ -31,10 +31,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${SYSCONFDIR}/rc.d
 	${INSTALL_DATA_DIR} ${WRKINST}/var/prometheus
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/prometheus/consoles
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/prometheus/console_libraries
 	${INSTALL_PROGRAM} ${WRKSRC}/prometheus ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/promtool ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/consoles/* ${PREFIX}/share/examples/prometheus/consoles/
-	${INSTALL_DATA} ${WRKSRC}/console_libraries/{menu.lib,prom.lib} ${PREFIX}/share/examples/prometheus/
+	${INSTALL_DATA} ${WRKSRC}/console_libraries/{menu.lib,prom.lib} ${PREFIX}/share/examples/prometheus/console_libraries
 	${INSTALL_DATA} ${PKGDIR}/prometheus.yml ${PREFIX}/share/examples/prometheus/prometheus.yml
 	${INSTALL_DATA} ${PKGDIR}/prometheus.rc ${WRKINST}/${SYSCONFDIR}/rc.d/prometheus
 
