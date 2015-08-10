@@ -4,11 +4,9 @@ SHARED_ONLY=		Yes
 
 COMMENT=		extra widgets for GTK+
 
-V=			3.1.3
+V=			3.1.5
 DISTNAME=		gtkextra-${V}
 PKGNAME=		gtkextra-${V}
-
-REVISION=		1
 
 CATEGORIES=		x11 devel
 
