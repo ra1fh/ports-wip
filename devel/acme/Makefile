@@ -2,10 +2,10 @@
 
 COMMENT=		ACME crossassembler for multiple environments
 
-DISTNAME=		acme-crossass-code-0-54-trunk
-PKGNAME=    		acme-0.95.5
+DISTNAME=		acme-crossass-code-0-63-trunk
+PKGNAME=    		acme-0.95.6
 EXTRACT_SUFX= 		.zip
-WRKDIST=		${WRKDIR}/acme-crossass-code-0-54-trunk
+WRKDIST=		${WRKDIR}/acme-crossass-code-0-63-trunk
 
 CATEGORIES=		devel
 
