@@ -2,10 +2,10 @@
 
 COMMENT=		6502/65C02/65816/CPU64/65DTV02 cross assembler
 
-DISTNAME=		64tass_v1.46
-PKGNAME=    		64tass-1.46
-EXTRACT_SUFX= 		.tar.bz2
-WRKDIST=		${WRKDIR}/${PKGNAME}
+DISTNAME=		64tass-1.51.992-src
+PKGNAME=    		64tass-1.51.992
+EXTRACT_SUFX= 		.zip
+WRKDIST=		${WRKDIR}/${PKGNAME}-src
 
 CATEGORIES=		devel
 
@@ -19,10 +19,10 @@ USE_GMAKE =		Yes
 
 WANTLIB += 		c
 
-MASTER_SITES = 		http://c64.rulez.org/pub/c64/IDE64/source/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tass64/source/}
 
 do-build:
-	cd ${WRKSRC} && $(MAKE_PROGRAM) -f Makefile2
+	cd ${WRKSRC} && $(MAKE_PROGRAM)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/64tass ${PREFIX}/bin/64tass
