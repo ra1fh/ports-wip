@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		prometheus monitoring
-DISTNAME =		prometheus-0.15.1
+DISTNAME =		prometheus-0.16.1
 
 CATEGORIES =		sysutils
 
@@ -18,13 +18,13 @@ USE_GMAKE = 		Yes
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
-GH_TAGNAME =		0.15.1
+GH_TAGNAME =		0.16.1
 #GH_COMMIT =		85100767f75a5866527150fae271e9a3c8ea66a8
 
-BUILD_DEPENDS=	lang/go
+MODULES=		lang/go
 
 do-build:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} build
+	cd ${WRKSRC} && GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} build
 
 do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${SYSCONFDIR}/prometheus

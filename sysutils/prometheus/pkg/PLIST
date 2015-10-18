@@ -1,8 +1,8 @@
 @comment $OpenBSD$
 @newgroup _prometheus:751
 @newuser _prometheus:751:751:daemon:prometheus:/nonexistent:/sbin/nologin
-bin/prometheus
-bin/promtool
+@bin bin/prometheus
+@bin bin/promtool
 share/examples/prometheus/
 @sample ${SYSCONFDIR}/prometheus/
 share/examples/prometheus/consoles/
@@ -12,7 +12,6 @@ share/examples/prometheus/consoles/aws_redshift-cluster.html
 share/examples/prometheus/consoles/aws_redshift.html
 share/examples/prometheus/consoles/cassandra.html
 share/examples/prometheus/consoles/cloudwatch.html
-share/examples/prometheus/consoles/federation_template_example.txt
 share/examples/prometheus/consoles/haproxy-backend.html
 share/examples/prometheus/consoles/haproxy-backends.html
 share/examples/prometheus/consoles/haproxy-frontend.html
@@ -26,6 +25,10 @@ share/examples/prometheus/consoles/node.html
 share/examples/prometheus/console_libraries/
 share/examples/prometheus/console_libraries/menu.lib
 share/examples/prometheus/console_libraries/prom.lib
+share/examples/prometheus/consoles/prometheus-overview.html
+share/examples/prometheus/consoles/prometheus.html
+share/examples/prometheus/consoles/snmp-overview.html
+share/examples/prometheus/consoles/snmp.html
 share/examples/prometheus/prometheus.yml
 @sample ${SYSCONFDIR}/prometheus/prometheus.yml
 @mode 0755

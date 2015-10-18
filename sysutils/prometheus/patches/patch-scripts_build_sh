@@ -1,0 +1,12 @@
+$OpenBSD$
+--- scripts/build.sh.orig	Fri Oct 16 12:40:31 2015
++++ scripts/build.sh	Sun Oct 18 15:11:26 2015
+@@ -20,7 +20,7 @@ repo_path="github.com/prometheus/prometheus"
+ version=$( cat version/VERSION )
+ revision=$( git rev-parse --short HEAD 2> /dev/null || echo 'unknown' )
+ branch=$( git rev-parse --abbrev-ref HEAD 2> /dev/null || echo 'unknown' )
+-host=$( hostname -f )
++host=$( hostname )
+ build_date=$( date +%Y%m%d-%H:%M:%S )
+ go_version=$( go version | sed -e 's/^[^0-9.]*\([0-9.]*\).*/\1/' )
+ 
