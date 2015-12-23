@@ -4,7 +4,7 @@ SHARED_ONLY=		Yes
 
 COMMENT=		extra widgets for GTK+
 
-V=			3.1.5
+V=			3.2.0
 DISTNAME=		gtkextra-${V}
 PKGNAME=		gtkextra-${V}
 
