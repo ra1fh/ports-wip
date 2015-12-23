@@ -3,8 +3,8 @@
 SHARED_ONLY =		Yes
 
 COMMENT =		PIC microcontroller emulator
-DISTNAME =		gpsim-0.28.1
-PKGNAME =		gpsim-0.28.1
+DISTNAME =		gpsim-0.29.0
+PKGNAME =		gpsim-0.29.0
 
 CATEGORIES =		devel
 
