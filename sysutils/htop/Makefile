@@ -15,7 +15,7 @@ HOMEPAGE=		https://github.com/hishamhm/htop
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += 		c m
+WANTLIB += 		c m kvm ncursesw
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
