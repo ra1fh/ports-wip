@@ -41,7 +41,7 @@ My OpenBSD ports.
 ### sysutils
 
 * **sysutils/prometheus** monitoring system and time series database
-* **sysutils/htop interactive process viewer
+* **sysutils/htop** interactive process viewer
 
 ### textproc
 
