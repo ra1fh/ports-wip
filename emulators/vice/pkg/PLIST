@@ -65,14 +65,17 @@ lib/vice/C64/jpchrgen
 lib/vice/C64/jpkernal
 lib/vice/C64/kernal
 lib/vice/C64/pc64.vpl
+lib/vice/C64/pepto-ntsc-sony.vpl
+lib/vice/C64/pepto-ntsc.vpl
+lib/vice/C64/rgb.vpl
 lib/vice/C64/sxkernal
 lib/vice/C64/vice.vpl
 lib/vice/C64/x11_keyrah.vkm
 lib/vice/C64/x11_keyrah_de.vkm
 lib/vice/C64/x11_pos.vkm
-lib/vice/C64/x11_posger.vkm
+lib/vice/C64/x11_pos_de.vkm
 lib/vice/C64/x11_sym.vkm
-lib/vice/C64/x11_symger.vkm
+lib/vice/C64/x11_sym_de.vkm
 lib/vice/C64DTV/
 lib/vice/C64DTV/basic
 lib/vice/C64DTV/c64mem.sym
@@ -106,8 +109,8 @@ lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom500.vrs
 lib/vice/CBM-II/white.vpl
-lib/vice/CBM-II/x11_buks.vkm
-lib/vice/CBM-II/x11_buks_de.vkm
+lib/vice/CBM-II/x11_sym.vkm
+lib/vice/CBM-II/x11_sym_de.vkm
 lib/vice/DRIVES/
 lib/vice/DRIVES/d1541II
 lib/vice/DRIVES/d1571cr
@@ -118,11 +121,9 @@ lib/vice/DRIVES/dos1551
 lib/vice/DRIVES/dos1570
 lib/vice/DRIVES/dos1571
 lib/vice/DRIVES/dos1581
-lib/vice/DRIVES/dos2000
 lib/vice/DRIVES/dos2031
 lib/vice/DRIVES/dos2040
 lib/vice/DRIVES/dos3040
-lib/vice/DRIVES/dos4000
 lib/vice/DRIVES/dos4040
 lib/vice/PET/
 lib/vice/PET/amber.vpl
@@ -159,18 +160,19 @@ lib/vice/PET/waterloo-d000.901898-04.bin
 lib/vice/PET/waterloo-e000.901897-01.bin
 lib/vice/PET/waterloo-f000.901898-05.bin
 lib/vice/PET/white.vpl
-lib/vice/PET/x11_bdep.vkm
-lib/vice/PET/x11_bdep_de.vkm
-lib/vice/PET/x11_bdes.vkm
-lib/vice/PET/x11_bdes_de.vkm
-lib/vice/PET/x11_bgrp.vkm
-lib/vice/PET/x11_bgrp_de.vkm
-lib/vice/PET/x11_bgrs.vkm
-lib/vice/PET/x11_bgrs_de.vkm
-lib/vice/PET/x11_bukp.vkm
-lib/vice/PET/x11_bukp_de.vkm
-lib/vice/PET/x11_buks.vkm
-lib/vice/PET/x11_buks_de.vkm
+lib/vice/PET/x11_bude_pos.vkm
+lib/vice/PET/x11_bude_pos_de.vkm
+lib/vice/PET/x11_bude_sym.vkm
+lib/vice/PET/x11_bude_sym_de.vkm
+lib/vice/PET/x11_buuk_pos.vkm
+lib/vice/PET/x11_buuk_pos_de.vkm
+lib/vice/PET/x11_buuk_sym.vkm
+lib/vice/PET/x11_buuk_sym_de.vkm
+lib/vice/PET/x11_grus_pos.vkm
+lib/vice/PET/x11_grus_pos_de.vkm
+lib/vice/PET/x11_grus_sym.vkm
+lib/vice/PET/x11_grus_sym_de.vkm
+lib/vice/PET/x11_sym.vkm
 lib/vice/PLUS4/
 lib/vice/PLUS4/3plus1hi
 lib/vice/PLUS4/3plus1lo
@@ -209,15 +211,17 @@ lib/vice/SCPU64/scpu64
 lib/vice/SCPU64/scpu64mem.sym
 lib/vice/SCPU64/vice.vpl
 lib/vice/SCPU64/x11_pos.vkm
-lib/vice/SCPU64/x11_posger.vkm
+lib/vice/SCPU64/x11_pos_de.vkm
 lib/vice/SCPU64/x11_sym.vkm
-lib/vice/SCPU64/x11_symger.vkm
+lib/vice/SCPU64/x11_sym_de.vkm
 lib/vice/VIC20/
 lib/vice/VIC20/basic
 lib/vice/VIC20/chargen
 lib/vice/VIC20/default.vpl
 lib/vice/VIC20/default.vrs
 lib/vice/VIC20/kernal
+lib/vice/VIC20/mike-ntsc.vpl
+lib/vice/VIC20/mike-pal.vpl
 lib/vice/VIC20/x11_pos.vkm
 lib/vice/VIC20/x11_sym.vkm
 lib/vice/doc/
@@ -295,6 +299,7 @@ lib/vice/doc/vice_toc.html
 @man man/man1/c1541.1
 @man man/man1/petcat.1
 @man man/man1/vice.1
+share/fonts/
 @fontdir share/fonts/vice/
 share/fonts/vice/CBM.ttf
 share/fonts/vice/fonts.dir

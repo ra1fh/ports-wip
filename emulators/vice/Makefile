@@ -2,7 +2,7 @@
 
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-2.4.18
+DISTNAME =		vice-2.4.25
 
 CATEGORIES =		emulators
 

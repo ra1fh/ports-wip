@@ -1,0 +1,13 @@
+$OpenBSD$
+--- src/c64/cart/c64carthooks.c.orig	Mon Dec 21 00:18:58 2015
++++ src/c64/cart/c64carthooks.c	Wed Feb 17 21:13:24 2016
+@@ -70,7 +70,9 @@
+ #include "c64tpi.h"
+ #include "comal80.h"
+ #include "capture.h"
++#if 0
+ #include "debugcart.h"
++#endif
+ #include "delaep256.h"
+ #include "delaep64.h"
+ #include "delaep7x8.h"
