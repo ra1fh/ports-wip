@@ -11,6 +11,7 @@ My OpenBSD ports.
 * **devel/libnxt** Low level tools for Lego Mindstorms NXT
 * **devel/mxass** cross assembler that targets Commodore 64-like platforms
 * **devel/nxt-python** Python library to control NXT
+* **devel/openocd** Open on-chip JTAG debug solution
 * **devel/ophis** cross-assembler for the 65xx series
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
