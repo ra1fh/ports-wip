@@ -43,6 +43,9 @@ lib/vice/C128/kernalit
 lib/vice/C128/kernalno
 lib/vice/C128/kernalse
 lib/vice/C128/pc64.vpl
+lib/vice/C128/pepto-ntsc-sony.vpl
+lib/vice/C128/pepto-ntsc.vpl
+lib/vice/C128/rgb.vpl
 lib/vice/C128/vdc_comp.vpl
 lib/vice/C128/vdc_deft.vpl
 lib/vice/C128/vice.vpl
@@ -83,6 +86,7 @@ lib/vice/C64DTV/chargen
 lib/vice/C64DTV/default.vrs
 lib/vice/C64DTV/dtvrom.bin
 lib/vice/C64DTV/kernal
+lib/vice/C64DTV/spiff.vpl
 lib/vice/C64DTV/x11_pos.vkm
 lib/vice/C64DTV/x11_sym.vkm
 lib/vice/CBM-II/
@@ -103,11 +107,15 @@ lib/vice/CBM-II/green.vpl
 lib/vice/CBM-II/kernal
 lib/vice/CBM-II/kernal.500
 lib/vice/CBM-II/pc64.vpl
+lib/vice/CBM-II/pepto-ntsc-sony.vpl
+lib/vice/CBM-II/pepto-ntsc.vpl
+lib/vice/CBM-II/rgb.vpl
 lib/vice/CBM-II/rom128h.vrs
 lib/vice/CBM-II/rom128l.vrs
 lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom500.vrs
+lib/vice/CBM-II/vice.vpl
 lib/vice/CBM-II/white.vpl
 lib/vice/CBM-II/x11_sym.vkm
 lib/vice/CBM-II/x11_sym_de.vkm
@@ -184,7 +192,6 @@ lib/vice/PLUS4/kernal
 lib/vice/PLUS4/kernal.005
 lib/vice/PLUS4/kernal.232
 lib/vice/PLUS4/kernal.364
-lib/vice/PLUS4/vice.vpl
 lib/vice/PLUS4/x11_pos.vkm
 lib/vice/PLUS4/x11_sym.vkm
 lib/vice/PLUS4/x11_sym_de.vkm
@@ -207,6 +214,9 @@ lib/vice/SCPU64/frodo.vpl
 lib/vice/SCPU64/godot.vpl
 lib/vice/SCPU64/jpchrgen
 lib/vice/SCPU64/pc64.vpl
+lib/vice/SCPU64/pepto-ntsc-sony.vpl
+lib/vice/SCPU64/pepto-ntsc.vpl
+lib/vice/SCPU64/rgb.vpl
 lib/vice/SCPU64/scpu64
 lib/vice/SCPU64/scpu64mem.sym
 lib/vice/SCPU64/vice.vpl
@@ -297,6 +307,7 @@ lib/vice/doc/vice_8.html
 lib/vice/doc/vice_9.html
 lib/vice/doc/vice_toc.html
 @man man/man1/c1541.1
+@man man/man1/cartconv.1
 @man man/man1/petcat.1
 @man man/man1/vice.1
 share/fonts/
