@@ -1,7 +1,5 @@
 # $OpenBSD$
 
-SHARED_ONLY=		Yes
-
 COMMENT=		extra widgets for GTK+
 
 V=			3.2.0
@@ -14,8 +12,6 @@ HOMEPAGE=		http://gtkextra.sourceforge.net
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_LIBS +=  	gtkextra-x11-3.0          1.0
 
