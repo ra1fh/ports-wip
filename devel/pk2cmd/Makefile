@@ -9,17 +9,15 @@ WRKDIST=		${WRKDIR}/pk2cmdv1.20LinuxMacSource
 
 CATEGORIES=		devel
 
-HOMEPAGE= 		http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&nodeId=1406&dDocName=en023805
+HOMEPAGE=		http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=pg164120
 
 PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE = 		Yes
 
 MASTER_SITES = 		http://ww1.microchip.com/downloads/en/DeviceDoc/
 
-WANTLIB += 		c
+WANTLIB += 		c m stdc++ usb
 
 LIB_DEPENDS = 		devel/libusb-compat
 
