@@ -51,5 +51,4 @@ My OpenBSD ports.
 
 ### x11
 
-* **x11/dunst** customizable and lightweight notification daemon
 * **x11/gtkextra** extra widgets for GTK+
