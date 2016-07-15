@@ -2,8 +2,8 @@
 
 COMMENT=		6502/65C02/65816/CPU64/65DTV02 cross assembler
 
-DISTNAME=		64tass-1.51.992-src
-PKGNAME=    		64tass-1.51.992
+DISTNAME=		64tass-1.52.1229-src
+PKGNAME=    		64tass-1.52.1229
 EXTRACT_SUFX= 		.zip
 WRKDIST=		${WRKDIR}/${PKGNAME}-src
 
