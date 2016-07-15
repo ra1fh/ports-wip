@@ -1,16 +1,7 @@
 $OpenBSD$
---- Makefile.in.orig	Wed Dec 17 01:47:31 2014
-+++ Makefile.in	Fri Apr  3 23:04:45 2015
-@@ -113,7 +113,7 @@ LIBOBJS = queue.o route.o waypt.o filter_vecs.o util.o
- 	  inifile.o garmin_fs.o gbsleep.o units.o @GBSER@ gbser.o \
- 	  gbfile.o parse.o session.o src/core/xmlstreamwriter.o \
- 	  src/core/usasciicodec.o \
--	$(PALM_DB) $(GARMIN) $(JEEPS) $(SHAPE) @ZLIB@ $(FMTS) $(FILTERS)
-+	$(PALM_DB) $(GARMIN) $(JEEPS) @SHAPE@ @ZLIB@ $(FMTS) $(FILTERS)
- OBJS = main.o globals.o $(LIBOBJS) @FILEINFO@
- 
- DEPFILES = $(OBJS:.o=.d)
-@@ -224,7 +224,6 @@ dep:
+--- Makefile.in.orig	Sat May  7 22:48:40 2016
++++ Makefile.in	Fri Jul 15 21:53:29 2016
+@@ -233,7 +233,6 @@ dep:
  $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
  	perl xmldoc/makedoc
@@ -18,7 +9,7 @@ $OpenBSD$
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
  	xsltproc \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -252,13 +251,11 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
+@@ -261,13 +260,11 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  #
  gpsbabel.fo:  FORCE
  	perl xmldoc/makedoc
@@ -32,7 +23,7 @@ $OpenBSD$
  
  
  gpsbabel.html: FORCE # gpsbabel
-@@ -281,7 +278,7 @@ changes.html: FORCE
+@@ -290,7 +287,7 @@ changes.html: FORCE
  	wget -O $(WEB)/changes.html http://www.gpsbabel.org/changes.html || exit 1
  	rm -f $(WEB)/changes.html.1 > /dev/null
  

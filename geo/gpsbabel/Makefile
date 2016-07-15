@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/10 02:08:22 brad Exp $
+# $OpenBSD$
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
 COMMENT-qt=		Qt front-end to gpsbabel
 
-VERSION=		1.5.2
+GH_ACCOUNT=		gpsbabel
+GH_PROJECT=		gpsbabel
+GH_COMMIT=		a187be693531e73cb110447805e76043bcdf6e87
+
+VERSION=		20160507
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
@@ -16,11 +20,10 @@ HOMEPAGE=		http://www.gpsbabel.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.linklevel.net/distfiles/
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--with-zlib=system \
+CONFIGURE_ARGS+=	--with-zlib=included \
 			--with-doc=./babelweb
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,7 +43,7 @@ LIB_DEPENDS-main=	devel/libusb-compat \
 
 cWANTLIB = 		c m pthread
 WANTLIB-main += 	usb z estdc++ Qt5Core ${cWANTLIB}
-WANTLIB-tk = 
+WANTLIB-tk =
 WANTLIB-qt += 		stdc++ ${cWANTLIB} GL
 WANTLIB-qt += 		Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5Xml
 WANTLIB-qt += 		Qt5WebKitWidgets Qt5Widgets
@@ -62,6 +65,7 @@ post-configure:
 post-build:
 	cd ${WRKSRC}/gui && make
 	cd ${WRKSRC} && make doc
+	cd ${WRKSRC} && make check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${PREFIX}/bin

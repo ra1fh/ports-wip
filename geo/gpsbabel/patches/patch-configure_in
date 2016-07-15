@@ -1,7 +1,7 @@
 $OpenBSD$
---- configure.in.orig	Thu Apr  2 20:37:11 2015
-+++ configure.in	Thu Apr  2 20:43:51 2015
-@@ -66,15 +66,20 @@ if test "$cet" = "default"; then
+--- configure.in.orig	Sat May  7 22:48:40 2016
++++ configure.in	Fri Jul 15 21:53:29 2016
+@@ -68,15 +68,20 @@ if test "$cet" = "default"; then
  fi
  
  AC_MSG_CHECKING(whether to support shapefiles)
@@ -29,7 +29,7 @@ $OpenBSD$
  
  AC_MSG_CHECKING(whether to support Palm/OS pdb formats)
  AC_ARG_ENABLE(pdb,
-@@ -285,32 +290,9 @@ AC_SUBST(USB_LIBS)
+@@ -290,32 +295,9 @@ AC_SUBST(USB_LIBS)
  AC_SUBST(USB_CFLAGS)
  AC_SUBST(OSJEEPS)
  AC_SUBST(GBSER)
