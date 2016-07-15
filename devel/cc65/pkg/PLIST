@@ -2,6 +2,7 @@
 @bin bin/ar65
 @bin bin/ca65
 @bin bin/cc65
+@bin bin/chrcvt65
 @bin bin/cl65
 @bin bin/co65
 @bin bin/da65
@@ -11,10 +12,14 @@
 @bin bin/sim65
 @bin bin/sp65
 share/cc65/
+share/cc65/Makefile
+share/cc65/README
+share/cc65/ascii.c
 share/cc65/asminc/
 share/cc65/asminc/_file.inc
 share/cc65/asminc/_heap.inc
 share/cc65/asminc/apple2.inc
+share/cc65/asminc/apple2.mac
 share/cc65/asminc/atari.inc
 share/cc65/asminc/atari.mac
 share/cc65/asminc/atari5200.inc
@@ -35,6 +40,7 @@ share/cc65/asminc/em-error.inc
 share/cc65/asminc/em-kernel.inc
 share/cc65/asminc/errno.inc
 share/cc65/asminc/fcntl.inc
+share/cc65/asminc/gamate.inc
 share/cc65/asminc/generic.mac
 share/cc65/asminc/get_tv.inc
 share/cc65/asminc/joy-error.inc
@@ -47,6 +53,7 @@ share/cc65/asminc/mouse-kernel.inc
 share/cc65/asminc/nes.inc
 share/cc65/asminc/o65.inc
 share/cc65/asminc/opcodes.inc
+share/cc65/asminc/pce.inc
 share/cc65/asminc/pet.inc
 share/cc65/asminc/plus4.inc
 share/cc65/asminc/ser-error.inc
@@ -90,6 +97,7 @@ share/cc65/cfg/c64-overlay.cfg
 share/cc65/cfg/c64.cfg
 share/cc65/cfg/cbm510.cfg
 share/cc65/cfg/cbm610.cfg
+share/cc65/cfg/gamate.cfg
 share/cc65/cfg/geos-apple.cfg
 share/cc65/cfg/geos-cbm.cfg
 share/cc65/cfg/lunix.cfg
@@ -102,6 +110,7 @@ share/cc65/cfg/nes.cfg
 share/cc65/cfg/none.cfg
 share/cc65/cfg/osic1p-asm.cfg
 share/cc65/cfg/osic1p.cfg
+share/cc65/cfg/pce.cfg
 share/cc65/cfg/pet.cfg
 share/cc65/cfg/plus4.cfg
 share/cc65/cfg/sim6502.cfg
@@ -112,30 +121,37 @@ share/cc65/cfg/supervision-64k.cfg
 share/cc65/cfg/supervision.cfg
 share/cc65/cfg/vic20-32k.cfg
 share/cc65/cfg/vic20.cfg
-share/cc65/emd/
-share/cc65/emd/a2.auxmem.emd
-share/cc65/emd/a2e.auxmem.emd
-share/cc65/emd/atr130.emd
-share/cc65/emd/atrx130.emd
-share/cc65/emd/c128-georam.emd
-share/cc65/emd/c128-ram.emd
-share/cc65/emd/c128-ram2.emd
-share/cc65/emd/c128-ramcart.emd
-share/cc65/emd/c128-reu.emd
-share/cc65/emd/c128-vdc.emd
-share/cc65/emd/c16-ram.emd
-share/cc65/emd/c64-c256k.emd
-share/cc65/emd/c64-dqbb.emd
-share/cc65/emd/c64-georam.emd
-share/cc65/emd/c64-isepic.emd
-share/cc65/emd/c64-ram.emd
-share/cc65/emd/c64-ramcart.emd
-share/cc65/emd/c64-reu.emd
-share/cc65/emd/c64-vdc.emd
-share/cc65/emd/cbm510-ram.emd
-share/cc65/emd/cbm610-ram.emd
-share/cc65/emd/dtv-himem.emd
-share/cc65/emd/geos-vdc.emd
+share/cc65/diodemo.c
+share/cc65/enumdevdir.c
+share/cc65/fire.c
+share/cc65/geos/
+share/cc65/geos/bitmap-demo.c
+share/cc65/geos/bitmap-demores.grc
+share/cc65/geos/dialog.c
+share/cc65/geos/filesel.c
+share/cc65/geos/fileselres.grc
+share/cc65/geos/geosconio.c
+share/cc65/geos/geosconiores.grc
+share/cc65/geos/getid.c
+share/cc65/geos/getidres.grc
+share/cc65/geos/grphstr.c
+share/cc65/geos/hello1.c
+share/cc65/geos/hello1res.grc
+share/cc65/geos/hello2.c
+share/cc65/geos/hello2res.grc
+share/cc65/geos/inittab.c
+share/cc65/geos/logo.pcx
+share/cc65/geos/menu.c
+share/cc65/geos/overlay-demo.c
+share/cc65/geos/overlay-demores.grc
+share/cc65/geos/rmvprot.c
+share/cc65/geos/rmvprotres.grc
+share/cc65/geos/vector-demo.c
+share/cc65/geos/vector-demores.grc
+share/cc65/geos/yesno.c
+share/cc65/geos/yesnores.grc
+share/cc65/gunzip65.c
+share/cc65/hello.c
 share/cc65/include/
 share/cc65/include/6502.h
 share/cc65/include/_6522.h
@@ -183,6 +199,7 @@ share/cc65/include/em.h
 share/cc65/include/em/em-kernel.h
 share/cc65/include/errno.h
 share/cc65/include/fcntl.h
+share/cc65/include/gamate.h
 share/cc65/include/geos/
 share/cc65/include/geos.h
 share/cc65/include/geos/gconst.h
@@ -212,6 +229,7 @@ share/cc65/include/mouse/mouse-kernel.h
 share/cc65/include/nes.h
 share/cc65/include/o65.h
 share/cc65/include/osic1p.h
+share/cc65/include/pce.h
 share/cc65/include/peekpoke.h
 share/cc65/include/pen.h
 share/cc65/include/pet.h
@@ -239,31 +257,6 @@ share/cc65/include/time.h
 share/cc65/include/unistd.h
 share/cc65/include/vic20.h
 share/cc65/include/zlib.h
-share/cc65/joy/
-share/cc65/joy/a2.stdjoy.joy
-share/cc65/joy/a2e.stdjoy.joy
-share/cc65/joy/atmos-pase.joy
-share/cc65/joy/atr5200std.joy
-share/cc65/joy/atrmj8.joy
-share/cc65/joy/atrstd.joy
-share/cc65/joy/atrxmj8.joy
-share/cc65/joy/atrxstd.joy
-share/cc65/joy/c128-ptvjoy.joy
-share/cc65/joy/c128-stdjoy.joy
-share/cc65/joy/c16-stdjoy.joy
-share/cc65/joy/c64-hitjoy.joy
-share/cc65/joy/c64-numpad.joy
-share/cc65/joy/c64-ptvjoy.joy
-share/cc65/joy/c64-stdjoy.joy
-share/cc65/joy/cbm510-std.joy
-share/cc65/joy/geos-stdjoy.joy
-share/cc65/joy/lynx-stdjoy.joy
-share/cc65/joy/nes-stdjoy.joy
-share/cc65/joy/pet-ptvjoy.joy
-share/cc65/joy/pet-stdjoy.joy
-share/cc65/joy/plus4-stdjoy.joy
-share/cc65/joy/vic20-ptvjoy.joy
-share/cc65/joy/vic20-stdjoy.joy
 share/cc65/lib/
 share/cc65/lib/apple2-iobuf-0800.o
 share/cc65/lib/apple2.lib
@@ -275,103 +268,267 @@ share/cc65/lib/atarixl.lib
 share/cc65/lib/atmos.lib
 share/cc65/lib/c128.lib
 share/cc65/lib/c16.lib
+share/cc65/lib/c64-soft80.o
+share/cc65/lib/c64-soft80mono.o
 share/cc65/lib/c64.lib
 share/cc65/lib/cbm510.lib
 share/cc65/lib/cbm610.lib
+share/cc65/lib/gamate.lib
 share/cc65/lib/geos-apple.lib
 share/cc65/lib/geos-cbm.lib
 share/cc65/lib/lynx.lib
 share/cc65/lib/nes.lib
 share/cc65/lib/osic1p-screen-s3-32x28.o
 share/cc65/lib/osic1p.lib
+share/cc65/lib/pce.lib
 share/cc65/lib/pet.lib
 share/cc65/lib/plus4.lib
 share/cc65/lib/sim6502.lib
 share/cc65/lib/sim65c02.lib
 share/cc65/lib/supervision.lib
 share/cc65/lib/vic20.lib
-share/cc65/mou/
-share/cc65/mou/a2.stdmou.mou
-share/cc65/mou/a2e.stdmou.mou
-share/cc65/mou/atrami.mou
-share/cc65/mou/atrjoy.mou
-share/cc65/mou/atrst.mou
-share/cc65/mou/atrtrk.mou
-share/cc65/mou/atrtt.mou
-share/cc65/mou/atrxami.mou
-share/cc65/mou/atrxjoy.mou
-share/cc65/mou/atrxst.mou
-share/cc65/mou/atrxtrk.mou
-share/cc65/mou/atrxtt.mou
-share/cc65/mou/c128-1351.mou
-share/cc65/mou/c128-inkwell.mou
-share/cc65/mou/c128-joy.mou
-share/cc65/mou/c128-pot.mou
-share/cc65/mou/c64-1351.mou
-share/cc65/mou/c64-inkwell.mou
-share/cc65/mou/c64-joy.mou
-share/cc65/mou/c64-pot.mou
-share/cc65/mou/cbm510-inkwl.mou
-share/cc65/mou/cbm510-joy.mou
-share/cc65/ser/
-share/cc65/ser/a2.ssc.ser
-share/cc65/ser/a2e.ssc.ser
-share/cc65/ser/atmos-acia.ser
-share/cc65/ser/atrrdev.ser
-share/cc65/ser/atrxrdev.ser
-share/cc65/ser/c128-swlink.ser
-share/cc65/ser/c64-swlink.ser
-share/cc65/ser/cbm510-std.ser
-share/cc65/ser/cbm610-std.ser
-share/cc65/ser/lynx-comlynx.ser
-share/cc65/ser/plus4-stdser.ser
-share/cc65/targetutil/
-share/cc65/targetutil/convert.system
-share/cc65/targetutil/loader.system
-share/cc65/targetutil/w2cas.com
-share/cc65/tgi/
-share/cc65/tgi/a2.hi.tgi
-share/cc65/tgi/a2.lo.tgi
-share/cc65/tgi/a2e.hi.tgi
-share/cc65/tgi/a2e.lo.tgi
-share/cc65/tgi/atmos-228-200-3.tgi
-share/cc65/tgi/atmos-240-200-2.tgi
-share/cc65/tgi/atr10.tgi
-share/cc65/tgi/atr10p2.tgi
-share/cc65/tgi/atr11.tgi
-share/cc65/tgi/atr14.tgi
-share/cc65/tgi/atr15.tgi
-share/cc65/tgi/atr15p2.tgi
-share/cc65/tgi/atr3.tgi
-share/cc65/tgi/atr4.tgi
-share/cc65/tgi/atr5.tgi
-share/cc65/tgi/atr6.tgi
-share/cc65/tgi/atr7.tgi
-share/cc65/tgi/atr8.tgi
-share/cc65/tgi/atr8p2.tgi
-share/cc65/tgi/atr9.tgi
-share/cc65/tgi/atr9p2.tgi
-share/cc65/tgi/atrx10.tgi
-share/cc65/tgi/atrx10p2.tgi
-share/cc65/tgi/atrx11.tgi
-share/cc65/tgi/atrx14.tgi
-share/cc65/tgi/atrx15.tgi
-share/cc65/tgi/atrx15p2.tgi
-share/cc65/tgi/atrx3.tgi
-share/cc65/tgi/atrx4.tgi
-share/cc65/tgi/atrx5.tgi
-share/cc65/tgi/atrx6.tgi
-share/cc65/tgi/atrx7.tgi
-share/cc65/tgi/atrx8.tgi
-share/cc65/tgi/atrx8p2.tgi
-share/cc65/tgi/atrx9.tgi
-share/cc65/tgi/atrx9p2.tgi
-share/cc65/tgi/c128-vdc.tgi
-share/cc65/tgi/c128-vdc2.tgi
-share/cc65/tgi/c64-hi.tgi
-share/cc65/tgi/geos-tgi.tgi
-share/cc65/tgi/lynx-160-102-16.tgi
-share/cc65/tgi/nes-64-56-2.tgi
+share/cc65/mandelbrot.c
+share/cc65/mousetest.c
+share/cc65/multidemo.c
+share/cc65/nachtm.c
+share/cc65/overlaydemo.c
+share/cc65/plasma.c
+share/cc65/sieve.c
+share/cc65/target/
+share/cc65/target/apple2/
+share/cc65/target/apple2/drv/
+share/cc65/target/apple2/drv/emd/
+share/cc65/target/apple2/drv/emd/a2.auxmem.emd
+share/cc65/target/apple2/drv/joy/
+share/cc65/target/apple2/drv/joy/a2.stdjoy.joy
+share/cc65/target/apple2/drv/mou/
+share/cc65/target/apple2/drv/mou/a2.stdmou.mou
+share/cc65/target/apple2/drv/ser/
+share/cc65/target/apple2/drv/ser/a2.ssc.ser
+share/cc65/target/apple2/drv/tgi/
+share/cc65/target/apple2/drv/tgi/a2.hi.tgi
+share/cc65/target/apple2/drv/tgi/a2.lo.tgi
+share/cc65/target/apple2/util/
+share/cc65/target/apple2/util/loader.system
+share/cc65/target/apple2enh/
+share/cc65/target/apple2enh/drv/
+share/cc65/target/apple2enh/drv/emd/
+share/cc65/target/apple2enh/drv/emd/a2e.auxmem.emd
+share/cc65/target/apple2enh/drv/joy/
+share/cc65/target/apple2enh/drv/joy/a2e.stdjoy.joy
+share/cc65/target/apple2enh/drv/mou/
+share/cc65/target/apple2enh/drv/mou/a2e.stdmou.mou
+share/cc65/target/apple2enh/drv/ser/
+share/cc65/target/apple2enh/drv/ser/a2e.ssc.ser
+share/cc65/target/apple2enh/drv/tgi/
+share/cc65/target/apple2enh/drv/tgi/a2e.hi.tgi
+share/cc65/target/apple2enh/drv/tgi/a2e.lo.tgi
+share/cc65/target/apple2enh/util/
+share/cc65/target/apple2enh/util/loader.system
+share/cc65/target/atari/
+share/cc65/target/atari/drv/
+share/cc65/target/atari/drv/emd/
+share/cc65/target/atari/drv/emd/atr130.emd
+share/cc65/target/atari/drv/joy/
+share/cc65/target/atari/drv/joy/atrmj8.joy
+share/cc65/target/atari/drv/joy/atrstd.joy
+share/cc65/target/atari/drv/mou/
+share/cc65/target/atari/drv/mou/atrami.mou
+share/cc65/target/atari/drv/mou/atrjoy.mou
+share/cc65/target/atari/drv/mou/atrst.mou
+share/cc65/target/atari/drv/mou/atrtrk.mou
+share/cc65/target/atari/drv/mou/atrtt.mou
+share/cc65/target/atari/drv/ser/
+share/cc65/target/atari/drv/ser/atrrdev.ser
+share/cc65/target/atari/drv/tgi/
+share/cc65/target/atari/drv/tgi/atr10.tgi
+share/cc65/target/atari/drv/tgi/atr10p2.tgi
+share/cc65/target/atari/drv/tgi/atr11.tgi
+share/cc65/target/atari/drv/tgi/atr14.tgi
+share/cc65/target/atari/drv/tgi/atr15.tgi
+share/cc65/target/atari/drv/tgi/atr15p2.tgi
+share/cc65/target/atari/drv/tgi/atr3.tgi
+share/cc65/target/atari/drv/tgi/atr4.tgi
+share/cc65/target/atari/drv/tgi/atr5.tgi
+share/cc65/target/atari/drv/tgi/atr6.tgi
+share/cc65/target/atari/drv/tgi/atr7.tgi
+share/cc65/target/atari/drv/tgi/atr8.tgi
+share/cc65/target/atari/drv/tgi/atr8p2.tgi
+share/cc65/target/atari/drv/tgi/atr9.tgi
+share/cc65/target/atari/drv/tgi/atr9p2.tgi
+share/cc65/target/atari/util/
+share/cc65/target/atari/util/w2cas.com
+share/cc65/target/atari5200/
+share/cc65/target/atari5200/drv/
+share/cc65/target/atari5200/drv/joy/
+share/cc65/target/atari5200/drv/joy/atr5200std.joy
+share/cc65/target/atarixl/
+share/cc65/target/atarixl/drv/
+share/cc65/target/atarixl/drv/emd/
+share/cc65/target/atarixl/drv/emd/atrx130.emd
+share/cc65/target/atarixl/drv/joy/
+share/cc65/target/atarixl/drv/joy/atrxmj8.joy
+share/cc65/target/atarixl/drv/joy/atrxstd.joy
+share/cc65/target/atarixl/drv/mou/
+share/cc65/target/atarixl/drv/mou/atrxami.mou
+share/cc65/target/atarixl/drv/mou/atrxjoy.mou
+share/cc65/target/atarixl/drv/mou/atrxst.mou
+share/cc65/target/atarixl/drv/mou/atrxtrk.mou
+share/cc65/target/atarixl/drv/mou/atrxtt.mou
+share/cc65/target/atarixl/drv/ser/
+share/cc65/target/atarixl/drv/ser/atrxrdev.ser
+share/cc65/target/atarixl/drv/tgi/
+share/cc65/target/atarixl/drv/tgi/atrx10.tgi
+share/cc65/target/atarixl/drv/tgi/atrx10p2.tgi
+share/cc65/target/atarixl/drv/tgi/atrx11.tgi
+share/cc65/target/atarixl/drv/tgi/atrx14.tgi
+share/cc65/target/atarixl/drv/tgi/atrx15.tgi
+share/cc65/target/atarixl/drv/tgi/atrx15p2.tgi
+share/cc65/target/atarixl/drv/tgi/atrx3.tgi
+share/cc65/target/atarixl/drv/tgi/atrx4.tgi
+share/cc65/target/atarixl/drv/tgi/atrx5.tgi
+share/cc65/target/atarixl/drv/tgi/atrx6.tgi
+share/cc65/target/atarixl/drv/tgi/atrx7.tgi
+share/cc65/target/atarixl/drv/tgi/atrx8.tgi
+share/cc65/target/atarixl/drv/tgi/atrx8p2.tgi
+share/cc65/target/atarixl/drv/tgi/atrx9.tgi
+share/cc65/target/atarixl/drv/tgi/atrx9p2.tgi
+share/cc65/target/atmos/
+share/cc65/target/atmos/drv/
+share/cc65/target/atmos/drv/joy/
+share/cc65/target/atmos/drv/joy/atmos-pase.joy
+share/cc65/target/atmos/drv/ser/
+share/cc65/target/atmos/drv/ser/atmos-acia.ser
+share/cc65/target/atmos/drv/tgi/
+share/cc65/target/atmos/drv/tgi/atmos-228-200-3.tgi
+share/cc65/target/atmos/drv/tgi/atmos-240-200-2.tgi
+share/cc65/target/c128/
+share/cc65/target/c128/drv/
+share/cc65/target/c128/drv/emd/
+share/cc65/target/c128/drv/emd/c128-efnram.emd
+share/cc65/target/c128/drv/emd/c128-georam.emd
+share/cc65/target/c128/drv/emd/c128-ifnram.emd
+share/cc65/target/c128/drv/emd/c128-ram.emd
+share/cc65/target/c128/drv/emd/c128-ram2.emd
+share/cc65/target/c128/drv/emd/c128-ramcart.emd
+share/cc65/target/c128/drv/emd/c128-reu.emd
+share/cc65/target/c128/drv/emd/c128-vdc.emd
+share/cc65/target/c128/drv/joy/
+share/cc65/target/c128/drv/joy/c128-ptvjoy.joy
+share/cc65/target/c128/drv/joy/c128-stdjoy.joy
+share/cc65/target/c128/drv/mou/
+share/cc65/target/c128/drv/mou/c128-1351.mou
+share/cc65/target/c128/drv/mou/c128-inkwell.mou
+share/cc65/target/c128/drv/mou/c128-joy.mou
+share/cc65/target/c128/drv/mou/c128-pot.mou
+share/cc65/target/c128/drv/ser/
+share/cc65/target/c128/drv/ser/c128-swlink.ser
+share/cc65/target/c128/drv/tgi/
+share/cc65/target/c128/drv/tgi/c128-vdc.tgi
+share/cc65/target/c128/drv/tgi/c128-vdc2.tgi
+share/cc65/target/c16/
+share/cc65/target/c16/drv/
+share/cc65/target/c16/drv/emd/
+share/cc65/target/c16/drv/emd/c16-ram.emd
+share/cc65/target/c16/drv/joy/
+share/cc65/target/c16/drv/joy/c16-stdjoy.joy
+share/cc65/target/c64/
+share/cc65/target/c64/drv/
+share/cc65/target/c64/drv/emd/
+share/cc65/target/c64/drv/emd/c64-65816.emd
+share/cc65/target/c64/drv/emd/c64-c256k.emd
+share/cc65/target/c64/drv/emd/c64-dqbb.emd
+share/cc65/target/c64/drv/emd/c64-georam.emd
+share/cc65/target/c64/drv/emd/c64-isepic.emd
+share/cc65/target/c64/drv/emd/c64-ram.emd
+share/cc65/target/c64/drv/emd/c64-ramcart.emd
+share/cc65/target/c64/drv/emd/c64-reu.emd
+share/cc65/target/c64/drv/emd/c64-vdc.emd
+share/cc65/target/c64/drv/emd/dtv-himem.emd
+share/cc65/target/c64/drv/joy/
+share/cc65/target/c64/drv/joy/c64-hitjoy.joy
+share/cc65/target/c64/drv/joy/c64-numpad.joy
+share/cc65/target/c64/drv/joy/c64-ptvjoy.joy
+share/cc65/target/c64/drv/joy/c64-stdjoy.joy
+share/cc65/target/c64/drv/mou/
+share/cc65/target/c64/drv/mou/c64-1351.mou
+share/cc65/target/c64/drv/mou/c64-inkwell.mou
+share/cc65/target/c64/drv/mou/c64-joy.mou
+share/cc65/target/c64/drv/mou/c64-pot.mou
+share/cc65/target/c64/drv/ser/
+share/cc65/target/c64/drv/ser/c64-swlink.ser
+share/cc65/target/c64/drv/tgi/
+share/cc65/target/c64/drv/tgi/c64-hi.tgi
+share/cc65/target/cbm510/
+share/cc65/target/cbm510/drv/
+share/cc65/target/cbm510/drv/emd/
+share/cc65/target/cbm510/drv/emd/cbm510-ram.emd
+share/cc65/target/cbm510/drv/joy/
+share/cc65/target/cbm510/drv/joy/cbm510-std.joy
+share/cc65/target/cbm510/drv/mou/
+share/cc65/target/cbm510/drv/mou/cbm510-inkwl.mou
+share/cc65/target/cbm510/drv/mou/cbm510-joy.mou
+share/cc65/target/cbm510/drv/ser/
+share/cc65/target/cbm510/drv/ser/cbm510-std.ser
+share/cc65/target/cbm610/
+share/cc65/target/cbm610/drv/
+share/cc65/target/cbm610/drv/emd/
+share/cc65/target/cbm610/drv/emd/cbm610-ram.emd
+share/cc65/target/cbm610/drv/ser/
+share/cc65/target/cbm610/drv/ser/cbm610-std.ser
+share/cc65/target/gamate/
+share/cc65/target/gamate/drv/
+share/cc65/target/gamate/drv/joy/
+share/cc65/target/gamate/drv/joy/gamate-stdjoy.joy
+share/cc65/target/geos-apple/
+share/cc65/target/geos-apple/util/
+share/cc65/target/geos-apple/util/convert.system
+share/cc65/target/geos-cbm/
+share/cc65/target/geos-cbm/drv/
+share/cc65/target/geos-cbm/drv/emd/
+share/cc65/target/geos-cbm/drv/emd/geos-vdc.emd
+share/cc65/target/geos-cbm/drv/joy/
+share/cc65/target/geos-cbm/drv/joy/geos-stdjoy.joy
+share/cc65/target/geos-cbm/drv/tgi/
+share/cc65/target/geos-cbm/drv/tgi/geos-tgi.tgi
+share/cc65/target/lynx/
+share/cc65/target/lynx/drv/
+share/cc65/target/lynx/drv/joy/
+share/cc65/target/lynx/drv/joy/lynx-stdjoy.joy
+share/cc65/target/lynx/drv/ser/
+share/cc65/target/lynx/drv/ser/lynx-comlynx.ser
+share/cc65/target/lynx/drv/tgi/
+share/cc65/target/lynx/drv/tgi/lynx-160-102-16.tgi
+share/cc65/target/nes/
+share/cc65/target/nes/drv/
+share/cc65/target/nes/drv/joy/
+share/cc65/target/nes/drv/joy/nes-stdjoy.joy
+share/cc65/target/nes/drv/tgi/
+share/cc65/target/nes/drv/tgi/nes-64-56-2.tgi
+share/cc65/target/pce/
+share/cc65/target/pce/drv/
+share/cc65/target/pce/drv/joy/
+share/cc65/target/pce/drv/joy/pce-stdjoy.joy
+share/cc65/target/pet/
+share/cc65/target/pet/drv/
+share/cc65/target/pet/drv/joy/
+share/cc65/target/pet/drv/joy/pet-ptvjoy.joy
+share/cc65/target/pet/drv/joy/pet-stdjoy.joy
+share/cc65/target/plus4/
+share/cc65/target/plus4/drv/
+share/cc65/target/plus4/drv/joy/
+share/cc65/target/plus4/drv/joy/plus4-stdjoy.joy
+share/cc65/target/plus4/drv/ser/
+share/cc65/target/plus4/drv/ser/plus4-stdser.ser
+share/cc65/target/vic20/
+share/cc65/target/vic20/drv/
+share/cc65/target/vic20/drv/joy/
+share/cc65/target/vic20/drv/joy/vic20-ptvjoy.joy
+share/cc65/target/vic20/drv/joy/vic20-stdjoy.joy
+share/cc65/tgidemo.c
+share/cc65/tutorial/
+share/cc65/tutorial/hello.c
+share/cc65/tutorial/text.s
 share/doc/cc65/
 share/doc/cc65/html/
 share/doc/cc65/html/apple2.html
@@ -386,7 +543,9 @@ share/doc/cc65/html/c64.html
 share/doc/cc65/html/ca65.html
 share/doc/cc65/html/cbm510.html
 share/doc/cc65/html/cbm610.html
+share/doc/cc65/html/cc65-intern.html
 share/doc/cc65/html/cc65.html
+share/doc/cc65/html/chrcvt65.html
 share/doc/cc65/html/cl65.html
 share/doc/cc65/html/co65.html
 share/doc/cc65/html/coding.html
@@ -397,6 +556,7 @@ share/doc/cc65/html/dio.html
 share/doc/cc65/html/doc.css
 share/doc/cc65/html/doc.png
 share/doc/cc65/html/funcref.html
+share/doc/cc65/html/gamate.html
 share/doc/cc65/html/geos.html
 share/doc/cc65/html/grc65.html
 share/doc/cc65/html/index.html
@@ -407,10 +567,56 @@ share/doc/cc65/html/lynx.html
 share/doc/cc65/html/nes.html
 share/doc/cc65/html/od65.html
 share/doc/cc65/html/osi.html
+share/doc/cc65/html/pce.html
 share/doc/cc65/html/pet.html
 share/doc/cc65/html/plus4.html
+share/doc/cc65/html/sim65.html
 share/doc/cc65/html/smc.html
 share/doc/cc65/html/sp65.html
 share/doc/cc65/html/supervision.html
 share/doc/cc65/html/using-make.html
 share/doc/cc65/html/vic20.html
+share/info/
+@info share/info/apple2.info
+@info share/info/apple2enh.info
+@info share/info/ar65.info
+@info share/info/atari.info
+@info share/info/atari5200.info
+@info share/info/atmos.info
+@info share/info/c128.info
+@info share/info/c16.info
+@info share/info/c64.info
+@info share/info/ca65.info
+@info share/info/cbm510.info
+@info share/info/cbm610.info
+@info share/info/cc65-intern.info
+@info share/info/cc65.info
+@info share/info/chrcvt65.info
+@info share/info/cl65.info
+@info share/info/co65.info
+@info share/info/coding.info
+@info share/info/customizing.info
+@info share/info/da65.info
+@info share/info/debugging.info
+@info share/info/dio.info
+@info share/info/funcref.info
+@info share/info/gamate.info
+@info share/info/geos.info
+@info share/info/grc65.info
+@info share/info/index.info
+@info share/info/intro.info
+@info share/info/ld65.info
+@info share/info/library.info
+@info share/info/lynx.info
+@info share/info/nes.info
+@info share/info/od65.info
+@info share/info/osi.info
+@info share/info/pce.info
+@info share/info/pet.info
+@info share/info/plus4.info
+@info share/info/sim65.info
+@info share/info/smc.info
+@info share/info/sp65.info
+@info share/info/supervision.info
+@info share/info/using-make.info
+@info share/info/vic20.info

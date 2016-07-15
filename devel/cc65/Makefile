@@ -2,10 +2,10 @@
 
 COMMENT=		cross development package for 6502 systems
 
-V =			20160410
+V =			20160714
 GH_ACCOUNT =		cc65
 GH_PROJECT =		cc65
-GH_COMMIT = 		e809d6bf0d0ed35bee291cffb845b280e42a9bc6
+GH_COMMIT = 		fb53bfc25dc8dc2123006ac1266d1fabe0d124db
 
 DISTNAME =		${GH_PROJECT}-${V}
 
