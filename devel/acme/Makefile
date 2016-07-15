@@ -9,8 +9,7 @@ WRKDIST=		${WRKDIR}/acme-crossass-code-0-66-trunk
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.esw-heim.tu-clausthal.de/~marco/smorbrod/acme/ \
-			http://sourceforge.net/p/acme-crossass/
+HOMEPAGE=		http://sourceforge.net/p/acme-crossass/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
