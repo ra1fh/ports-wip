@@ -35,6 +35,10 @@ My OpenBSD ports.
 
 * **lang/nbc** C-like compiler for Lego Mindstorms NXT
 
+### misc
+
+* **misc/s725** Communicate with Polar S725X heart rate monitor
+
 ### print
 
 * **print/auctex** extensible emacs interface for TeX (for emacs 24)

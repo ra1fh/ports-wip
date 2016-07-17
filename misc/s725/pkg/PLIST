@@ -1,0 +1,4 @@
+@comment $OpenBSD$
+@bin bin/hrmtool
+@bin bin/s725get
+bin/s725plot
