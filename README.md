@@ -45,7 +45,8 @@ My OpenBSD ports.
 
 ### sysutils
 
-* **sysutils/prometheus** monitoring system and time series database
+* **sysutils/prometheus** prometheus monitoring system and time series database
+* **sysutils/node_exporter** prometheus agent
 
 ### textproc
 
