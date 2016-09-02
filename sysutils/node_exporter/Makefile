@@ -28,5 +28,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${WRKINST}/${SYSCONFDIR}/rc.d
+	${INSTALL_DATA} ${PKGDIR}/nodeexporter.rc ${WRKINST}/${SYSCONFDIR}/rc.d/nodeexporter
 
 .include <bsd.port.mk>
