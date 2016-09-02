@@ -1,7 +1,7 @@
 # $OpenBSD$
 
 COMMENT =		prometheus monitoring
-DISTNAME =		prometheus-0.16.1
+DISTNAME =		prometheus-1.0.2
 
 CATEGORIES =		sysutils
 
@@ -11,14 +11,13 @@ MAINTAINER =		Ralf Horstmann <ralf-lists@ackstorm.de>
 
 PERMIT_PACKAGE_CDROM =	Yes
 
-# "make port-lib-depends-check" can help
 WANTLIB =		c pthread
 
 USE_GMAKE = 		Yes
 
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
-GH_TAGNAME =		0.16.1
+GH_TAGNAME =		v1.0.2
 #GH_COMMIT =		85100767f75a5866527150fae271e9a3c8ea66a8
 
 MODULES=		lang/go
