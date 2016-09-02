@@ -23,6 +23,7 @@ GH_TAGNAME =		0.12.0
 MODULES=		lang/go
 
 do-build:
+	cd ${WRKSRC} && ${MODGO_ENV} go get -d
 	cd ${WRKSRC} && ${MODGO_ENV} go build
 
 do-install:
