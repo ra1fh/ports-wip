@@ -1,0 +1,186 @@
+$OpenBSD$
+--- collector/diskstats_openbsd.go.orig	Fri Sep  2 23:06:12 2016
++++ collector/diskstats_openbsd.go	Fri Sep  2 23:06:30 2016
+@@ -0,0 +1,182 @@
++// +build !nodiskstats
++
++package collector
++
++import (
++	"flag"
++	"fmt"
++	"strings"
++	"regexp"
++	"unsafe"
++
++	"github.com/prometheus/client_golang/prometheus"
++)
++
++/*
++#include <sys/time.h>
++#include <sys/disk.h>
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <stdlib.h>
++*/
++import "C"
++
++const (
++	diskSubsystem = "disk"
++)
++
++var (
++	ignoredDevices = flag.String("collector.diskstats.ignored-devices", "^(ram|loop|fd|(h|s|v|xv)d[a-z])\\d+$", "Regexp of devices to ignore for diskstats.")
++)
++
++type diskstatsCollector struct {
++	ignoredDevicesPattern *regexp.Regexp
++	readsCompleted       *prometheus.CounterVec
++	writesCompleted      *prometheus.CounterVec
++	bytesRead            *prometheus.CounterVec
++	bytesWrite           *prometheus.CounterVec
++	sectorsRead          *prometheus.CounterVec
++	sectorsWritten       *prometheus.CounterVec
++	ioTime               *prometheus.CounterVec
++}
++
++func init() {
++	Factories["diskstats"] = NewDiskstatsCollector
++}
++
++// Takes a prometheus registry and returns a new Collector exposing
++// disk device stats.
++func NewDiskstatsCollector() (Collector, error) {
++	var diskLabelNames = []string{"device"}
++
++	return &diskstatsCollector{
++		ignoredDevicesPattern: regexp.MustCompile(*ignoredDevices),
++
++		readsCompleted: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "reads_completed",
++				Help:      "The total number of read transfers.",
++			},
++			diskLabelNames,
++		),
++		writesCompleted: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "writes_completed",
++				Help:      "The total number of write transfers",
++			},
++			diskLabelNames,
++		),
++		bytesRead: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "bytes_read",
++				Help:      "The total number of read bytes.",
++			},
++			diskLabelNames,
++		),
++		bytesWrite: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "bytes_write",
++				Help:      "The total number of write bytes",
++			},
++			diskLabelNames,
++		),
++		sectorsRead: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "sectors_read",
++				Help:      "The total number of read sectors.",
++			},
++			diskLabelNames,
++		),
++		sectorsWritten: prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "sectors_written",
++				Help:      "The total number of written sectors.",
++			},
++			diskLabelNames,
++		),
++
++		ioTime:	prometheus.NewCounterVec(
++			prometheus.CounterOpts{
++				Namespace: Namespace,
++				Subsystem: diskSubsystem,
++				Name:      "io_time_ms",
++				Help:      "Milliseconds spent doing I/Os.",
++			},
++			diskLabelNames,
++		),
++	}, nil
++}
++
++func (c *diskstatsCollector) Update(ch chan<- prometheus.Metric) (err error) {
++	var ndrive C.int
++	err = Sysctl([]C.int{ C.CTL_HW, C.HW_DISKCOUNT },
++		unsafe.Pointer(&ndrive), unsafe.Sizeof(ndrive))
++	if err != nil {
++		return err
++	}
++	if int(ndrive) < 1 {
++		return fmt.Errorf("ndrive < 0")
++	}
++
++	var size int
++	size, err = SysctlSize([]C.int{ C.CTL_HW, C.HW_DISKNAMES })
++	if err != nil {
++		return err
++	}
++	
++	disknames := make([]byte, size, size)
++	err = Sysctl([]C.int{ C.CTL_HW, C.HW_DISKNAMES },
++		unsafe.Pointer(&disknames[0]), uintptr(len(disknames)))
++	if err != nil {
++		return err
++	}
++
++	diskarray := strings.Split(string(disknames[:]), ",")
++	disks := make([]string, 0)
++	for i := range(diskarray) {
++		disks = append(disks, strings.Split(diskarray[i], ":")[0])
++	}
++
++	if int(ndrive) != len(diskarray) {
++		return fmt.Errorf("ndrive != len(diskarray) (%d != %d)", int(ndrive), len(diskarray))
++	}
++
++	diskstats := make([]C.struct_diskstats, ndrive, ndrive)
++	err = Sysctl([]C.int{ C.CTL_HW, C.HW_DISKSTATS },
++		unsafe.Pointer(&diskstats[0]), unsafe.Sizeof(diskstats[0]) * uintptr(ndrive))
++	if err != nil {
++		return err
++	}
++	
++	for i := range(disks) {
++		c.readsCompleted.WithLabelValues(disks[i]).Set(float64((diskstats[i].ds_rxfer)))
++		c.writesCompleted.WithLabelValues(disks[i]).Set(float64(diskstats[i].ds_wxfer))
++		c.bytesRead.WithLabelValues(disks[i]).Set(float64((diskstats[i].ds_rbytes)))
++		c.bytesWrite.WithLabelValues(disks[i]).Set(float64((diskstats[i].ds_wbytes)))
++		c.sectorsRead.WithLabelValues(disks[i]).Set(float64(diskstats[i].ds_rbytes) / 512)
++		c.sectorsWritten.WithLabelValues(disks[i]).Set(float64(diskstats[i].ds_wbytes) / 512)
++		c.ioTime.WithLabelValues(disks[i]).Set(float64(int64(diskstats[i].ds_time.tv_sec) * 1000 + int64(diskstats[i].ds_time.tv_usec) / 1000))
++	}
++
++	c.readsCompleted.Collect(ch)
++	c.writesCompleted.Collect(ch)
++	c.bytesRead.Collect(ch)
++	c.bytesWrite.Collect(ch)
++	c.sectorsRead.Collect(ch)
++	c.sectorsWritten.Collect(ch)
++	c.ioTime.Collect(ch)
++
++	return nil
++}
