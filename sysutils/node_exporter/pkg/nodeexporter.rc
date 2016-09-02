@@ -1,7 +1,7 @@
 #!/bin/sh
 
 daemon="/usr/local/bin/node_exporter"
-daemon_flags="-collectors.enabled='filesystem,loadavg,netdev,time'"
+daemon_flags=""
 daemon_user=_prometheus
 
 . /etc/rc.d/rc.subr
