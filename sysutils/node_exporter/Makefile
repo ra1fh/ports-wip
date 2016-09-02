@@ -18,12 +18,12 @@ USE_GMAKE = 		Yes
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		node_exporter
 GH_TAGNAME =		0.12.0
-#GH_COMMIT =		85100767f75a5866527150fae271e9a3c8ea66a8
+#GH_COMMIT =		1549f3087d5cf7ddff2752d9498fce1a1c4259af
 
 MODULES=		lang/go
 
 do-build:
-	cd ${WRKSRC} && GOPATH=${MODGO_WORKSPACE} ${MAKE_PROGRAM} build
+	cd ${WRKSRC} && ${MODGO_ENV} go build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
