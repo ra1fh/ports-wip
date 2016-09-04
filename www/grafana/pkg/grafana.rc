@@ -1,0 +1,13 @@
+#!/bin/sh
+
+daemon="/usr/local/bin/grafana-server -homepath /usr/local/share/grafana cfg:default.paths.data=/var/grafana cfg:default.paths.logs=/var/log/grafana"
+daemon_user="_grafana"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
