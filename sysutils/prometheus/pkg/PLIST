@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _prometheus:751
-@newuser _prometheus:751:751:daemon:prometheus:/nonexistent:/sbin/nologin
+@newgroup _prometheus:989
+@newuser _prometheus:989:_prometheus:daemon:prometheus:/nonexistent:/sbin/nologin
 @bin bin/prometheus
 @bin bin/promtool
 share/examples/prometheus/
