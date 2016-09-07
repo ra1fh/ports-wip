@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _grafana:752
-@newuser _grafana:752:_grafana:daemon:Grafana:${LOCALSTATEDIR}:/sbin/nologin
+@newgroup _grafana:987
+@newuser _grafana:987:_grafana:daemon:Grafana:${LOCALSTATEDIR}:/sbin/nologin
 @bin bin/grafana-cli
 @bin bin/grafana-server
 share/examples/grafana/
