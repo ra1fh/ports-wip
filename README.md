@@ -53,6 +53,10 @@ My OpenBSD ports.
 * **textproc/fop** Formatting Objects Processor
 * **textproc/linuxdoc-tools** LinuxDoc tools
 
+### www
+
+* ***www/grafana*** Browser based analytic dashboard
+
 ### x11
 
 * **x11/gtkextra** extra widgets for GTK+
