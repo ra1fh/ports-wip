@@ -8,6 +8,7 @@ My OpenBSD ports.
 * **devel/dasm** c64 cross assembler
 * **devel/dreamass** dreamass is a cross assembler for 6510 and compatible
 * **devel/gpsim** PIC microcontroller emulator
+* **devel/icestorm** icestorm tools for Lattice iCE40 FPGA
 * **devel/libnxt** Low level tools for Lego Mindstorms NXT
 * **devel/mxass** cross assembler that targets Commodore 64-like platforms
 * **devel/nxt-python** Python library to control NXT

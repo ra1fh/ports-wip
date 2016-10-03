@@ -1,0 +1,20 @@
+@comment $OpenBSD$
+bin/icebox.py
+bin/icebox_chipdb
+bin/icebox_colbuf
+bin/icebox_diff
+bin/icebox_explain
+bin/icebox_html
+bin/icebox_maps
+bin/icebox_vlog
+bin/iceboxdb.py
+@bin bin/icebram
+@bin bin/icemulti
+@bin bin/icepack
+@bin bin/icepll
+@bin bin/iceprog
+@bin bin/icetime
+bin/iceunpack
+share/icebox/
+share/icebox/chipdb-1k.txt
+share/icebox/chipdb-8k.txt
