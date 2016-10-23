@@ -15,9 +15,11 @@ MAINTAINER =		David Schaefer <dawedawe@gmx.de>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c fontconfig freetype
-WANTLIB += 		m pthread stdc++ z
-WANTLIB +=		usb
+WANTLIB +=		c GL m pthread z usb
+WANTLIB += 		Qt5Bluetooth Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
+WANTLIB += 		Qt5MultimediaWidgets Qt5Network Qt5SerialPort Qt5Sql
+WANTLIB += 		Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+WANTLIB += 		crypto ssl
 
 GH_ACCOUNT =		GoldenCheetah
 GH_PROJECT =		GoldenCheetah
