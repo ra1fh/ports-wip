@@ -1,0 +1,69 @@
+$OpenBSD$
+
+Configure for OpenBSD.
+
+--- src/gcconfig.pri.orig	Sun Aug 31 01:48:50 2014
++++ src/gcconfig.pri	Sun Aug 31 01:49:48 2014
+@@ -6,7 +6,7 @@
+ 
+ # We recommend a debug build for development and a release build for deployment
+ #CONFIG += debug
+-#CONFIG += release
++CONFIG += release
+ 
+ # If you want a console window to appear on Windows machines
+ # then uncomment the following two lines.
+@@ -16,7 +16,7 @@
+ # To compile translation you need QT tool - lrelease
+ # If it is not found using he defaults in src/src.pro
+ # then set the full path and filename here.
+-#QMAKE_LRELEASE = /usr/bin/lrelease
++QMAKE_LRELEASE = /usr/local/bin/lrelease4
+ 
+ # We use g++ on all platforms so switch on auto vectorization amongst other
+ # things to speed up looping over ride file points
+@@ -24,8 +24,8 @@
+ 
+ # Let us know where flex and bison are installed.
+ # You may need to specify the full path if things don't work.
+-#QMAKE_LEX  = flex
+-#QMAKE_YACC = bison
++QMAKE_LEX  = /usr/bin/flex
++QMAKE_YACC = /usr/local/bin/bison
+ #win32 {
+ #  QMAKE_YACC = bison --file-prefix=y -t
+ #  QMAKE_MOVE = cmd /c move
+@@ -149,9 +149,9 @@
+ #     http://sourceforge.net/projects/libusb-win32/files/libusb-win32-releases/0.1.12.2/
+ # You may override the INCLUDE and LIB files if you like.
+ # You *must* define LIBUSB_INSTALL to use this feature.
+-#LIBUSB_INSTALL = /usr/local
++LIBUSB_INSTALL = /usr/local
+ #LIBUSB_INCLUDE = 
+-#LIBUSB_LIBS    = 
++LIBUSB_LIBS    = -lusb
+ 
+ # if you want video playback on training mode then
+ # download and install vlc (videolan) from
+@@ -178,8 +178,8 @@
+ #If you want search functionality then uncomment the following
+ #two lines once you habve installed clucene developer libraries
+ #and runtimes. See the INSTALL guide for your platform. 
+-#CLUCENE_INCLUDE = /usr/include/CLucene
+-#CLUCENE_LIBS    = -lclucene-core
++CLUCENE_INCLUDE = /usr/local/include/CLucene
++CLUCENE_LIBS    = -lclucene-core
+ 
+ 
+ # *** Mac users NOTE ***
+@@ -192,8 +192,8 @@
+ # Add the names of libraries with PKG_CONFIG information.
+ # eg. PKGCONFIG = oauth libical
+ # Uncomment the following two lines to enable.
+-#CONFIG   += link_pkgconfig
+-#PKGCONFIG = 
++CONFIG   += link_pkgconfig
++PKGCONFIG = 
+ 
+ # If your QT build includes its own local compress libs
+ # then you should comment the line below, otherwise you
