@@ -39,6 +39,7 @@ My OpenBSD ports.
 ### misc
 
 * **misc/s725** Communicate with Polar S725X heart rate monitor
+* **misc/GoldenCheetah** Cycling performance software
 
 ### print
 
