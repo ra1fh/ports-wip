@@ -47,17 +47,12 @@ My OpenBSD ports.
 
 ### sysutils
 
-* **sysutils/prometheus** prometheus monitoring system and time series database
 * **sysutils/node_exporter** prometheus agent
 
 ### textproc
 
 * **textproc/fop** Formatting Objects Processor
 * **textproc/linuxdoc-tools** LinuxDoc tools
-
-### www
-
-* ***www/grafana*** Browser based analytic dashboard
 
 ### x11
 
