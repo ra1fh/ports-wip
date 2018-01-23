@@ -1,7 +1,22 @@
 $OpenBSD$
---- collector/cpu_openbsd.go.orig	Fri Sep  2 22:54:01 2016
-+++ collector/cpu_openbsd.go	Mon Oct 19 22:31:18 2015
-@@ -0,0 +1,157 @@
+
+Index: collector/cpu_openbsd.go
+--- collector/cpu_openbsd.go.orig
++++ collector/cpu_openbsd.go
+@@ -0,0 +1,78 @@
++// Copyright 2018 The Prometheus Authors
++// Licensed under the Apache License, Version 2.0 (the "License");
++// you may not use this file except in compliance with the License.
++// You may obtain a copy of the License at
++//
++// http://www.apache.org/licenses/LICENSE-2.0
++//
++// Unless required by applicable law or agreed to in writing, software
++// distributed under the License is distributed on an "AS IS" BASIS,
++// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++// See the License for the specific language governing permissions and
++// limitations under the License.
++
 +// +build !nocpu
 +
 +package collector
@@ -11,151 +26,59 @@ $OpenBSD$
 +	"unsafe"
 +
 +	"github.com/prometheus/client_golang/prometheus"
++	"golang.org/x/sys/unix"
 +)
 +
 +/*
 +#include <sys/param.h>
 +#include <sys/sched.h>
-+#include <sys/sysctl.h>
-+#include <sys/vmmeter.h>
-+#include <stdlib.h>
-+#include <string.h>
-+#include <time.h>
 +*/
 +import "C"
 +
-+type statCollector struct {
-+	cpu *prometheus.CounterVec
-+	intr         prometheus.Counter
-+	ctxt         prometheus.Counter
-+	forks        prometheus.Counter
-+	btime        prometheus.Gauge
-+	procsRunning prometheus.Gauge
-+	procsBlocked prometheus.Gauge
++type cpuCollector struct {
++	cpu typedDesc
 +}
 +
 +func init() {
-+	Factories["cpu"] = NewStatCollector
++	registerCollector("cpu", defaultEnabled, NewCpuCollector)
 +}
 +
-+// Takes a prometheus registry and returns a new Collector exposing
-+// CPU stats.
-+func NewStatCollector() (Collector, error) {
-+	return &statCollector{
-+		cpu: prometheus.NewCounterVec(
-+			prometheus.CounterOpts{
-+				Namespace: Namespace,
-+				Name:      "cpu",
-+				Help:      "Seconds the CPU spent in each mode.",
-+			},
-+			[]string{"cpu", "mode"},
-+		),
-+		intr: prometheus.NewCounter(
-+			prometheus.CounterOpts{
-+				Namespace: Namespace,
-+				Name:      "intr",
-+				Help:      "Total number of interrupts serviced.",
-+			}),
-+		ctxt: prometheus.NewCounter(
-+			prometheus.CounterOpts{
-+				Namespace: Namespace,
-+				Name:      "context_switches",
-+				Help:      "Total number of context switches.",
-+			}),
-+		forks: prometheus.NewCounter(
-+			prometheus.CounterOpts{
-+				Namespace: Namespace,
-+				Name:      "forks",
-+				Help:      "Total number of forks.",
-+			}),
-+		btime: prometheus.NewGauge(
-+			prometheus.GaugeOpts{
-+				Namespace: Namespace,
-+				Name:      "boot_time",
-+				Help:      "Node boot time, in unixtime.",
-+			}),
-+		procsRunning: prometheus.NewGauge(
-+			prometheus.GaugeOpts{
-+				Namespace: Namespace,
-+				Name:      "procs_running",
-+				Help:      "Number of processes in runnable state.",
-+			}),
-+		procsBlocked: prometheus.NewGauge(
-+			prometheus.GaugeOpts{
-+				Namespace: Namespace,
-+				Name:      "procs_blocked",
-+				Help:      "Number of processes blocked waiting for I/O to complete.",
-+		}),
++func NewCpuCollector() (Collector, error) {
++	return &cpuCollector{
++		cpu: typedDesc{prometheus.NewDesc(
++			prometheus.BuildFQName(namespace, "", "cpu"),
++			"Seconds the CPU spent in each mode.",
++			[]string{"cpu", "mode"}, nil,
++		), prometheus.CounterValue},
 +	}, nil
 +}
 +
-+// Expose CPU stats using sysctl.
-+func (c *statCollector) Update(ch chan<- prometheus.Metric) (err error) {
-+	var clockinfo C.struct_clockinfo
-+	if Sysctl([]C.int{ C.CTL_KERN, C.KERN_CLOCKRATE },
-+		unsafe.Pointer(&clockinfo), unsafe.Sizeof(clockinfo)) == nil {
-+		hz := float64(clockinfo.stathz)
-+		ncpus := C.int(0)
-+		if Sysctl([]C.int{ C.CTL_HW, C.HW_NCPU },
-+			unsafe.Pointer(&ncpus), unsafe.Sizeof(ncpus)) == nil {
-+			for i := 0; i < int(ncpus); i++ {
-+				var cp_time [C.CPUSTATES]C.int64_t
-+				if Sysctl([]C.int{ C.CTL_KERN, C.KERN_CPTIME2, C.int(i) },
-+					unsafe.Pointer(&cp_time[0]), unsafe.Sizeof(cp_time)) == nil {
-+						c.cpu.With(prometheus.Labels{"cpu": strconv.Itoa(i), "mode": "user"}).Set(
-+							float64(cp_time[C.CP_USER])/hz)
-+						c.cpu.With(prometheus.Labels{"cpu": strconv.Itoa(i), "mode": "nice"}).Set(
-+							float64(cp_time[C.CP_NICE])/hz)
-+						c.cpu.With(prometheus.Labels{"cpu": strconv.Itoa(i), "mode": "system"}).Set(
-+							float64(cp_time[C.CP_SYS])/hz)
-+						c.cpu.With(prometheus.Labels{"cpu": strconv.Itoa(i), "mode": "interrupt"}).Set(
-+							float64(cp_time[C.CP_INTR])/hz)
-+						c.cpu.With(prometheus.Labels{"cpu": strconv.Itoa(i), "mode": "idle"}).Set(
-+							float64(cp_time[C.CP_IDLE])/hz)
-+					}
-+			}
-+		}
++func (c *cpuCollector) Update(ch chan<- prometheus.Metric) (err error) {
++	clockb, err := unix.SysctlRaw("kern.clockrate")
++	if err != nil {
++		return err
++	}
++	clock := *(*C.struct_clockinfo)(unsafe.Pointer(&clockb[0]))
++	hz := float64(clock.stathz)
++
++	ncpus, err := unix.SysctlUint32("hw.ncpu")
++	if err != nil {
++		return err
 +	}
 +
-+	var nintr C.int
-+	var intrcnt C.uint64_t
-+	var intrsum C.uint64_t
-+	intrsum = 0
-+	if Sysctl([]C.int{ C.CTL_KERN, C.KERN_INTRCNT, C.KERN_INTRCNT_NUM },
-+		unsafe.Pointer(&nintr), unsafe.Sizeof(nintr)) == nil {
-+		for i := 0; i < int(nintr); i++ {
-+			if (Sysctl([]C.int{ C.CTL_KERN, C.KERN_INTRCNT, C.KERN_INTRCNT_CNT, C.int(i) },
-+				unsafe.Pointer(&intrcnt), unsafe.Sizeof(intrcnt)) == nil) {
-+					intrsum += intrcnt
-+				}
++	for i := 0; i < int(ncpus); i++ {
++		var cp_time [C.CPUSTATES]C.int64_t
++		cp_timeb, err := unix.SysctlRaw("kern.cp_time2", i)
++		if err != nil {
++			return err
 +		}
++		cp_time = *(*[C.CPUSTATES]C.int64_t)(unsafe.Pointer(&cp_timeb[0]))
++		lcpu := strconv.Itoa(i)
++		ch <- c.cpu.mustNewConstMetric(float64(cp_time[C.CP_USER])/hz, lcpu, "user")
++		ch <- c.cpu.mustNewConstMetric(float64(cp_time[C.CP_NICE])/hz, lcpu, "nice")
++		ch <- c.cpu.mustNewConstMetric(float64(cp_time[C.CP_SYS])/hz, lcpu, "system")
++		ch <- c.cpu.mustNewConstMetric(float64(cp_time[C.CP_INTR])/hz, lcpu, "interrupt")
++		ch <- c.cpu.mustNewConstMetric(float64(cp_time[C.CP_IDLE])/hz, lcpu, "idle")
 +	}
-+	c.intr.Set(float64(intrsum))
-+	
-+	var uvmexp C.struct_uvmexp
-+	uvmexp.swtch = 0
-+	uvmexp.forks = 0
-+	Sysctl([]C.int{ C.CTL_VM, C.VM_UVMEXP }, unsafe.Pointer(&uvmexp), unsafe.Sizeof(uvmexp))
-+	c.ctxt.Set(float64(uvmexp.swtch))
-+	c.forks.Set(float64(uvmexp.forks))
-+
-+	var vmtotal C.struct_vmtotal
-+	vmtotal.t_rq = 1
-+	vmtotal.t_dw = 0
-+	vmtotal.t_pw = 0
-+	Sysctl([]C.int{ C.CTL_VM, C.VM_METER }, unsafe.Pointer(&vmtotal), unsafe.Sizeof(vmtotal))
-+	c.procsRunning.Set(float64(vmtotal.t_rq - 1))
-+	c.procsBlocked.Set(float64(vmtotal.t_dw) + float64(vmtotal.t_pw))
-+
-+	c.btime.Set(float64(C.time(nil)))
-+
-+	c.cpu.Collect(ch)
-+	c.intr.Collect(ch)
-+	c.ctxt.Collect(ch)
-+	c.forks.Collect(ch)
-+	c.btime.Collect(ch)
-+	c.procsRunning.Collect(ch)
-+	c.procsBlocked.Collect(ch)
-+
 +	return err
 +}

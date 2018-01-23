@@ -1,12 +1,18 @@
 # $OpenBSD$
 
 COMMENT =		prometheus node_exporter
-DISTNAME =		node_exporter-0.12.0
+
+DISTNAME = 		node_exporter-0.15.2.git
+GH_ACCOUNT =		prometheus
+GH_PROJECT =		node_exporter
+GH_COMMIT =		111e3af43700c041c3f0a30ff934406d7f411824
+WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://prometheus.io/
 
+# Apache 2.0
 MAINTAINER =		Ralf Horstmann <ralf-lists@ackstorm.de>
 
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,16 +21,10 @@ WANTLIB =		c pthread
 
 USE_GMAKE = 		Yes
 
-GH_ACCOUNT =		prometheus
-GH_PROJECT =		node_exporter
-GH_TAGNAME =		0.12.0
-#GH_COMMIT =		1549f3087d5cf7ddff2752d9498fce1a1c4259af
-
 MODULES=		lang/go
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_ENV} go get -d
-	cd ${WRKSRC} && ${MODGO_ENV} go build
+	cd ${WRKSRC} && ${MODGO_ENV} go build -tags nosystemd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
