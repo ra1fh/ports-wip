@@ -7,6 +7,7 @@ My OpenBSD ports.
 * **devel/cc65** cross development package for 6502 systems
 * **devel/dasm** c64 cross assembler
 * **devel/dreamass** dreamass is a cross assembler for 6510 and compatible
+* **devel/github-backup** Backup a github account
 * **devel/gpsim** PIC microcontroller emulator
 * **devel/icestorm** icestorm tools for Lattice iCE40 FPGA
 * **devel/libnxt** Low level tools for Lego Mindstorms NXT
