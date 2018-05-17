@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/acme
 share/doc/acme/
 share/doc/acme/65816.txt
@@ -15,3 +15,4 @@ share/doc/acme/Lib.txt
 share/doc/acme/QuickRef.txt
 share/doc/acme/Source.txt
 share/doc/acme/Upgrade.txt
+share/doc/acme/cputypes.txt
