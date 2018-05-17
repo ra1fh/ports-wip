@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/file65
 @bin bin/ldo65
 @bin bin/printcbm
