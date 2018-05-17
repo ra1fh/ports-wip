@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 include/gtkextra-3.0/
 include/gtkextra-3.0/gtkextra/
 include/gtkextra-3.0/gtkextra/gtkbordercombo.h
@@ -107,7 +107,6 @@ share/gtk-doc/html/gtkextra-3/compiling.html
 share/gtk-doc/html/gtkextra-3/gtkbordercombo.jpg
 share/gtk-doc/html/gtkextra-3/gtkcharsel.jpg
 share/gtk-doc/html/gtkextra-3/gtkcolorcombo.jpg
-share/gtk-doc/html/gtkextra-3/gtkextra-3.devhelp
 share/gtk-doc/html/gtkextra-3/gtkextra-3.devhelp2
 share/gtk-doc/html/gtkextra-3/gtkextra-GtkDataFormat.html
 share/gtk-doc/html/gtkextra-3/gtkextra-GtkExtra-Versioning.html
@@ -121,9 +120,11 @@ share/gtk-doc/html/gtkextra-3/gtkfilelist.jpg
 share/gtk-doc/html/gtkextra-3/gtkiconlist.jpg
 share/gtk-doc/html/gtkextra-3/home.png
 share/gtk-doc/html/gtkextra-3/index.html
-share/gtk-doc/html/gtkextra-3/index.sgml
+share/gtk-doc/html/gtkextra-3/left-insensitive.png
 share/gtk-doc/html/gtkextra-3/left.png
 share/gtk-doc/html/gtkextra-3/resources.html
+share/gtk-doc/html/gtkextra-3/right-insensitive.png
 share/gtk-doc/html/gtkextra-3/right.png
 share/gtk-doc/html/gtkextra-3/style.css
+share/gtk-doc/html/gtkextra-3/up-insensitive.png
 share/gtk-doc/html/gtkextra-3/up.png
