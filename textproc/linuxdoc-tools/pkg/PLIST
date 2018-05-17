@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 bin/linuxdoc
 @bin bin/rtf2rtf
 bin/sgml2html
@@ -21,7 +21,7 @@ bin/sgmlcheck
 @man man/man1/sgmlcheck.1
 @man man/man1/sgmlpre.1
 @man man/man1/sgmlsasp.1
-share/doc/linuxdoc-tools/
+@info share/doc/linuxdoc-tools/
 share/doc/linuxdoc-tools/CHANGES.Debian-native
 share/doc/linuxdoc-tools/CHANGES.old-sgml-tools.v1
 share/doc/linuxdoc-tools/CONTRIBUTORS.old-sgml-tools-v1
@@ -32,10 +32,9 @@ share/doc/linuxdoc-tools/example/example-tr.sgml
 share/doc/linuxdoc-tools/example/example.sgml
 share/doc/linuxdoc-tools/example/logo.eps.gz
 share/doc/linuxdoc-tools/example/logo.png
-share/doc/linuxdoc-tools/guide.dvi
 @info share/doc/linuxdoc-tools/guide.info
 share/doc/linuxdoc-tools/guide.lyx
-share/doc/linuxdoc-tools/guide.ps.gz
+share/doc/linuxdoc-tools/guide.pdf
 share/doc/linuxdoc-tools/guide.sgml
 share/doc/linuxdoc-tools/guide.txt
 share/doc/linuxdoc-tools/html/
@@ -197,7 +196,6 @@ share/linuxdoc-tools/mappings/rtf/mapping
 share/linuxdoc-tools/null.sty
 share/linuxdoc-tools/qwertz.sty
 share/linuxdoc-tools/sgml.dcl
-share/sgml/
 share/sgml/iso-entities-8879.1986/
 share/sgml/iso-entities-8879.1986/ISOamsa
 share/sgml/iso-entities-8879.1986/ISOamsb

@@ -2,7 +2,7 @@
 
 COMMENT =		LinuxDoc tools
 
-DISTNAME =		linuxdoc-tools-0.9.69
+DISTNAME =		linuxdoc-tools-0.9.72
 
 CATEGORIES =		textproc
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/l/linuxdoc-tools/}
 
-DISTFILES =		linuxdoc-tools_0.9.69.orig.tar.gz
+DISTFILES =		linuxdoc-tools_0.9.72.orig.tar.gz
 
 # Dependencies
 #
