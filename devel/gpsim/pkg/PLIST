@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/gpsim
 include/eXdbm/
 include/eXdbm/eXdbm.h
@@ -28,6 +28,8 @@ include/gpsim/cmd_gpsim.h
 include/gpsim/cmd_manager.h
 include/gpsim/cod.h
 include/gpsim/comparator.h
+include/gpsim/ctmu.h
+include/gpsim/dsm_module.h
 include/gpsim/eeprom.h
 include/gpsim/errors.h
 include/gpsim/exports.h
@@ -44,6 +46,7 @@ include/gpsim/icd.h
 include/gpsim/intcon.h
 include/gpsim/interface.h
 include/gpsim/ioports.h
+include/gpsim/lcd_module.h
 include/gpsim/lxt_write.h
 include/gpsim/modules.h
 include/gpsim/operator.h
@@ -53,11 +56,13 @@ include/gpsim/p16f62x.h
 include/gpsim/p16f87x.h
 include/gpsim/p16f88x.h
 include/gpsim/p16f8x.h
+include/gpsim/p16f91x.h
 include/gpsim/p16x5x.h
 include/gpsim/p16x6x.h
 include/gpsim/p16x7x.h
 include/gpsim/p16x8x.h
 include/gpsim/p17c75x.h
+include/gpsim/p18fk.h
 include/gpsim/p18x.h
 include/gpsim/p1xf1xxx.h
 include/gpsim/packages.h
@@ -92,13 +97,9 @@ include/gpsim/ui.h
 include/gpsim/value.h
 include/gpsim/xref.h
 @lib lib/libgpsim.so.${LIBgpsim_VERSION}
-@lib lib/libgpsim_dht11.so.${LIBgpsim_dht11_VERSION}
-@lib lib/libgpsim_ds1307.so.${LIBgpsim_ds1307_VERSION}
-@lib lib/libgpsim_ds1820.so.${LIBgpsim_ds1820_VERSION}
 @lib lib/libgpsim_dspic.so.${LIBgpsim_dspic_VERSION}
 @lib lib/libgpsim_eXdbm.so.${LIBgpsim_eXdbm_VERSION}
-@lib lib/libgpsim_graphicLCD.so.${LIBgpsim_graphicLCD_VERSION}
-@lib lib/libgpsim_lcd.so.${LIBgpsim_lcd_VERSION}
+@lib lib/libgpsim_extras.so.${LIBgpsim_extras_VERSION}
 @lib lib/libgpsim_modules.so.${LIBgpsim_modules_VERSION}
 @lib lib/libgpsimcli.so.${LIBgpsimcli_VERSION}
 @lib lib/libgpsimgui.so.${LIBgpsimgui_VERSION}

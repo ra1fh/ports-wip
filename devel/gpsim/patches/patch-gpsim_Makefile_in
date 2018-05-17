@@ -1,7 +1,8 @@
 $OpenBSD$
---- gpsim/Makefile.in.orig	Sat Nov 15 05:28:59 2014
-+++ gpsim/Makefile.in	Thu Apr  2 23:12:25 2015
-@@ -655,7 +655,7 @@ uninstall-am: uninstall-binPROGRAMS
+Index: gpsim/Makefile.in
+--- gpsim/Makefile.in.orig
++++ gpsim/Makefile.in
+@@ -676,7 +676,7 @@ uninstall-am: uninstall-binPROGRAMS
  
  
  gpsim.h: gpsim.h.in
