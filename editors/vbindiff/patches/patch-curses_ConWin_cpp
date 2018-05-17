@@ -1,0 +1,22 @@
+$OpenBSD$
+
+Index: curses/ConWin.cpp
+--- curses/ConWin.cpp.orig
++++ curses/ConWin.cpp
+@@ -45,13 +45,13 @@ static const ColorPair colorStyle[] = {
+ };
+ 
+ static const attr_t attribStyle[] = {
+-              COLOR_PAIR(colorStyle[ cBackground ]),
+-              COLOR_PAIR(colorStyle[ cPromptWin  ]),
++  (attr_t)    COLOR_PAIR(colorStyle[ cBackground ]),
++  (attr_t)    COLOR_PAIR(colorStyle[ cPromptWin  ]),
+   A_BOLD    | COLOR_PAIR(colorStyle[ cPromptKey  ]),
+   A_BOLD    | COLOR_PAIR(colorStyle[ cPromptBdr  ]),
+   A_REVERSE | COLOR_PAIR(colorStyle[ cCurrentMode]),
+   A_REVERSE | COLOR_PAIR(colorStyle[ cFileName   ]),
+-              COLOR_PAIR(colorStyle[ cFileWin    ]),
++  (attr_t)    COLOR_PAIR(colorStyle[ cFileWin    ]),
+   A_BOLD    | COLOR_PAIR(colorStyle[ cFileDiff   ]),
+   A_BOLD    | COLOR_PAIR(colorStyle[ cFileEdit   ])
+ };

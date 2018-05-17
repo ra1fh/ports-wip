@@ -2,10 +2,10 @@
 
 COMMENT=		visual binary diff
 
-DISTNAME=		vbindiff-3.0_beta4
-PKGNAME=    		vbindiff-3.0-beta4
+DISTNAME=		vbindiff-3.0_beta5
+PKGNAME=    		vbindiff-3.0-beta5
 EXTRACT_SUFX= 		.tar.gz
-WRKDIST=		${WRKDIR}/vbindiff-3.0_beta4
+WRKDIST=		${WRKDIR}/vbindiff-3.0_beta5
 
 CATEGORIES=		editors
 
