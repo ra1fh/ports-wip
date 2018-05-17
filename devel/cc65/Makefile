@@ -2,12 +2,9 @@
 
 COMMENT=		cross development package for 6502 systems
 
-V =			20160714
 GH_ACCOUNT =		cc65
 GH_PROJECT =		cc65
-GH_COMMIT = 		fb53bfc25dc8dc2123006ac1266d1fabe0d124db
-
-DISTNAME =		${GH_PROJECT}-${V}
+GH_TAGNAME =		2.17
 
 CATEGORIES=		devel
 
@@ -22,6 +19,10 @@ BUILD_DEPENDS=		textproc/linuxdoc-tools
 USE_GMAKE = 		Yes
 ALL_TARGET =		all doc
 
-MAKE_ENV =		prefix=${PREFIX}
+do-install:
+	cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} \
+	${SETENV} PREFIX=${WRKINST}${LOCALBASE} \
+	${MAKE_PROGRAM} -f ${MAKE_FILE} ${FAKE_TARGET}
+
 
 .include <bsd.port.mk>
