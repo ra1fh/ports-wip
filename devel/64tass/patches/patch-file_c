@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: file.c
+--- file.c.orig
++++ file.c
+@@ -18,7 +18,7 @@
+ */
+ #include "file.h"
+ #include <string.h>
+-#include "wchar.h"
++#include <wchar.h>
+ #include <errno.h>
+ #ifdef _WIN32
+ #include <locale.h>

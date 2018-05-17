@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: arguments.c
+--- arguments.c.orig
++++ arguments.c
+@@ -26,7 +26,7 @@
+ #include "file.h"
+ #include "error.h"
+ #include "unicode.h"
+-#include "wchar.h"
++#include <wchar.h>
+ 
+ struct arguments_s arguments = {
+     true,        /* warning */

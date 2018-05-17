@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: 64tass.c
+--- 64tass.c.orig
++++ 64tass.c
+@@ -33,7 +33,7 @@
+ #include <wincon.h>
+ #endif
+ #include <locale.h>
+-#include "wchar.h"
++#include <wchar.h>
+ #include <string.h>
+ 
+ #include "error.h"
