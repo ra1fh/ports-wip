@@ -1,0 +1,11 @@
+$OpenBSD: patch-sources_tools_libgloss_msp430_Makefile_in,v 1.1.1.1 2015/07/21 15:51:37 jasper Exp $
+--- sources/tools/libgloss/msp430/Makefile.in.orig	Fri Oct 30 23:02:48 2015
++++ sources/tools/libgloss/msp430/Makefile.in	Fri Sep  1 23:14:40 2017
+@@ -36,6 +36,7 @@ MULTISUBDIR =
+ MULTIDO = true
+ MULTICLEAN = true
+ 
++DESTDIR = ${DESTDIR}
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
