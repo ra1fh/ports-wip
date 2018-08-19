@@ -1,18 +1,14 @@
 # $OpenBSD$
 
-COMMENT-main=		GPS waypoint, track, and route conversion tool
-COMMENT-tk=		Tk front-end to gpsbabel
-COMMENT-qt=		Qt front-end to gpsbabel
+COMMENT=		GPS waypoint, track, and route conversion tool
 
 GH_ACCOUNT=		gpsbabel
 GH_PROJECT=		gpsbabel
-GH_COMMIT=		a187be693531e73cb110447805e76043bcdf6e87
+GH_COMMIT=		54c0ff6ae82ea75e132742b2fe4d179f621ee730
 
-VERSION=		20160507
+VERSION=		1.5.4
 DISTNAME=		gpsbabel-${VERSION}
-PKGNAME-main=		gpsbabel-${VERSION}
-PKGNAME-tk=		gpsbabel-tk-${VERSION}
-PKGNAME-qt=		gpsbabel-qt-${VERSION}
+PKGNAME=		gpsbabel-${VERSION}
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
@@ -30,56 +26,32 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			WEB=${WRKSRC}
 
-MULTI_PACKAGES=		-main -tk -qt
-
-MODULES=		x11/tk x11/qt5
+MODULES=		x11/qt5
 
 BUILD_DEPENDS=		textproc/libxml \
 			textproc/libxslt \
 			textproc/fop
 
-LIB_DEPENDS-main=	devel/libusb-compat \
-			x11/qt5
+LIB_DEPENDS=		devel/libusb-compat
 
-cWANTLIB = 		c m pthread
-WANTLIB-main += 	usb z estdc++ Qt5Core ${cWANTLIB}
-WANTLIB-tk =
-WANTLIB-qt += 		stdc++ ${cWANTLIB} GL
-WANTLIB-qt += 		Qt5Core Qt5Gui Qt5Network Qt5WebKit Qt5Xml
-WANTLIB-qt += 		Qt5WebKitWidgets Qt5Widgets
+WANTLIB = 		c m pthread
+WANTLIB += 		Qt5Core usb
+WANTLIB += 		${COMPILER_LIBCXX}
 
-LIB_DEPENDS-tk=
-PKG_ARCH-tk=	*
-RUN_DEPENDS-tk=		geo/gpsbabel \
-			${MODTK_RUN_DEPENDS}
-RUN_DEPENDS-qt=		geo/gpsbabel \
-			devel/desktop-file-utils
+USE_GMAKE=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/guibabel
 	@perl -pi -e 's/gpsbabelfe-bin/guibabel-qt/' \
 		${WRKSRC}/gui/gpsbabel.desktop
-post-configure:
-	cd ${WRKSRC}/gui && ${SETENV} ${CONFIGURE_ENV} qmake-qt5 \
-		app.pro
 post-build:
-	cd ${WRKSRC}/gui && make
-	cd ${WRKSRC} && make doc
-	cd ${WRKSRC} && make check
+	cd ${WRKSRC} && JAVA_HOME=/usr/local/jdk-1.8.0 ${MAKE_PROGRAM} doc
+	cd ${WRKSRC} && ${MAKE_PROGRAM} check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gui/objects/gpsbabelfe-bin \
-		${PREFIX}/bin/guibabel-qt
-	${INSTALL_SCRIPT} ${WRKSRC}/guibabel ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA} ${WRKSRC}/gpsbabel.pdf ${PREFIX}/share/doc/gpsbabel
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/gui/gpsbabel.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gui/images/appicon.png \
-		${PREFIX}/share/pixmaps/gpsbabel.png
 
 .include <bsd.port.mk>

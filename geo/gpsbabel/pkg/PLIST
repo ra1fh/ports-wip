@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/01/05 06:18:06 sasano Exp $
-@pkgpath geo/gpsbabel
+@comment $OpenBSD: PLIST,v$
 @bin bin/gpsbabel
-@comment share/applications/
 share/doc/gpsbabel/
 share/doc/gpsbabel/README.contrib
 share/doc/gpsbabel/README.igc
 share/doc/gpsbabel/README.mapconverter
+share/doc/gpsbabel/README.md
 share/doc/gpsbabel/README.xmapwpt
 share/doc/gpsbabel/gpsbabel.pdf
+@tag update-desktop-database

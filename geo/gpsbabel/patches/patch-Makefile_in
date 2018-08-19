@@ -1,29 +1,32 @@
 $OpenBSD$
---- Makefile.in.orig	Sat May  7 22:48:40 2016
-+++ Makefile.in	Fri Jul 15 21:53:29 2016
-@@ -233,7 +233,6 @@ dep:
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -239,7 +239,6 @@ dep:
  $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  	mkdir -p $(WEB)/htmldoc-$(DOCVERSION)
  	perl xmldoc/makedoc
 -	xmlwf xmldoc/readme.xml		#check for well-formedness
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
- 	xsltproc \
+ 	xsltproc --load-trace \
  	 --stringparam base.dir "$(WEB)/htmldoc-$(DOCVERSION)/" \
-@@ -261,13 +260,11 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
+@@ -267,15 +266,12 @@ $(WEB)/htmldoc-$(DOCVERSION)/index.html: FORCE
  #
  gpsbabel.fo:  FORCE
  	perl xmldoc/makedoc
 -	xmlwf xmldoc/readme.xml		#check for well-formedness
  	xmllint --noout --valid xmldoc/readme.xml    	#validate
- 	xsltproc -o $@ xmldoc/babelpdf.xsl xmldoc/readme.xml
+ 	xsltproc --load-trace -o $@ xmldoc/babelpdf.xsl xmldoc/readme.xml
  
  gpsbabel.pdf: gpsbabel.fo
- 	fop -q -fo gpsbabel.fo -pdf gpsbabel.pdf 
+ 	fop -q -fo gpsbabel.fo -pdf gpsbabel.pdf
 -	cp gpsbabel.pdf $(WEB)/htmldoc-$(DOCVERSION)/gpsbabel-$(DOCVERSION).pdf
  
- 
+-
  gpsbabel.html: FORCE # gpsbabel
-@@ -290,7 +287,7 @@ changes.html: FORCE
+ 	# perl xmldoc/makedoc
+ 	xsltproc --load-trace \
+@@ -296,7 +292,7 @@ changes.html: FORCE
  	wget -O $(WEB)/changes.html http://www.gpsbabel.org/changes.html || exit 1
  	rm -f $(WEB)/changes.html.1 > /dev/null
  
