@@ -2,10 +2,10 @@
 
 COMMENT =		prometheus node_exporter
 
-DISTNAME = 		node_exporter-0.15.2.git
+DISTNAME = 		node_exporter-0.16.0.git
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		node_exporter
-GH_COMMIT =		111e3af43700c041c3f0a30ff934406d7f411824
+GH_COMMIT =		5a461d261c99ed9479e491c97cfd3bfe310a4139
 WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
 
 CATEGORIES =		sysutils
