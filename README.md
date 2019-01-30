@@ -15,7 +15,6 @@ My OpenBSD ports.
 * **devel/ophis** cross-assembler for the 65xx series
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
-* **devel/pyusb** python interface to libusb-1.0
 * **ti-msp430gcc** TI' open source compiler for MSP430
 * **devel/xa65** open source 6502 cross assembler
 
