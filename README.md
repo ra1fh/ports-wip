@@ -16,7 +16,6 @@ My OpenBSD ports.
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
 * **ti-msp430gcc** TI' open source compiler for MSP430
-* **devel/xa65** open source 6502 cross assembler
 
 ### editors
 
