@@ -2,11 +2,10 @@
 
 COMMENT =		prometheus node_exporter
 
-DISTNAME = 		node_exporter-0.16.0.git
+DISTNAME = 		node_exporter-0.17.0
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		node_exporter
-GH_COMMIT =		9f820bd3eee287f9124a5c3e66296ec03105be9d
-WRKDIST =		${WRKDIR}/${GH_PROJECT}-${GH_COMMIT}
+GH_TAGNAME =		v0.17.0
 
 CATEGORIES =		sysutils
 
@@ -24,7 +23,7 @@ USE_GMAKE = 		Yes
 MODULES=		lang/go
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_ENV} go build -tags nosystemd
+	cd ${WRKSRC} && ${MODGO_CMD} build -tags nosystemd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
