@@ -18,6 +18,7 @@ My OpenBSD ports.
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
 * **devel/pyusb** python interface to libusb-1.0
+* **ti-msp430gcc** TI' open source compiler for MSP430
 * **devel/xa65** open source 6502 cross assembler
 
 ### editors
@@ -41,10 +42,6 @@ My OpenBSD ports.
 
 * **misc/s725** Communicate with Polar S725X heart rate monitor
 * **misc/GoldenCheetah** Cycling performance software
-
-### print
-
-* **print/auctex** extensible emacs interface for TeX (for emacs 24)
 
 ### sysutils
 
