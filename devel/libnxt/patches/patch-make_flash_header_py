@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: make_flash_header.py
+--- make_flash_header.py.orig
++++ make_flash_header.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Take the flash_routine.bin file, and embed it as an array of bytes
+ # in a flash_routine.h, ready for packaging with the C firmware

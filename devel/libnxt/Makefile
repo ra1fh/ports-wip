@@ -11,12 +11,15 @@ HOMEPAGE =		https://code.google.com/p/libnxt/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-LIB_DEPENDS =		devel/libusb-compat
-WANTLIB =		c pthread usb
-
 MASTER_SITES =		https://libnxt.googlecode.com/files/
 
-MODULES =		devel/scons
+MODULES =		devel/scons \
+			lang/python
+
+WANTLIB =		c pthread usb
+
+BUILD_DEPENDS=		lang/python/${MODPY_DEFAULT_VERSION_2}
+LIB_DEPENDS =		devel/libusb-compat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fwexec ${PREFIX}/bin/fwexec
