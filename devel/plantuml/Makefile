@@ -1,7 +1,8 @@
 COMMENT =		plantuml UML diagram generator
 
-DISTNAME =		plantuml-7961
-PKGNAME  =  		plantuml-7961
+V = 1.2019.0
+DISTNAME =		plantuml-${V}
+PKGNAME  =  		plantuml-${V}
 
 PKG_ARCH =		*
 
