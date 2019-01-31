@@ -2,7 +2,7 @@
 
 daemon="/usr/local/bin/node_exporter"
 daemon_flags=""
-daemon_user=_node-exporter
+daemon_user=_node_exporter
 
 . /etc/rc.d/rc.subr
 

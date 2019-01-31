@@ -1,5 +1,5 @@
 @comment $OpenBSD$
-@newgroup _node-exporter:988
-@newuser _node-exporter:988:_node-exporter:daemon:prometheus:/nonexistent:/sbin/nologin
+@newgroup _node_exporter:988
+@newuser _node_exporter:988:_node_exporter:daemon:prometheus:/nonexistent:/sbin/nologin
 @bin bin/node_exporter
-@rcscript ${RCDIR}/nodeexporter
+@rcscript ${RCDIR}/node_exporter
