@@ -1,6 +1,8 @@
 #!/bin/sh
+#
+# $OpenBSD$
 
-daemon="/usr/local/bin/node_exporter"
+daemon="${LOCALBASE}/bin/node_exporter"
 daemon_flags=""
 daemon_user=_node_exporter
 

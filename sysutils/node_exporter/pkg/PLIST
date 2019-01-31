@@ -1,5 +1,15 @@
 @comment $OpenBSD$
 @newgroup _node_exporter:988
-@newuser _node_exporter:988:_node_exporter:daemon:prometheus:/nonexistent:/sbin/nologin
-@bin bin/node_exporter
+@newuser _node_exporter:988:_node_exporter:daemon:node_exporter user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/node_exporter
+@bin bin/node_exporter
+share/examples/node_exporter/
+share/examples/node_exporter/README.md
+share/examples/node_exporter/apt.sh
+share/examples/node_exporter/deleted_libraries.py
+share/examples/node_exporter/directory-size.sh
+share/examples/node_exporter/ipmitool
+share/examples/node_exporter/md_info.sh
+share/examples/node_exporter/ntpd_metrics.py
+share/examples/node_exporter/smartmon.sh
+share/examples/node_exporter/storcli.py
