@@ -23,7 +23,7 @@ SUBST_CARS +=	LOCALBASE
 MODULES =	lang/go
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} build -tags nosystemd
+	cd ${WRKSRC} && ${MODGO_CMD} build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
