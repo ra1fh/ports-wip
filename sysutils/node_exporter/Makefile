@@ -18,10 +18,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c pthread
 
+BUILD_DEPENDS =	devel/promu
+
 MODULES =	lang/go
 
 do-build:
-	cd ${WRKSRC} && ${MODGO_CMD} build
+	cd ${WRKSRC} && GOPATH=${MODGO_WORKSPACE} GO111MODULE=on \
+		${LOCALBASE}/bin/promu -v --config .promu-cgo.yml build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/node_exporter ${PREFIX}/bin
