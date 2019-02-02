@@ -18,8 +18,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	c pthread
 
-SUBST_CARS +=	LOCALBASE
-
 MODULES =	lang/go
 
 do-build:
