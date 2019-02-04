@@ -1,6 +1,6 @@
 @comment $OpenBSD$
-@newgroup _node_exporter:988
-@newuser _node_exporter:988:_node_exporter:daemon:node_exporter user:/nonexistent:/sbin/nologin
+@newgroup _node_exporter:831
+@newuser _node_exporter:831:_node_exporter:daemon:node_exporter user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/node_exporter
 @bin bin/node_exporter
 share/examples/node_exporter/
