@@ -1,8 +1,12 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @newgroup _node_exporter:831
 @newuser _node_exporter:831:_node_exporter:daemon:node_exporter user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/node_exporter
 @bin bin/node_exporter
+share/doc/node_exporter/
+share/doc/node_exporter/CHANGELOG.md
+share/doc/node_exporter/README.md
+share/doc/node_exporter/TIME.md
 share/examples/node_exporter/
 share/examples/node_exporter/README.md
 share/examples/node_exporter/apt.sh

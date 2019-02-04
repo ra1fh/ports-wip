@@ -16,7 +16,6 @@ MAINTAINER =	Ralf Horstmann <ralf+ports@ackstorm.de>
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c pthread
 MODULES =	lang/go
 BUILD_DEPENDS =	devel/promu
 
@@ -29,5 +28,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/node_exporter/
 	${INSTALL_DATA} ${WRKSRC}/text_collector_examples/* \
 		${PREFIX}/share/examples/node_exporter/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/node_exporter
+	${INSTALL_DATA} ${WRKSRC}/{CHANGELOG,README}.md \
+		${PREFIX}/share/doc/node_exporter
+	${INSTALL_DATA} ${WRKSRC}/docs/TIME.md \
+		${PREFIX}/share/doc/node_exporter
 
 .include <bsd.port.mk>
