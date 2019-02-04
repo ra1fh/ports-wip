@@ -8,7 +8,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://gpsim.sourceforge.net
 
-MAINTAINER =		Ralf Horstmann <ralf-lists@ackstorm.de>
+MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 # GPLv2+ LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -15,7 +15,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	http://www.clifford.at/icestorm
 
-MAINTAINER =		Ralf Horstmann <ralf-lists@ackstorm.de>
+MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 PERMIT_PACKAGE_CDROM =	Yes
 

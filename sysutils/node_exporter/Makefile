@@ -11,7 +11,7 @@ GH_TAGNAME =	v${V}
 CATEGORIES =	sysutils
 HOMEPAGE =	http://prometheus.io/
 
-MAINTAINER =	Ralf Horstmann <ralf-lists@ackstorm.de>
+MAINTAINER =	Ralf Horstmann <ralf+ports@ackstorm.de>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =	c pthread
 
 BUILD_DEPENDS =	devel/promu
-
+g
 MODULES =	lang/go
 
 do-build:

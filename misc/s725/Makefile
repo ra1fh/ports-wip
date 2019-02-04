@@ -13,7 +13,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		https://github.com/ra1fh/s725
 
-MAINTAINER=		Ralf Horstmann <ralf@ackstorm.de>
+MAINTAINER=		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 PERMIT_PACKAGE_CDROM=	Yes
 
