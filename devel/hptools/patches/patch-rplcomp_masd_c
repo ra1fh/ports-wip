@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: rplcomp/masd.c
+--- rplcomp/masd.c.orig
++++ rplcomp/masd.c
+@@ -12,7 +12,6 @@
+ #  include <strings.h>
+ #endif
+ #ifndef macintosh
+-# include <malloc.h>
+ #endif
+ #include <ctype.h>
+ 

@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: common/getopt.c
+--- common/getopt.c.orig
++++ common/getopt.c
+@@ -21,7 +21,7 @@
+ int	optopt, opterr = TRUE, optind = 1;
+ char	*optarg;
+ 
+-static	int	sp = 1;
++int	sp = 1;
+ 
+ int getopt( int argc, char * const argv[], const char *opts )
+ {

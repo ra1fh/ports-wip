@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/makerom
+@bin bin/rplcomp
+@bin bin/sasm
+@bin bin/sload
+share/doc/hptools/
+share/doc/hptools/CHANGES
+share/doc/hptools/COPYING
+share/doc/hptools/DOCS
+share/doc/hptools/MAKEROM.DOC
+share/doc/hptools/README
+share/doc/hptools/RPLCOMP.DOC
+share/doc/hptools/RPLMAN.DOC
+share/doc/hptools/SASM.DOC
+share/doc/hptools/SLOAD.DOC

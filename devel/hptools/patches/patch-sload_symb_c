@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: sload/symb.c
+--- sload/symb.c.orig
++++ sload/symb.c
+@@ -8,7 +8,7 @@
+ #include "sptree.h"
+ 
+ 
+-static SYMBOLPTR symtree;
++SYMBOLPTR symtree;
+ int lookups=0, lkcmps=0, adds=0;
+ 
+ b_16 symbols;

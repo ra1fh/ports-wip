@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: common/envfile.c
+--- common/envfile.c.orig
++++ common/envfile.c
+@@ -11,7 +11,6 @@
+ #  include <strings.h>
+ #endif
+ #ifndef	macintosh
+-# include <malloc.h>
+ #endif
+ 
+ #include "envfile.h"

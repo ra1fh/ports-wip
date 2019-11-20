@@ -9,6 +9,7 @@ My OpenBSD ports.
 * **devel/dreamass** dreamass is a cross assembler for 6510 and compatible
 * **devel/gpsim** PIC microcontroller emulator
 * **devel/hp48cc** C-like compiler for HP 48
+* **devel/hptools** HP Tools for HP48/49/50 calculators
 * **devel/icestorm** icestorm tools for Lattice iCE40 FPGA
 * **devel/libnxt** Low level tools for Lego Mindstorms NXT
 * **devel/mxass** cross assembler that targets Commodore 64-like platforms

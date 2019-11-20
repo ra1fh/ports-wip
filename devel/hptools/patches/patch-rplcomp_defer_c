@@ -1,0 +1,13 @@
+$OpenBSD$
+
+Index: rplcomp/defer.c
+--- rplcomp/defer.c.orig
++++ rplcomp/defer.c
+@@ -12,7 +12,6 @@
+ #  include <strings.h>
+ #endif
+ #ifndef	macintosh
+-# include <malloc.h>
+ #endif
+ #include <ctype.h>
+ 
