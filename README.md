@@ -41,10 +41,6 @@ My OpenBSD ports.
 * **misc/s725** Communicate with Polar S725X heart rate monitor
 * **misc/GoldenCheetah** Cycling performance software
 
-### sysutils
-
-* **sysutils/node_exporter** prometheus agent
-
 ### textproc
 
 * **textproc/fop** Formatting Objects Processor
