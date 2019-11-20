@@ -28,10 +28,6 @@ My OpenBSD ports.
 * **emulators/ctools** programs for accessing C64 and C128 CP/M disk images
 * **emulators/vice** versatile Commodore emulator (development version)
 
-### geo
-
-* **geo/gpsbabel** GPS waypoint, track, and route conversion tool
-
 ### lang
 
 * **lang/nbc** C-like compiler for Lego Mindstorms NXT
