@@ -39,7 +39,6 @@ My OpenBSD ports.
 
 ### textproc
 
-* **textproc/fop** Formatting Objects Processor
 * **textproc/linuxdoc-tools** LinuxDoc tools
 
 ### x11
