@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v$
+bin/bear
+lib/bear/
+@so lib/bear/libear.so
+@man man/man1/bear.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/bear
+share/doc/bear/
+share/doc/bear/COPYING
+share/doc/bear/ChangeLog.md
+share/doc/bear/README.md
