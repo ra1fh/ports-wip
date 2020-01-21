@@ -4,6 +4,7 @@ My OpenBSD ports.
 
 * **devel/64tass** 6502/65C02/65816/CPU64/65DTV02 cross assembler
 * **devel/acme** ACME crossassembler for multiple environments
+* **devel/bear** Tool that generates a compilation database for clang tooling
 * **devel/cc65** cross development package for 6502 systems
 * **devel/dasm** c64 cross assembler
 * **devel/dreamass** dreamass is a cross assembler for 6510 and compatible
