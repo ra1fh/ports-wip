@@ -11,7 +11,7 @@ HOMEPAGE =		http://gpsim.sourceforge.net
 MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 # GPLv2+ LGPLv2+
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 SHARED_LIBS +=  gpsim                     0.0 # 0.0
 SHARED_LIBS +=  gpsim_dspic               0.0 # 0.0
