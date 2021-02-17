@@ -10,7 +10,7 @@ Index: Makefile.def
 +
 +OBJDIR =
 +CC = cc
-+CFLAGS = -g -O2 -Wall
++CFLAGS = -g -O2 -Wall -fomit-frame-pointer -fno-common
 +HOST_OBJEXTENSION = .o
 +LD = $(CC)
 +LDFLAGS =

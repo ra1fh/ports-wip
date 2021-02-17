@@ -3,6 +3,7 @@
 COMMENT=		AS is a portable macro cross assembler
 
 PKGNAME=		asl-1.42.193
+REVISION=		0
 DISTNAME=		asl-current
 DISTFILES=		asl-current-142-bld193.tar.bz2
 
