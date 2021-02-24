@@ -18,6 +18,7 @@ My OpenBSD ports.
 * **devel/ophis** cross-assembler for the 65xx series
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
+* **devel/py-intelhex** Python library for Intel HEX files manipulations
 * **ti-msp430gcc** TI' open source compiler for MSP430
 
 ### editors

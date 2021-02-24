@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v$
+bin/bin2hex.py
+bin/hex2bin.py
+bin/hex2dump.py
+bin/hexdiff.py
+bin/hexinfo.py
+bin/hexmerge.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/intelhex/__init__.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/__main__.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/__main__.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/__version__.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/__version__.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/bench.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/bench.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/compat.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/getsizeof.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/getsizeof.pyc
+lib/python${MODPY_VERSION}/site-packages/intelhex/test.py
+lib/python${MODPY_VERSION}/site-packages/intelhex/test.pyc
