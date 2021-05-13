@@ -2,17 +2,18 @@
 
 COMMENT=		ACME crossassembler for multiple environments
 
-DISTNAME=		acme-crossass-code-0-97-trunk
-PKGNAME=    		acme-0.96.4
+SVNCOMMIT=		r266
+DISTNAME=		acme-crossass-code-0-$(SVNCOMMIT)-trunk
+PKGNAME=    		acme-0.97
 EXTRACT_SUFX= 		.zip
-WRKDIST=		${WRKDIR}/acme-crossass-code-0-97-trunk
+WRKDIST=		${WRKDIR}/acme-crossass-code-0-$(SVNCOMMIT)-trunk
 
 CATEGORIES=		devel
 
 HOMEPAGE=		http://sourceforge.net/p/acme-crossass/
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		Yes
+
+
 
 WANTLIB += 		c m
 
@@ -24,7 +25,10 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/acme ${PREFIX}/bin/acme
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acme
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/acme
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acme/cputypes
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${PREFIX}/share/doc/acme
+	${INSTALL_DATA} ${WRKSRC}/docs/COPYING ${PREFIX}/share/doc/acme
+	${INSTALL_DATA} ${WRKSRC}/docs/cputypes/*.txt ${PREFIX}/share/doc/acme/cputypes
 
 
 .include <bsd.port.mk>

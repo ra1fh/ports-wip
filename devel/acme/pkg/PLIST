@@ -15,4 +15,13 @@ share/doc/acme/Lib.txt
 share/doc/acme/QuickRef.txt
 share/doc/acme/Source.txt
 share/doc/acme/Upgrade.txt
-share/doc/acme/cputypes.txt
+share/doc/acme/cputypes/
+share/doc/acme/cputypes/all.txt
+share/doc/acme/cputypes/cpu 4502.txt
+share/doc/acme/cputypes/cpu 6502.txt
+share/doc/acme/cputypes/cpu 65816.txt
+share/doc/acme/cputypes/cpu 65c02.txt
+share/doc/acme/cputypes/cpu 65ce02.txt
+share/doc/acme/cputypes/cpu nmos6502.txt
+share/doc/acme/cputypes/cpu r65c02.txt
+share/doc/acme/cputypes/cpu w65c02.txt
