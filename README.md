@@ -44,6 +44,4 @@ My OpenBSD ports.
 * **textproc/linuxdoc** LinuxDoc SGML DTD
 * **textproc/linuxdoc-tools** LinuxDoc tools
 
-### x11
 
-* **x11/gtkextra** extra widgets for GTK+
