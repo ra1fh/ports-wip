@@ -4,7 +4,7 @@ COMMENT=		Tool that generates a compilation database for clang tooling
 
 GH_ACCOUNT =		rizsotto
 GH_PROJECT =		Bear
-GH_TAGNAME =		2.4.2
+GH_TAGNAME =		2.4.4
 
 CATEGORIES=		devel
 
