@@ -2,20 +2,18 @@
 
 COMMENT =		LinuxDoc tools
 
-DISTNAME =		linuxdoc-tools-0.9.72
+DISTNAME =		linuxdoc-tools-0.9.82
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://packages.debian.org/sid/linuxdoc-tools
 
 # GPL3+ and Public Domain
-PERMIT_PACKAGE_CDROM =	Yes 
-PERMIT_PACKAGE_FTP =	Yes 
-PERMIT_DISTFILES_FTP =	Yes 
+PERMIT_PACKAGE =	Yes 
 
 MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/l/linuxdoc-tools/}
 
-DISTFILES =		linuxdoc-tools_0.9.72.orig.tar.gz
+DISTFILES =		linuxdoc-tools_0.9.82.orig.tar.gz
 
 # Dependencies
 #

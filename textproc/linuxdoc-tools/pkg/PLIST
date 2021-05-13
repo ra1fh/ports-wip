@@ -60,6 +60,7 @@ share/entity-map/0.1.0/GFextra.2l1s
 share/entity-map/0.1.0/GFextra.2rtf
 share/entity-map/0.1.0/GFextra.2tex
 share/entity-map/0.1.0/GFextra.2texi
+share/entity-map/0.1.0/GFextra.2u8b
 share/entity-map/0.1.0/ISOdia
 share/entity-map/0.1.0/ISOdia.2ab
 share/entity-map/0.1.0/ISOdia.2as
@@ -71,6 +72,7 @@ share/entity-map/0.1.0/ISOdia.2rtf
 share/entity-map/0.1.0/ISOdia.2tex
 share/entity-map/0.1.0/ISOdia.2texi
 share/entity-map/0.1.0/ISOdia.2tr
+share/entity-map/0.1.0/ISOdia.2u8b
 share/entity-map/0.1.0/ISOlat1
 share/entity-map/0.1.0/ISOlat1.2ab
 share/entity-map/0.1.0/ISOlat1.2as
@@ -82,6 +84,9 @@ share/entity-map/0.1.0/ISOlat1.2rtf
 share/entity-map/0.1.0/ISOlat1.2tex
 share/entity-map/0.1.0/ISOlat1.2texi
 share/entity-map/0.1.0/ISOlat1.2tr
+share/entity-map/0.1.0/ISOlat1.2u8b
+share/entity-map/0.1.0/ISOlat1.2u8s
+share/entity-map/0.1.0/ISOlat1.2u8tr
 share/entity-map/0.1.0/ISOlat2
 share/entity-map/0.1.0/ISOlat2.2ab
 share/entity-map/0.1.0/ISOlat2.2as
@@ -101,6 +106,7 @@ share/entity-map/0.1.0/ISOnum.2rtf
 share/entity-map/0.1.0/ISOnum.2tex
 share/entity-map/0.1.0/ISOnum.2texi
 share/entity-map/0.1.0/ISOnum.2tr
+share/entity-map/0.1.0/ISOnum.2u8b
 share/entity-map/0.1.0/ISOpub
 share/entity-map/0.1.0/ISOpub.2ab
 share/entity-map/0.1.0/ISOpub.2as
@@ -112,6 +118,7 @@ share/entity-map/0.1.0/ISOpub.2rtf
 share/entity-map/0.1.0/ISOpub.2tex
 share/entity-map/0.1.0/ISOpub.2texi
 share/entity-map/0.1.0/ISOpub.2tr
+share/entity-map/0.1.0/ISOpub.2u8b
 share/entity-map/0.1.0/ISOtech
 share/entity-map/0.1.0/ISOtech.2ab
 share/entity-map/0.1.0/ISOtech.2as
@@ -123,6 +130,7 @@ share/entity-map/0.1.0/ISOtech.2rtf
 share/entity-map/0.1.0/ISOtech.2tex
 share/entity-map/0.1.0/ISOtech.2texi
 share/entity-map/0.1.0/ISOtech.2tr
+share/entity-map/0.1.0/ISOtech.2u8b
 share/entity-map/0.1.0/LDextra.2html
 share/entity-map/0.1.0/LDextra.2l1tr
 share/entity-map/0.1.0/LDextra.2tex
@@ -134,6 +142,10 @@ share/linuxdoc-tools/LinuxDocTools/
 share/linuxdoc-tools/LinuxDocTools.pm
 share/linuxdoc-tools/LinuxDocTools/BackEnd.pm
 share/linuxdoc-tools/LinuxDocTools/CharEnts.pm
+share/linuxdoc-tools/LinuxDocTools/Data/
+share/linuxdoc-tools/LinuxDocTools/Data/Latin1ToSgml.pm
+share/linuxdoc-tools/LinuxDocTools/Data/Strings_SBCS.pm
+share/linuxdoc-tools/LinuxDocTools/Data/Strings_UTF8.pm
 share/linuxdoc-tools/LinuxDocTools/FixRef.pm
 share/linuxdoc-tools/LinuxDocTools/Html2Html.pm
 share/linuxdoc-tools/LinuxDocTools/InfoUtils.pm
