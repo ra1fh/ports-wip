@@ -4,13 +4,14 @@ COMMENT=		cross development package for 6502 systems
 
 GH_ACCOUNT =		cc65
 GH_PROJECT =		cc65
-GH_TAGNAME =		2.17
+GH_TAGNAME =		V2.19
 
 CATEGORIES=		devel
 
 HOMEPAGE=		https://cc65.github.io/cc65/
 
-PERMIT_PACKAGE_CDROM=	Yes
+# ZLIB license
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += 		c m
 
