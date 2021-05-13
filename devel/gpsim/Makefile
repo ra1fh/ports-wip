@@ -1,8 +1,8 @@
 # $OpenBSD:$
 
 COMMENT =		PIC microcontroller emulator
-DISTNAME =		gpsim-0.30.0
-PKGNAME =		gpsim-0.30.0
+DISTNAME =		gpsim-0.31.0
+PKGNAME =		gpsim-0.31.0
 
 CATEGORIES =		devel
 
