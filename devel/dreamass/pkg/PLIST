@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/dreamass
 @info info/dreamass.info
 share/doc/dreamass/

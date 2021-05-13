@@ -2,10 +2,10 @@
 
 COMMENT=		dreamass is a cross assembler for 6510 and compatible
 
-V =			20140504
+V =			20210412
 GH_ACCOUNT =		docbacardi
 GH_PROJECT =		dreamass
-GH_COMMIT =		ba43fe1a1cc038a617e6afc11363a72606e2f91e
+GH_COMMIT =		bc34eb3d622b0e29cf8688986efcf77b3bf89420
 
 DISTNAME=		${GH_PROJECT}-${V}
 
@@ -14,9 +14,8 @@ CATEGORIES=		devel
 HOMEPAGE=		http://sourceforge.net/projects/rrtools/ \
 			https://github.com/docbacardi/dreamass
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# GPLv2
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += 		c
 
