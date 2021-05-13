@@ -41,6 +41,7 @@ My OpenBSD ports.
 
 ### textproc
 
+* **textproc/linuxdoc** LinuxDoc SGML DTD
 * **textproc/linuxdoc-tools** LinuxDoc tools
 
 ### x11
