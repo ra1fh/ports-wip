@@ -1,0 +1,17 @@
+$OpenBSD$
+
+Remove config.h include in breakpoints.h As config.h
+is not part of the installed header files.
+
+Index: src/breakpoints.h
+--- src/breakpoints.h.orig
++++ src/breakpoints.h
+@@ -22,8 +22,6 @@ License along with this library; if not, see
+ #ifndef  SRC_BREAKPOINTS_H_
+ #define  SRC_BREAKPOINTS_H_
+ 
+-#include "../config.h"
+-
+ #include <glib.h>
+ #include <string>
+ #include "exports.h"

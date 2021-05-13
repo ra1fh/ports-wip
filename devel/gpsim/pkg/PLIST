@@ -23,12 +23,14 @@ include/gpsim/bit.h
 include/gpsim/bitlog.h
 include/gpsim/breakpoints.h
 include/gpsim/bytelog.h
+include/gpsim/clc.h
 include/gpsim/clock_phase.h
 include/gpsim/cmd_gpsim.h
 include/gpsim/cmd_manager.h
 include/gpsim/cod.h
 include/gpsim/comparator.h
 include/gpsim/ctmu.h
+include/gpsim/cwg.h
 include/gpsim/dsm_module.h
 include/gpsim/eeprom.h
 include/gpsim/errors.h
@@ -49,6 +51,8 @@ include/gpsim/ioports.h
 include/gpsim/lcd_module.h
 include/gpsim/lxt_write.h
 include/gpsim/modules.h
+include/gpsim/nco.h
+include/gpsim/op_amp.h
 include/gpsim/operator.h
 include/gpsim/p12f6xx.h
 include/gpsim/p12x.h
@@ -71,10 +75,10 @@ include/gpsim/pic-ioports.h
 include/gpsim/pic-packages.h
 include/gpsim/pic-processor.h
 include/gpsim/pic-registers.h
-include/gpsim/picdis.h
 include/gpsim/pie.h
 include/gpsim/pir.h
 include/gpsim/pm_rd.h
+include/gpsim/pps.h
 include/gpsim/processor.h
 include/gpsim/program_files.h
 include/gpsim/protocol.h
@@ -96,6 +100,7 @@ include/gpsim/uart.h
 include/gpsim/ui.h
 include/gpsim/value.h
 include/gpsim/xref.h
+include/gpsim/zcd.h
 @lib lib/libgpsim.so.${LIBgpsim_VERSION}
 @lib lib/libgpsim_dspic.so.${LIBgpsim_dspic_VERSION}
 @lib lib/libgpsim_eXdbm.so.${LIBgpsim_eXdbm_VERSION}
