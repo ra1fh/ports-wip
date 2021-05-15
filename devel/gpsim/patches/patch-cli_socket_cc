@@ -3,7 +3,7 @@ $OpenBSD$
 Index: cli/socket.cc
 --- cli/socket.cc.orig
 +++ cli/socket.cc
-@@ -542,7 +542,7 @@ void Socket::Bind()
+@@ -546,7 +546,7 @@ void Socket::Bind()
      return;
    }
  

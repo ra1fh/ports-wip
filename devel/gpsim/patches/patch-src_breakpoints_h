@@ -13,5 +13,5 @@ Index: src/breakpoints.h
 -#include "../config.h"
 -
  #include <glib.h>
+ #include <list>
  #include <string>
- #include "exports.h"

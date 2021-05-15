@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Prevent lyx from writing to $HOME
+
+Index: doc/Makefile.am
+--- doc/Makefile.am.orig
++++ doc/Makefile.am
+@@ -4,10 +4,10 @@ SUBDIRS=gpsim.html.LyXconv
+ all: gpsim.ps gpsim.pdf
+ 
+ gpsim.ps: gpsim.lyx
+-	lyx -e ps gpsim.lyx
++	lyx -userdir /tmp -e ps gpsim.lyx
+ 
+ gpsim.pdf: gpsim.lyx
+-	lyx -e pdf gpsim.lyx
++	lyx -userdir /tmp -e pdf gpsim.lyx
+ 
+ EXTRA_DIST = \
+ 	screenshots/breadboard.png \

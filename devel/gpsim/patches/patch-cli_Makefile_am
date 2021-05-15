@@ -1,0 +1,20 @@
+$OpenBSD$
+
+Adjust for bison
+
+Index: cli/Makefile.am
+--- cli/Makefile.am.orig
++++ cli/Makefile.am
+@@ -56,10 +56,10 @@ libgpsimcli_la_LIBADD = @X_LDFLAGS@ @LIBREADLINE@ ../e
+ 
+ .yy.cc:
+ 	rm -f $*.h
+-	$(am__skipyacc) $(SHELL) $(YLWRAP) $< y.tab.c $*.cc y.tab.h $*.h y.output $*.output -- $(YACCCOMPILE)
++	$(am__skipyacc) $(SHELL) $(YLWRAP) $< parse.tab.cc $*.cc parse.tab.hh $*.h y.output $*.output -- $(YACCCOMPILE)
+ 
+ .yy.h:
+ 	rm -f $*.h
+-	$(am__skipyacc) $(SHELL) $(YLWRAP) $< y.tab.c $*.cc y.tab.h $*.h y.output $*.output -- $(YACCCOMPILE)
++	$(am__skipyacc) $(SHELL) $(YLWRAP) $< parse.tab.cc $*.cc parse.tab.hh $*.h y.output $*.output -- $(YACCCOMPILE)
+ 
+ EXTRA_DIST = scan.h parse.h  makefile.mingw

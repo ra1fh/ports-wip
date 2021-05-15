@@ -1,12 +1,22 @@
 # $OpenBSD:$
 
+# XXX building gpsim while a version is already installed
+# may cause the build to fail because libraries are linked
+# from the installed version
+
 COMMENT =		PIC microcontroller emulator
-DISTNAME =		gpsim-0.31.0
-PKGNAME =		gpsim-0.31.0
+
+SVNREV =		2556
+PKGNAME =		gpsim-0.31.1.$(SVNREV)
+DISTNAME =		gpsim-code-r$(SVNREV)-trunk
+EXTRACT_SUFX =		.zip
+WRKDIST=		${WRKDIR}/gpsim-code-r$(SVNREV)-trunk
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://gpsim.sourceforge.net
+
+MASTER_SITES =		https://sourceforge.net/code-snapshots/svn/g/gp/gpsim/code/
 
 MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
@@ -31,19 +41,20 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 harfbuzz
 WANTLIB += ${COMPILER_LIBCXX} curses fribidi
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gpsim/}
-
-BUILD_DEPENDS =		devel/libtool
+BUILD_DEPENDS =		devel/bison \
+			print/lyx
 
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/popt
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" CFLAGS="-L${LOCALBASE}/lib"
-USE_LIBTOOL=		gnu
+CONFIGURE_STYLE =	autoreconf
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			CFLAGS="-L${LOCALBASE}/lib" \
+			YACC=bison
 
+AUTORECONF =		sh ./autogen.sh
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
+AUTOMAKE_VERSION =	1.16
 
 post-install:
 	rm ${PREFIX}/lib/libgpsim*.la

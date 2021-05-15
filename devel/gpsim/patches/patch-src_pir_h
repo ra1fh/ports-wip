@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Add override
+
+Index: src/pir.h
+--- src/pir.h.orig
++++ src/pir.h
+@@ -90,7 +90,7 @@ class PIR : public sfr_register (public)
+   virtual unsigned int get_sppif() { return 0;}
+ 
+   /// A generic method to set an interrupt bit by mask
+-  virtual void set(int mask)
++  virtual void set(int mask) override
+   {
+     put(get() | mask);
+   }

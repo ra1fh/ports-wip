@@ -1,7 +1,23 @@
 $OpenBSD$
---- gpsim/Makefile.am.orig	Thu Apr  2 23:11:52 2015
-+++ gpsim/Makefile.am	Sat Nov 15 04:18:47 2014
-@@ -22,4 +22,4 @@ CLEANFILES = gpsim.h
+
+* revert r2552 to fix the build
+* expand special vars
+
+Index: gpsim/Makefile.am
+--- gpsim/Makefile.am.orig
++++ gpsim/Makefile.am
+@@ -11,9 +11,7 @@ gpsim_SOURCES = main.cc \
+ 
+ #gpsim_LDFLAGS =  $(shell gtk-config --cflags)
+ gpsim_LDADD = ../src/libgpsim.la ../cli/libgpsimcli.la ../gui/libgpsimgui.la \
+-  ../eXdbm/libgpsim_eXdbm.la  ../modules/libgpsim_modules.la \
+-  ../extras/libgpsim_extras.la \
+-  @GTK@ @GDK@ @GLIB@ -lstdc++ -lpopt @LIBDL@ \
++  ../eXdbm/libgpsim_eXdbm.la @GTK@ @GDK@ @GLIB@ -lstdc++ -lpopt @LIBDL@ \
+   @X_LDFLAGS@ @Y_LDFLAGS@ @LIBREADLINE@
+ 
+ # Make sure we have parse.h when compiling other sources
+@@ -24,4 +22,4 @@ CLEANFILES = gpsim.h
  EXTRA_DIST = makefile.mingw
  
  gpsim.h: gpsim.h.in
