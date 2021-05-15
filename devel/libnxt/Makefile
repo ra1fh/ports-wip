@@ -1,25 +1,25 @@
 # $OpenBSD$
 
-COMMENT =		Low level tools for Lego Mindstorms NXT
+COMMENT=	Low level tools for Lego Mindstorms NXT
 
-DISTNAME =		libnxt-0.3
+DISTNAME=	libnxt-0.3
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://code.google.com/p/libnxt/
+HOMEPAGE=	https://code.google.com/archive/p/libnxt/
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://libnxt.googlecode.com/files/
+MASTER_SITES=	https://libnxt.googlecode.com/files/
 
-MODULES =		devel/scons \
-			lang/python
+MODULES=	devel/scons \
+		lang/python
 
-WANTLIB =		c pthread usb
+WANTLIB=	c pthread usb
 
-BUILD_DEPENDS=		lang/python/${MODPY_DEFAULT_VERSION_2}
-LIB_DEPENDS =		devel/libusb-compat
+BUILD_DEPENDS=	lang/python/${MODPY_DEFAULT_VERSION_2}
+LIB_DEPENDS=	devel/libusb-compat
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fwexec ${PREFIX}/bin/fwexec

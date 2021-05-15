@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/fwexec
 @bin bin/fwflash
 @man man/man1/fwexec.1
