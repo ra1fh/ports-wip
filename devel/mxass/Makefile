@@ -1,21 +1,21 @@
 # $OpenBSD$
 
-COMMENT =		cross assembler that targets Commodore 64-like platforms
+COMMENT=	cross assembler that targets Commodore 64-like platforms
 
-V =			20141206
-GH_ACCOUNT =		mist64
-GH_PROJECT =		mxass
-GH_COMMIT = 		ea6232621d95c9a0b4a46d43f697ffab2eb0987f
+V=		20141206
+GH_ACCOUNT=	mist64
+GH_PROJECT=	mxass
+GH_COMMIT= 	ea6232621d95c9a0b4a46d43f697ffab2eb0987f
 
-DISTNAME =		${GH_PROJECT}-${V}
+DISTNAME=	${GH_PROJECT}-${V}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/mist64/mxass
+HOMEPAGE=	https://github.com/mist64/mxass
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB += 		c
+WANTLIB+= 	c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mxass ${PREFIX}/bin

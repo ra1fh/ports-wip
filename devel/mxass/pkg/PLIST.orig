@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v$
+@comment $OpenBSD$
 @bin bin/mxass
 share/doc/mxass/
 share/doc/mxass/mxass.txt
