@@ -1,4 +1,6 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/hrmtool
 @bin bin/s725get
 bin/s725plot
+share/doc/s725/
+share/doc/s725/README.md
