@@ -12,9 +12,8 @@ CATEGORIES=		editors
 HOMEPAGE=		http://www.cjmweb.net/vbindiff/
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		Yes
+PERMIT_DISTFILES=	Yes
 
 WANTLIB += 		c m ncurses panel stdc++
 
