@@ -1,8 +1,8 @@
 COMMENT =		plantuml UML diagram generator
 
-V = 1.2019.0
+V = 			1.2021.6
 DISTNAME =		plantuml-${V}
-PKGNAME  =  		plantuml-${V}
+PKGNAME =  		plantuml-${V}
 
 PKG_ARCH =		*
 
@@ -11,12 +11,12 @@ CATEGORIES =		devel
 HOMEPAGE =		http://plantuml.sourceforge.net
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=plantuml/}
 
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread stdc++
 
 MODULES =		java
-MODJAVA_VER =		1.7+
+MODJAVA_VER =		11
 
 BUILD_DEPENDS =		devel/apache-ant
 RUN_DEPENDS =		java/javaPathHelper \
