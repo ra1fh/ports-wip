@@ -2,7 +2,6 @@
 
 COMMENT =		programs for accessing C64 and C128 CP/M disk images
 
-
 V =			0.4a
 GH_ACCOUNT =		mist64
 GH_PROJECT =		ctools
@@ -15,7 +14,7 @@ CATEGORIES =		emulators
 HOMEPAGE =		https://github.com/mist64/ctools
 
 # GPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		c
 

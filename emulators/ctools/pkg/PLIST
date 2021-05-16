@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/biosdump
 @bin bin/cformat
 @bin bin/ctools
