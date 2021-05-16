@@ -1,5 +1,6 @@
 # $OpenBSD$
 
+BROKEN =		syscalls from main program
 ONLY_FOR_ARCHS =	amd64 i386
 # see fpc
 
@@ -12,9 +13,8 @@ CATEGORIES=		lang
 HOMEPAGE=		http://bricxcc.sourceforge.net/nbc/
 
 # MPL - Mozilla Public License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		Yes
+PERMIT_DISTFILES=	Yes
 
 WANTLIB=		c usb 
 
