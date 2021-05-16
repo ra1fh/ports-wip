@@ -1,19 +1,19 @@
 # $OpenBSD$
 
-COMMENT=		PICkit 2 Command Line Interface
+COMMENT =		PICkit 2 Command Line Interface
 
-DISTNAME=		pk2cmdv1.20LinuxMacSource
-PKGNAME=    		pk2cmd-1.20
-EXTRACT_SUFX= 		.tar.gz
-WRKDIST=		${WRKDIR}/pk2cmdv1.20LinuxMacSource
+DISTNAME =		pk2cmdv1.20LinuxMacSource
+PKGNAME =    		pk2cmd-1.20
+EXTRACT_SUFX = 		.tar.gz
+WRKDIST =		${WRKDIR}/pk2cmdv1.20LinuxMacSource
 
-REVISION=		0
+REVISION =		0
 
-CATEGORIES=		devel
+CATEGORIES =		devel
 
-HOMEPAGE=		http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=pg164120
+HOMEPAGE =		http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=pg164120
 
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 USE_GMAKE = 		Yes
 
