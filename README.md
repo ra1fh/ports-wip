@@ -28,7 +28,6 @@ My OpenBSD ports.
 ### emulators
 
 * **emulators/ctools** programs for accessing C64 and C128 CP/M disk images
-* **emulators/vice** versatile Commodore emulator (development version)
 
 ### lang
 
