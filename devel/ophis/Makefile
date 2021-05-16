@@ -10,16 +10,19 @@ GH_TAGNAME = 		v2.1
 
 DISTNAME =		ophis-${V}
 
-CATEGORIES=		devel
+CATEGORIES =		devel
 
-HOMEPAGE=		https://github.com/michaelcmartin/Ophis
+HOMEPAGE =		https://github.com/michaelcmartin/Ophis
 
 # MIT license
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPUTILS = 	No
 WRKSRC =		${WRKDIST}/src
+
+FLAVORS =		python3
+FLAVOR ?=
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ophis
