@@ -1,6 +1,5 @@
 # $OpenBSD$
 
-BROKEN =		syscalls from main program
 ONLY_FOR_ARCHS =	amd64 i386
 # see fpc
 

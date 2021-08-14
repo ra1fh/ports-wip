@@ -3,6 +3,7 @@
 COMMENT =		LinuxDoc tools
 
 DISTNAME =		linuxdoc-tools-0.9.82
+REVISION =		0
 
 CATEGORIES =		textproc
 
