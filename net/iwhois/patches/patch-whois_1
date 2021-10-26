@@ -1,0 +1,49 @@
+$OpenBSD$
+
+Index: whois.1
+--- whois.1.orig
++++ whois.1
+@@ -1,8 +1,8 @@
+-.TH "WHOIS" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
++.TH "IWHOIS" "1" "2019-12-30" "Marco d'Itri" "Debian GNU/Linux"
+ .SH NAME
+-whois \- client for the whois directory service
++iwhois \- client for the whois directory service
+ .SH SYNOPSIS
+-.B whois
++.B iwhois
+ [
+ .RB {\~ \-h \~|\~ \-\-host \~}
+ .I HOST
+@@ -25,25 +25,25 @@ whois \- client for the whois directory service
+ .RB [\~ \-\-verbose \~]
+ .I OBJECT
+ 
+-.B whois
++.B iwhois
+ .B \-q
+ .I KEYWORD
+ 
+-.B whois
++.B iwhois
+ .B \-t
+ .I TYPE
+ 
+-.B whois
++.B iwhois
+ .B \-v
+ .I TYPE
+ 
+-.B whois \-\-help
++.B iwhois \-\-help
+ 
+-.B whois \-\-version
++.B iwhois \-\-version
+ 
+ .PP
+ .SH DESCRIPTION
+-.B whois
++.B iwhois
+ searches for an object in a
+ .I RFC 3912
+ database.

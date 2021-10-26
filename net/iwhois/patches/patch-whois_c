@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: whois.c
+--- whois.c.orig
++++ whois.c
+@@ -1488,7 +1488,7 @@ int isasciidigit(const char c)
+ void NORETURN usage(int error)
+ {
+     fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
+-"Usage: whois [OPTION]... OBJECT...\n\n"
++"Usage: iwhois [OPTION]... OBJECT...\n\n"
+ "-h HOST, --host HOST   connect to server HOST\n"
+ "-p PORT, --port PORT   connect to PORT\n"
+ "-I                     query whois.iana.org and follow its referral\n"

@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/iwhois
+@bin bin/mkpasswd
+man/man1/iwhois1
+@man man/man1/mkpasswd.1
+@man man/man5/whois.conf.5
+share/locale/
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
+share/locale/cs/LC_MESSAGES/whois.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
+share/locale/da/LC_MESSAGES/whois.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/whois.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
+share/locale/el/LC_MESSAGES/whois.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/whois.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/whois.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
+share/locale/fi/LC_MESSAGES/whois.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/whois.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/whois.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
+share/locale/ja/LC_MESSAGES/whois.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/whois.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/whois.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
+share/locale/ru/LC_MESSAGES/whois.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/whois.mo
