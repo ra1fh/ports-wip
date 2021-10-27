@@ -4,6 +4,7 @@ My OpenBSD ports.
 
 * **devel/acme** ACME crossassembler for multiple environments
 * **devel/asl** AS is a portable macro cross assembler
+* **devel/asm85** Intel 8085 Assembler with expressions and directives
 * **devel/bear** Tool that generates a compilation database for clang tooling
 * **devel/cc65** cross development package for 6502 systems
 * **devel/dasm** c64 cross assembler
