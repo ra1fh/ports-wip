@@ -6,7 +6,7 @@
 
 COMMENT =		PIC microcontroller emulator
 
-SVNREV =		2556
+SVNREV =		2563
 PKGNAME =		gpsim-0.31.1.$(SVNREV)
 DISTNAME =		gpsim-code-r$(SVNREV)-trunk
 EXTRACT_SUFX =		.zip
