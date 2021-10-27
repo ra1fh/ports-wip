@@ -1,4 +1,4 @@
-@comment $OpenBSD$
+@comment $OpenBSD: PLIST,v$
 @bin bin/nbc
 share/doc/nbc/
 share/doc/nbc/Changelog
