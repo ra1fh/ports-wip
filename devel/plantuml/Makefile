@@ -1,7 +1,6 @@
 COMMENT =		plantuml UML diagram generator
 
-V = 			1.2021.6
-REVISION =		0
+V = 			1.2021.12
 DISTNAME =		plantuml-${V}
 PKGNAME =  		plantuml-${V}
 
