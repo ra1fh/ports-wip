@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v$
+@bin bin/my1asm
+share/doc/my1asm85/
+share/doc/my1asm85/monitor85.asm

@@ -14,6 +14,7 @@ My OpenBSD ports.
 * **devel/icestorm** icestorm tools for Lattice iCE40 FPGA
 * **devel/libnxt** Low level tools for Lego Mindstorms NXT
 * **devel/mxass** cross assembler that targets Commodore 64-like platforms
+* **devel/my1asm85** Cross Assembler for Intel 8085 Microprocessor
 * **devel/nxt-python** Python library to control NXT
 * **devel/ophis** cross-assembler for the 65xx series
 * **devel/pk2cmd** PICkit 2 Command Line Interface

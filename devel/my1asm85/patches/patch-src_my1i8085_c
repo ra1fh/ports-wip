@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix potentially uninitialized variable.
+
+Index: src/my1i8085.c
+--- src/my1i8085.c.orig
++++ src/my1i8085.c
+@@ -793,7 +793,7 @@ int check_directive(STUFFS *pstuffs, char *argument, i
+ 	CODEX *pcodex, tcodex;
+ 	char *ptoken;
+ 	abyte *pbyte;
+-	int temp = 0, count = 0, check, chk16 = 0, errorcode = SYNTAX_OK;
++	int temp = 0, count = 0, check = SYNTAX_OK, chk16 = 0, errorcode = SYNTAX_OK;
+ 
+ 	/* initialize tcodex structure */
+ 	memset((void*)&tcodex,0x00,sizeof(CODEX));
