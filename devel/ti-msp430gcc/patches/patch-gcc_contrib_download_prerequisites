@@ -1,0 +1,56 @@
+$OpenBSD$
+
+Replace sha512sum and wget with base tools
+
+Index: gcc/contrib/download_prerequisites
+--- gcc/contrib/download_prerequisites.orig
++++ gcc/contrib/download_prerequisites
+@@ -51,7 +51,7 @@ case $OS in
+     chksum='shasum -a 512 --check'
+   ;;
+   *)
+-    chksum='sha512sum -c'
++    chksum='sha512 -c'
+   ;;
+ esac
+ 
+@@ -164,7 +164,7 @@ do
+                     chksum='shasum -a 512 --check'
+                   ;;
+                   *)
+-                    chksum='sha512sum --check'
++                    chksum='sha512 -c'
+                   ;;
+                 esac
+                 chksum_extension='sha512'
+@@ -176,7 +176,7 @@ do
+                     chksum='md5_check'
+                   ;;
+                   *)
+-                    chksum='md5 --check'
++                    chksum='md5 -c'
+                   ;;
+                 esac
+                 chksum_extension='md5'
+@@ -219,7 +219,7 @@ for ar in $(echo_archives)
+ do
+     if [ ${force} -gt 0 ]; then rm -f "${directory}/${ar}"; fi
+     [ -e "${directory}/${ar}" ]                                               \
+-        || ${fetch} --no-verbose -O "${directory}/${ar}" "${base_url}${ar}"       \
++        || ftp -V -o "${directory}/${ar}" "${base_url}${ar}"       \
+         || die "Cannot download ${ar} from ${base_url}"
+ done
+ unset ar
+@@ -243,7 +243,11 @@ do
+     package="${ar%.tar*}"
+     if [ ${force} -gt 0 ]; then rm -rf "${directory}/${package}"; fi
+     [ -e "${directory}/${package}" ]                                          \
+-        || ( cd "${directory}" && tar -xf "${ar}" )                           \
++        || ( cd "${directory}" &&                                             \
++                 ( case "${ar}" in                                            \
++                       *bz2) tar -xjf "${ar}" ;;                              \
++                       *gz)  tar -xzf "${ar}" ;;                              \
++                   esac; ) )                                                  \
+         || die "Cannot extract package from ${ar}"
+     unset package
+ done
