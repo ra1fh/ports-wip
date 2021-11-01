@@ -1,7 +1,0 @@
-@comment $OpenBSD$
-@bin bin/mxass
-share/doc/mxass/
-share/doc/mxass/mxass.txt
-share/mxass/
-share/mxass/OPCODES.A18
-share/mxass/OPZ80.A23
