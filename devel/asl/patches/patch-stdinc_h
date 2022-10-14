@@ -1,9 +1,7 @@
-$OpenBSD$
-
 Index: stdinc.h
 --- stdinc.h.orig
 +++ stdinc.h
-@@ -38,7 +38,7 @@
+@@ -28,7 +28,7 @@
  #include <alloc.h>
  #else
  #include <memory.h>

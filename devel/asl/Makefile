@@ -2,7 +2,7 @@
 
 COMMENT=		AS is a portable macro cross assembler
 
-BUILD=			211
+BUILD=			230
 PKGNAME=		asl-1.42.$(BUILD)
 DISTNAME=		asl-current
 DISTFILES=		asl-current-142-bld$(BUILD).tar.bz2
