@@ -6,7 +6,7 @@
 
 COMMENT =		PIC microcontroller emulator
 
-SVNREV =		2563
+SVNREV =		2601
 PKGNAME =		gpsim-0.31.1.$(SVNREV)
 DISTNAME =		gpsim-code-r$(SVNREV)-trunk
 EXTRACT_SUFX =		.zip
@@ -53,7 +53,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			YACC=bison
 
 AUTORECONF =		sh ./autogen.sh
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
 post-install:

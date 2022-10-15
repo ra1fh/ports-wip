@@ -1,14 +1,12 @@
-$OpenBSD$
-
 Index: cli/socket.cc
 --- cli/socket.cc.orig
 +++ cli/socket.cc
-@@ -546,7 +546,7 @@ void Socket::Bind()
-     return;
-   }
+@@ -585,7 +585,7 @@ void Socket::Bind()
+         return;
+     }
  
--  if (bind(my_socket->getSocket(), (struct sockaddr *) &addr, sizeof(addr)) != 0) {
-+  if (::bind(my_socket->getSocket(), (struct sockaddr *) &addr, sizeof(addr)) != 0) {
-     psocketerror("bind");
-   }
- }
+-    if (bind(my_socket->getSocket(), (struct sockaddr *) &addr, sizeof(addr)) != 0)
++    if (::bind(my_socket->getSocket(), (struct sockaddr *) &addr, sizeof(addr)) != 0)
+     {
+         psocketerror("bind");
+     }

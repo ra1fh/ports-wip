@@ -1,11 +1,9 @@
-$OpenBSD$
-
 Adjust for bison
 
 Index: cli/Makefile.am
 --- cli/Makefile.am.orig
 +++ cli/Makefile.am
-@@ -56,10 +56,10 @@ libgpsimcli_la_LIBADD = @X_LDFLAGS@ @LIBREADLINE@ ../e
+@@ -58,10 +58,10 @@ scan.lo: parse.h
  
  .yy.cc:
  	rm -f $*.h
