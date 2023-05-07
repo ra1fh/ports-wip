@@ -1,0 +1,12 @@
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -40,7 +40,7 @@ else
+   RMDIR = $(RM) -r $1
+ endif
+ 
+-CC = $(CROSS_COMPILE)gcc
++CC = $(CROSS_COMPILE)cc
+ AR = $(CROSS_COMPILE)ar
+ 
+ ifdef CROSS_COMPILE

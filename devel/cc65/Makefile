@@ -19,6 +19,7 @@ BUILD_DEPENDS=		textproc/linuxdoc-tools
 
 USE_GMAKE = 		Yes
 ALL_TARGET =		all doc
+PATCHORIG =		.orig
 
 do-install:
 	cd ${WRKBUILD} && umask 022 && exec ${_FAKESUDO} \
