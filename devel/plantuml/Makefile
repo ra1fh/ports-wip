@@ -1,15 +1,17 @@
 COMMENT =		plantuml UML diagram generator
 
-V = 			1.2021.12
-DISTNAME =		plantuml-${V}
+V = 			1.2023.6
+DISTNAME =		v${V}
 PKGNAME =  		plantuml-${V}
+EXTRACT_SUFX = 	.zip
+WRKDIST=		${WRKDIR}/plantuml-${V}
 
 PKG_ARCH =		*
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://plantuml.sourceforge.net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=plantuml/}
+MASTER_SITES =		https://github.com/plantuml/plantuml/archive/refs/tags/
 
 PERMIT_PACKAGE =	Yes
 
@@ -27,11 +29,13 @@ ANT_CMD =		${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
 			${LOCALBASE}/bin/ant
 
 do-build:
-	cd ${WRKSRC} && ${ANT_CMD}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle --no-daemon \
+		--offline --stacktrace build
+#	cd ${WRKSRC} && gradle --no-daemon build
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/plantuml
-	${INSTALL_DATA} ${WRKSRC}/plantuml.jar ${PREFIX}/share/plantuml
+	${INSTALL_DATA} ${WRKSRC}/build/libs/plantuml-${V}.jar ${PREFIX}/share/plantuml/plantuml.jar
 	echo '#!/bin/sh\n$$(javaPathHelper -c plantuml) -jar' \
 		'${TRUEPREFIX}/share/plantuml/plantuml.jar "$$@"' \
 		 > ${PREFIX}/bin/plantuml
