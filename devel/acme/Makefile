@@ -2,9 +2,9 @@
 
 COMMENT=		ACME crossassembler for multiple environments
 
-SVNCOMMIT=		r266
+SVNCOMMIT=		r325
 DISTNAME=		acme-crossass-code-0-$(SVNCOMMIT)-trunk
-PKGNAME=    		acme-0.97
+PKGNAME=    		acme-0.97.325
 EXTRACT_SUFX= 		.zip
 WRKDIST=		${WRKDIR}/acme-crossass-code-0-$(SVNCOMMIT)-trunk
 
