@@ -3,7 +3,7 @@
 COMMENT=		visual binary diff
 
 DISTNAME=		vbindiff-3.0_beta5
-PKGNAME=    		vbindiff-3.0-beta5
+PKGNAME=    		vbindiff-3.0.beta5
 EXTRACT_SUFX= 		.tar.gz
 WRKDIST=		${WRKDIR}/vbindiff-3.0_beta5
 
