@@ -19,7 +19,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += 		c
 
 do-build:
-	cd ${WRKSRC}/src && $(MAKE_PROGRAM)
+	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} CC=c++
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/asm85 ${PREFIX}/bin/asm85
