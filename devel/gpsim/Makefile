@@ -6,7 +6,7 @@
 
 COMMENT =		PIC microcontroller emulator
 
-SVNREV =		2601
+SVNREV =		2612
 PKGNAME =		gpsim-0.31.1.$(SVNREV)
 DISTNAME =		gpsim-code-r$(SVNREV)-trunk
 EXTRACT_SUFX =		.zip
@@ -17,7 +17,6 @@ CATEGORIES =		devel
 HOMEPAGE =		http://gpsim.sourceforge.net
 
 MASTER_SITES =		https://sourceforge.net/code-snapshots/svn/g/gp/gpsim/code/
-
 MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 # GPLv2+ LGPLv2+
@@ -45,7 +44,8 @@ BUILD_DEPENDS =		devel/bison \
 			print/lyx
 
 LIB_DEPENDS =		x11/gtk+2 \
-			devel/popt
+			devel/popt \
+			devel/pcre
 
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
