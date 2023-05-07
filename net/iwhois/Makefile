@@ -1,8 +1,8 @@
 
 COMMENT =	Intelligent WHOIS client
 
-V =		5.5.10
-DISTNAME =	whois
+V =		5.5.17
+DISTNAME =	whois-${V}
 PKGNAME =	iwhois-${V}
 
 CATEGORIES =	net
