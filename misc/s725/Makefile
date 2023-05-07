@@ -17,7 +17,7 @@ MAINTAINER=		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 PERMIT_PACKAGE=		Yes
 
-RUN_DEPENDS=		lang/python/3.8 \
+RUN_DEPENDS=		lang/python/3.9 \
 			math/py-numpy,python3 \
 			graphics/py-matplotlib,python3
 
