@@ -1,0 +1,30 @@
+Index: oscar64/oscar64.cpp
+--- oscar64/oscar64.cpp.orig
++++ oscar64/oscar64.cpp
+@@ -81,13 +81,17 @@ int main2(int argc, const char** argv)
+ 
+ 		_NSGetExecutablePath(basePath, &length);
+ 		length = strlen(basePath);
+-#else
++#elif __OpenBSD__
++		strlcpy(basePath, DATAPATH, sizeof(basePath));
++		strlcat(basePath, "/", sizeof(basePath));
++#else							   
+ 		int length = readlink("/proc/self/exe", basePath, sizeof(basePath));
+ 
+ 		//		strcpy(basePath, argv[0]);
+ 		//		int length = strlen(basePath);
+ #endif
+ #endif
++#ifndef __OpenBSD__								
+ 		while (length > 0 && basePath[length - 1] != '/' && basePath[length - 1] != '\\')
+ 			length--;
+ 
+@@ -99,6 +103,7 @@ int main2(int argc, const char** argv)
+ 		}
+ 
+ 		basePath[length] = 0;
++#endif
+ 
+ 		Compiler* compiler = new Compiler();
+ 

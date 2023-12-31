@@ -18,6 +18,7 @@ My OpenBSD ports.
 * **devel/my1asm85** Cross Assembler for Intel 8085 Microprocessor
 * **devel/nxt-python** Python library to control NXT
 * **devel/ophis** cross-assembler for the 65xx series
+* **devel/oscar64** Optimizing C Compiler Assembler and Runtime for C64
 * **devel/pk2cmd** PICkit 2 Command Line Interface
 * **devel/plantuml** plantuml UML diagram generator
 * **net/iwhois** Intelligent WHOIS client

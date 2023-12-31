@@ -1,0 +1,38 @@
+Index: make/makefile
+--- make/makefile.orig
++++ make/makefile
+@@ -5,22 +5,27 @@ objects = $(patsubst ../oscar64/%.cpp,%.o,$(sources))
+ 
+ CXX = c++
+ CPPFLAGS = -g -O2 -std=c++11 -Wno-switch
+- 
+- $(shell mkdir -p ../bin)
+- 
++
++$(shell mkdir -p ../bin)
++
+ ifdef WINDIR
+ 	linklibs = -lpthread
+ else
+ 	UNAME_S := $(shell uname -s)
+-	
++
+ 	ifeq ($(UNAME_S), Darwin)
+ 
+ 		linklibs = -lpthread
+-  	else
+-		linklibs = -lrt -lpthread
++	else
++		ifeq ($(UNAME_S), OpenBSD)
++			linklibs = -lpthread
++			CPPFLAGS += -DDATAPATH=\"$(DATAPATH)\"
++		else
++			linklibs = -lrt -lpthread
++		endif
+ 	endif
+ endif
+- 
++
+ %.o: ../oscar64/%.cpp
+ 	$(CXX) -c $(CPPFLAGS) $< -o $@
+ 

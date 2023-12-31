@@ -1,0 +1,11 @@
+Index: oscar64/Linker.cpp
+--- oscar64/Linker.cpp.orig
++++ oscar64/Linker.cpp
+@@ -1014,6 +1014,7 @@ static const char * LinkerObjectTypeNames[] = 
+ 	"BSS",
+ 	"HEAP",
+ 	"STACK",
++	"INLAY",
+ 	"START",
+ 	"END"
+ };
