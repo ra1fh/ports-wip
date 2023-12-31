@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.cjmweb.net/vbindiff/
 PERMIT_PACKAGE=		Yes
 PERMIT_DISTFILES=	Yes
 
-WANTLIB += 		c m ncurses panel stdc++
+WANTLIB += 		c m ncurses panel
 
 MASTER_SITES = 		http://www.cjmweb.net/vbindiff/
 
