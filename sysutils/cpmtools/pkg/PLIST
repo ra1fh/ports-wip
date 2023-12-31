@@ -1,0 +1,19 @@
+@bin bin/cpmchattr
+@bin bin/cpmchmod
+@bin bin/cpmcp
+@bin bin/cpmls
+@bin bin/cpmrm
+@bin bin/fsck.cpm
+@bin bin/fsed.cpm
+@bin bin/mkfs.cpm
+@man man/man1/cpmchattr.1
+@man man/man1/cpmchmod.1
+@man man/man1/cpmcp.1
+@man man/man1/cpmls.1
+@man man/man1/cpmrm.1
+@man man/man1/fsck.cpm.1
+@man man/man1/fsed.cpm.1
+@man man/man1/mkfs.cpm.1
+@man man/man5/cpm.5
+@man man/man5/diskdefs.5
+share/diskdefs

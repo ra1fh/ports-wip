@@ -40,6 +40,10 @@ My OpenBSD ports.
 * **misc/s725** Communicate with Polar S725X heart rate monitor
 * **misc/GoldenCheetah** Cycling performance software
 
+### sysutils
+
+* **sysutils/cpmtools** Access CP/M file systems similar to mtools
+
 ### textproc
 
 * **textproc/linuxdoc** LinuxDoc SGML DTD
