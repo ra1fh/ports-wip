@@ -4,7 +4,11 @@ COMMENT=		Optimizing C Compiler Assembler and Runtime for C64
 
 GH_ACCOUNT =		drmortalwombat
 GH_PROJECT =		oscar64
-GH_TAGNAME =		v1.26.229
+#GH_COMMIT =		91c907be7e6a1a38aa7d5f24fc8d9a6d42d2deb9
+GH_TAGNAME =		v1.27.244
+
+V =			1.27.244
+DISTNAME=		${GH_PROJECT}-${V}
 
 CATEGORIES=		devel
 
