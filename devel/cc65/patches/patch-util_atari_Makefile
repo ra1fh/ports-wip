@@ -1,0 +1,17 @@
+Index: util/atari/Makefile
+--- util/atari/Makefile.orig
++++ util/atari/Makefile
+@@ -1,5 +1,5 @@
+ 
+-CC = $(CROSS_COMPILE)gcc
++CC = $(CROSS_COMPILE)cc
+ 
+ ifdef CROSS_COMPILE
+   $(info CC: $(CC))
+@@ -26,5 +26,5 @@ ataricvt: ataricvt.c
+ 
+ mostlyclean clean:
+ 	$(DEL) ataricvt
+-	
++
+ install zip:

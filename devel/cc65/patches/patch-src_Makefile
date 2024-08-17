@@ -1,7 +1,7 @@
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -40,7 +40,7 @@ else
+@@ -46,7 +46,7 @@ else
    RMDIR = $(RM) -r $1
  endif
  

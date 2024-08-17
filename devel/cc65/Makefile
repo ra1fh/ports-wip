@@ -2,9 +2,14 @@
 
 COMMENT=		cross development package for 6502 systems
 
+V =			2.19
+REVISION =		1
 GH_ACCOUNT =		cc65
 GH_PROJECT =		cc65
-GH_TAGNAME =		V2.19
+#GH_TAGNAME =		V2.19
+GH_COMMIT = 		3dfe0330003f19680f2afc9a607bea397b5c9fec
+
+DISTNAME =		${GH_PROJECT}-${V}
 
 CATEGORIES=		devel
 
