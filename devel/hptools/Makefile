@@ -16,7 +16,7 @@ PERMIT_DISTFILES=	No
 
 WANTLIB += 		c
 
-MASTER_SITES =		https://www.hpcalc.org/hp48/pc/programming/
+SITES =			https://www.hpcalc.org/hp48/pc/programming/
 
 do-build:
 	cd ${WRKSRC} && $(MAKE_PROGRAM) rev=build

@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 USE_GMAKE = 		Yes
 
-MASTER_SITES = 		http://ww1.microchip.com/downloads/en/DeviceDoc/
+SITES = 		http://ww1.microchip.com/downloads/en/DeviceDoc/
 
 WANTLIB += 		c m usb
 WANTLIB += 		${COMPILER_LIBCXX}

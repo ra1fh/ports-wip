@@ -10,7 +10,7 @@ DISTFILES=		asl-current-142-bld$(BUILD).tar.bz2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://john.ccac.rwth-aachen.de:8000/as/
-MASTER_SITES=		http://john.ccac.rwth-aachen.de:8000/ftp/as/source/c_version/
+SITES=			http://john.ccac.rwth-aachen.de:8000/ftp/as/source/c_version/
 
 # GPLv2/GPLv3
 PERMIT_PACKAGE=		Yes

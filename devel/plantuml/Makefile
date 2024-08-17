@@ -11,7 +11,7 @@ PKG_ARCH =		*
 CATEGORIES =		devel
 
 HOMEPAGE =		http://plantuml.sourceforge.net
-MASTER_SITES =		https://github.com/plantuml/plantuml/archive/refs/tags/
+SITES =			https://github.com/plantuml/plantuml/archive/refs/tags/
 
 PERMIT_PACKAGE =	Yes
 

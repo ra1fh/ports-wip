@@ -12,7 +12,7 @@ HOMEPAGE =		https://packages.debian.org/sid/linuxdoc-tools
 # GPL3+ and Public Domain
 PERMIT_PACKAGE =	Yes 
 
-MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/l/linuxdoc-tools/}
+SITES =			${SITE_DEBIAN:=main/l/linuxdoc-tools/}
 
 DISTFILES =		linuxdoc-tools_0.9.82.orig.tar.gz
 

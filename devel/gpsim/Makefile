@@ -16,7 +16,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://gpsim.sourceforge.net
 
-MASTER_SITES =		https://sourceforge.net/code-snapshots/svn/g/gp/gpsim/code/
+SITES =			https://sourceforge.net/code-snapshots/svn/g/gp/gpsim/code/
 MAINTAINER =		Ralf Horstmann <ralf+ports@ackstorm.de>
 
 # GPLv2+ LGPLv2+

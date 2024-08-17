@@ -17,7 +17,7 @@ PERMIT_DISTFILES =	Yes
 
 WANTLIB =		c idn2
 
-MASTER_SITES =		http://deb.debian.org/debian/pool/main/w/whois/
+SITES =			http://deb.debian.org/debian/pool/main/w/whois/
 
 DISTFILES =		whois_${V}.tar.xz
 

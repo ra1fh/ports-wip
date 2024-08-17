@@ -17,7 +17,7 @@ PERMIT_DISTFILES=	Yes
 
 WANTLIB += 		c m ncurses panel
 
-MASTER_SITES = 		http://www.cjmweb.net/vbindiff/
+SITES =			http://www.cjmweb.net/vbindiff/
 
 CONFIGURE_STYLE= 	gnu
 

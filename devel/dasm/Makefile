@@ -7,15 +7,13 @@ CATEGORIES=		devel
 
 HOMEPAGE=		http://dasm-dillon.sourceforge.net/
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE=		Yes
 
 USE_GMAKE = 		Yes
 
 WANTLIB += 		c
 
-MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dasm-dillon/}
+SITES = 		${SITE_SOURCEFORGE:=dasm-dillon/}
 
 do-build:
 	cd ${WRKSRC}/src && $(MAKE_PROGRAM)

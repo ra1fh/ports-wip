@@ -11,7 +11,7 @@ HOMEPAGE=	https://code.google.com/archive/p/libnxt/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://libnxt.googlecode.com/files/
+SITES=		https://libnxt.googlecode.com/files/
 
 MODULES=	devel/scons \
 		lang/python

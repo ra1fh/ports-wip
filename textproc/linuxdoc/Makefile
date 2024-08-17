@@ -5,7 +5,7 @@ COMMENT=	Linuxdoc SGML DTD
 DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
 
-MASTER_SITES=	http://dist.bsdlab.org/
+SITES=		http://dist.bsdlab.org/
 
 RUN_DEPENDS=	textproc/iso8879
 

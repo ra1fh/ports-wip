@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += 		c m
 
-MASTER_SITES = 		https://sourceforge.net/code-snapshots/svn/a/ac/acme-crossass/code-0/
+SITES = 		https://sourceforge.net/code-snapshots/svn/a/ac/acme-crossass/code-0/
 
 do-build:
 	cd ${WRKSRC}/src && $(MAKE_PROGRAM) CC=cc

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB = c
 
-MASTER_SITES =		http://www.moria.de/~michael/cpmtools/files/
+SITES =			http://www.moria.de/~michael/cpmtools/files/
 
 CONFIGURE_STYLE =	gnu
 
