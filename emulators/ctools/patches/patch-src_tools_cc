@@ -1,0 +1,12 @@
+Index: src/tools.cc
+--- src/tools.cc.orig
++++ src/tools.cc
+@@ -259,7 +259,7 @@ cpm_filename(const char filename[])
+ 	char *s, *t, *dot;
+ 
+ 	// take basename
+-	t = strrchr(filename, '/');
++	t = (char *) strrchr(filename, '/');
+ 	if (t != NULL)
+ 		filename = t + 1;
+ 	s = strdup(filename);

@@ -21,6 +21,8 @@ WANTLIB += 		c
 USE_GMAKE = 		Yes
 WRKBUILD =		${WRKSRC}/src
 
+MAKE_FLAGS =		CXX=c++
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ctools
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README} ${PREFIX}/share/doc/ctools
