@@ -22,8 +22,8 @@ WANTLIB += 		c
 USE_GMAKE = Yes
 
 do-build:
-	cd ${WRKSRC} && $(MAKE_PROGRAM)
-	cd ${WRKSRC}/docs && $(MAKE_PROGRAM)
+	cd ${WRKSRC} && $(MAKE_PROGRAM) CC=cc
+	cd ${WRKSRC}/docs && $(MAKE_PROGRAM) CC=cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dreamass ${PREFIX}/bin/dreamass
