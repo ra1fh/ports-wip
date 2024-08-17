@@ -21,6 +21,8 @@ share/oscar64/include/c64/charwin.h
 share/oscar64/include/c64/cia.c
 share/oscar64/include/c64/cia.h
 share/oscar64/include/c64/easyflash.h
+share/oscar64/include/c64/flossiec.c
+share/oscar64/include/c64/flossiec.h
 share/oscar64/include/c64/iecbus.c
 share/oscar64/include/c64/iecbus.h
 share/oscar64/include/c64/joystick.c
@@ -64,6 +66,9 @@ share/oscar64/include/gfx/tinyfont.c
 share/oscar64/include/gfx/tinyfont.h
 share/oscar64/include/gfx/vector3d.c
 share/oscar64/include/gfx/vector3d.h
+share/oscar64/include/inttypes.c
+share/oscar64/include/inttypes.h
+share/oscar64/include/iso646.h
 share/oscar64/include/limits.h
 share/oscar64/include/math.c
 share/oscar64/include/math.h
@@ -81,6 +86,7 @@ share/oscar64/include/opp/
 share/oscar64/include/opp/algorithm.h
 share/oscar64/include/opp/array.h
 share/oscar64/include/opp/bidxlist.h
+share/oscar64/include/opp/functional.h
 share/oscar64/include/opp/ifstream.cpp
 share/oscar64/include/opp/ifstream.h
 share/oscar64/include/opp/iostream.cpp
@@ -181,6 +187,7 @@ share/oscar64/samples/kernalio/charwrite.c
 share/oscar64/samples/kernalio/diskdir.c
 share/oscar64/samples/kernalio/fileread.c
 share/oscar64/samples/kernalio/filewrite.c
+share/oscar64/samples/kernalio/hiresfload.c
 share/oscar64/samples/kernalio/hiresread.c
 share/oscar64/samples/kernalio/hireswrite.c
 share/oscar64/samples/kernalio/make.bat
@@ -224,6 +231,7 @@ share/oscar64/samples/rasterirq/openborder.c
 share/oscar64/samples/rasterirq/textcrawler.c
 share/oscar64/samples/resources/
 share/oscar64/samples/resources/ballsprite.bin
+share/oscar64/samples/resources/blumba2.bin
 share/oscar64/samples/resources/breakoutchars.bin
 share/oscar64/samples/resources/breakoutsprites.bin
 share/oscar64/samples/resources/charset.bin

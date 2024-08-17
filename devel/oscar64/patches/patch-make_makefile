@@ -1,7 +1,7 @@
 Index: make/makefile
 --- make/makefile.orig
 +++ make/makefile
-@@ -5,22 +5,27 @@ objects = $(patsubst ../oscar64/%.cpp,%.o,$(sources))
+@@ -5,25 +5,30 @@ objects = $(patsubst ../oscar64/%.cpp,%.o,$(sources))
  
  CXX = c++
  CPPFLAGS = -g -O2 -std=c++11 -Wno-switch
@@ -20,14 +20,19 @@ Index: make/makefile
  	ifeq ($(UNAME_S), Darwin)
  
  		linklibs = -lpthread
--  	else
+ 	else
+-		# MSVC
 -		linklibs = -lrt -lpthread
-+	else
+-		# MinGW
+-		#linklibs = -lversion -lpthread
 +		ifeq ($(UNAME_S), OpenBSD)
 +			linklibs = -lpthread
 +			CPPFLAGS += -DDATAPATH=\"$(DATAPATH)\"
 +		else
++			# MSVC
 +			linklibs = -lrt -lpthread
++			# MinGW
++			#linklibs = -lversion -lpthread
 +		endif
  	endif
  endif
