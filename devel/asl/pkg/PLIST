@@ -154,6 +154,7 @@ include/asl/avr/usimb8.inc
 include/asl/avr/wdm21.inc
 include/asl/avr/wdm60.inc
 include/asl/avr/wdme.inc
+include/asl/bcdic.inc
 include/asl/bitfuncs.inc
 include/asl/coldfire/
 include/asl/coldfire/52xxcan.inc
@@ -199,8 +200,22 @@ include/asl/coldfire/mcf5473.inc
 include/asl/coldfire/mcf5474.inc
 include/asl/coldfire/mcf5475.inc
 include/asl/coldfire/mcf547x.inc
+include/asl/cp037.inc
+include/asl/cp5100.inc
+include/asl/cp5110.inc
 include/asl/ctype.inc
+include/asl/ebcdic.inc
 include/asl/emulmsp.inc
+include/asl/ez80/
+include/asl/ez80/flash.inc
+include/asl/ez80/gpio.inc
+include/asl/ez80/i2c.inc
+include/asl/ez80/reg80190.inc
+include/asl/ez80/reg80f91.inc
+include/asl/ez80/reg80f92.inc
+include/asl/ez80/rtc.inc
+include/asl/ez80/spi.inc
+include/asl/ez80/uart.inc
 include/asl/h8_3048.inc
 include/asl/kenbak.inc
 include/asl/pdk/
@@ -217,6 +232,7 @@ include/asl/pdk/pmx232.inc
 include/asl/pdk/pmx234.inc
 include/asl/pdk/pmx271.inc
 include/asl/pdk/pxs154.inc
+include/asl/radix50.inc
 include/asl/reg166.inc
 include/asl/reg251.inc
 include/asl/reg29k.inc
@@ -232,6 +248,7 @@ include/asl/regavr.inc
 include/asl/regavrold.inc
 include/asl/regcold.inc
 include/asl/regcop8.inc
+include/asl/regez80.inc
 include/asl/regf8.inc
 include/asl/reggp32.inc
 include/asl/regh16.inc
@@ -485,15 +502,6 @@ include/asl/z8/z86cxx.inc
 include/asl/z8/z86xx.inc
 include/asl/z8/z88c0x.inc
 lib/asl/
-lib/asl/alink.msg
-lib/asl/as.msg
-lib/asl/cmdarg.msg
-lib/asl/ioerrs.msg
-lib/asl/p2bin.msg
-lib/asl/p2hex.msg
-lib/asl/pbind.msg
-lib/asl/plist.msg
-lib/asl/tools.msg
 @man man/man1/alink.1
 @man man/man1/asl.1
 @man man/man1/p2bin.1
@@ -509,6 +517,7 @@ share/doc/asl/as_EN.doc
 share/doc/asl/as_EN.html
 share/doc/asl/as_EN.pdf
 share/doc/asl/biblio.tex
+share/doc/asl/cp3finst.tex
 share/doc/asl/pscomm.tex
 share/doc/asl/pscpu.tex
 share/doc/asl/taborg.tex

@@ -1,7 +1,7 @@
 Index: sysdefs.h
 --- sysdefs.h.orig
 +++ sysdefs.h
-@@ -1170,7 +1170,7 @@ typedef unsigned long Card32;
+@@ -1245,7 +1245,7 @@ typedef unsigned long Card32;
  
     Principally, a normal *NIX. */
  
@@ -10,7 +10,7 @@ Index: sysdefs.h
  
  /* no long long data type if C89 is used */
  
-@@ -1184,6 +1184,8 @@ typedef unsigned long Card32;
+@@ -1259,6 +1259,8 @@ typedef unsigned long Card32;
  #define ARCHSYSNAME "unknown-freebsd"
  #elif defined __NetBSD__
  #define ARCHSYSNAME "unknown-netbsd"

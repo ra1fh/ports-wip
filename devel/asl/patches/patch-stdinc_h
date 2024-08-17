@@ -2,11 +2,11 @@ Index: stdinc.h
 --- stdinc.h.orig
 +++ stdinc.h
 @@ -28,7 +28,7 @@
- #include <alloc.h>
+ # include <alloc.h>
  #else
- #include <memory.h>
--#if !defined (__FreeBSD__) && !defined(__APPLE__)
-+#if !defined (__FreeBSD__) && !defined(__APPLE__) && !defined(__OpenBSD__)
- #include <malloc.h>
- #endif
+ # include <memory.h>
+-# if !defined (__FreeBSD__) && !defined(__APPLE__)
++# if !defined (__FreeBSD__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+ #  include <malloc.h>
+ # endif
  #endif
