@@ -16,8 +16,8 @@ WANTLIB += 		c
 SITES = 		${SITE_SOURCEFORGE:=dasm-dillon/}
 
 do-build:
-	cd ${WRKSRC}/src && $(MAKE_PROGRAM)
-	cd ${WRKSRC} && $(MAKE_PROGRAM)
+	cd ${WRKSRC}/src && $(MAKE_PROGRAM) CC=cc
+	cd ${WRKSRC} && $(MAKE_PROGRAM) CC=cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dasm ${PREFIX}/bin/dasm
