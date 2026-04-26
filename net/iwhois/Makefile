@@ -1,7 +1,7 @@
 
 COMMENT =	Intelligent WHOIS client
 
-V =		5.5.17
+V =		5.6.3
 DISTNAME =	whois-${V}
 PKGNAME =	iwhois-${V}
 

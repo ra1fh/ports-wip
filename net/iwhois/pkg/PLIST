@@ -1,7 +1,7 @@
 @comment $OpenBSD: PLIST,v$
 @bin bin/iwhois
 @bin bin/mkpasswd
-man/man1/iwhois1
+man/man1/iwhois.1
 @man man/man1/mkpasswd.1
 @man man/man5/whois.conf.5
 share/locale/

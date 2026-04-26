@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Index: whois.1
 --- whois.1.orig
 +++ whois.1
@@ -15,8 +13,8 @@ Index: whois.1
  [
  .RB {\~ \-h \~|\~ \-\-host \~}
  .I HOST
-@@ -25,25 +25,25 @@ whois \- client for the whois directory service
- .RB [\~ \-\-verbose \~]
+@@ -24,29 +24,29 @@ whois \- client for the whois directory service
+ .RB [\~ \-\-no\-recursion \~]
  .I OBJECT
  
 -.B whois
@@ -40,10 +38,29 @@ Index: whois.1
 -.B whois \-\-version
 +.B iwhois \-\-version
  
- .PP
  .SH DESCRIPTION
 -.B whois
 +.B iwhois
  searches for an object in a
  .I RFC 3912
  database.
+ .P
+-This version of the whois client tries to guess the right server to
++This version of the iwhois client tries to guess the right server to
+ ask for the specified object.
+ If no guess can be made it will connect to
+ .I whois.networksolutions.com
+@@ -303,11 +303,11 @@ The program may have buffer overflows in the command l
+ be sure to not pass untrusted data to it.
+ It should be rewritten to use a dynamic strings library.
+ .SH HISTORY
+-This program closely tracks the user interface of the whois client
++This program closely tracks the user interface of the iwhois client
+ developed at RIPE by Ambrose Magee and others on the base of the
+ original BSD client.
+ .SH AUTHOR
+-.B Whois
++.B Iwhois
+ and this man page were written by Marco d'Itri
+ .RI < md@linux.it >
+ and are licensed under the terms of the GNU General Public License,

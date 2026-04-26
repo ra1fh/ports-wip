@@ -1,9 +1,7 @@
-$OpenBSD$
-
 Index: whois.c
 --- whois.c.orig
 +++ whois.c
-@@ -1488,7 +1488,7 @@ int isasciidigit(const char c)
+@@ -1578,7 +1578,7 @@ int isasciidigit(const char c)
  void NORETURN usage(int error)
  {
      fprintf((EXIT_SUCCESS == error) ? stdout : stderr, _(
